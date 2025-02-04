@@ -1,6 +1,6 @@
 ### Syllabus for MAT 107 Discrete Mathematics (Spring 25)  
 ---
-Not that the syllabus is prepared with the help of Deepseek-R1
+Note that the syllabus is prepared with the help of Deepseek-R1
 
 ---
 **Course Title**: Discrete Mathematics  
