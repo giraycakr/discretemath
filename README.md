@@ -14,7 +14,7 @@ Not that the syllabus is prepared with the help of Deepseek-R1
 Discrete Mathematics introduces the fundamental concepts and tools that form the basics in the understanding of computer science, engineering, applied mathematics, and AI. This course only deals with the topics related to computer sciences that form theoretical foundations and practical problem-solving skills, enabling students to understand and model discrete computer systems.
 In particular, the topics covered in the course include: logic and proofs, basic mathematics on real numbers; fundamental mathematical objects such as sets, functions, relations, sums, and matrices;  number theory and modular arithmetic and polynomials; induction and recursion; counting,  probability, graphs; relations; and algorithms.
 
-    - This semester the course particularly integrates the use of AI examples and tools like DeepSeek. Each week’s AI case studies and assignments reinforce textbook concepts, preparing students for advanced CS/AI coursework.
+- **This semester the course particularly integrates the use of AI examples and tools like DeepSeek. Each week’s AI case studies and assignments reinforce textbook concepts, preparing students for advanced CS/AI coursework.**
 
 ### **Course Objectives**  
 1. Introduce foundational concepts in discrete mathematics.  
