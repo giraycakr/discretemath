@@ -50,7 +50,7 @@ This course teaches discrete mathematics that is used in Computer Science.
     <pre><code>
   Computation = {
     abstract: true,
-    intangible: true, // you can't see or touch
+    intangible: true, //you can't see or touch
     governedBy: "strict, well-defined rules",
     scale: "too big to comprehend all at once"
   }
