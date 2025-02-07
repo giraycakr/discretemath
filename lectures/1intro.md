@@ -1,11 +1,16 @@
 ---
-title: "discrete math-1intro"
-author: "ammar daskin"
-institute: "istanbul medeniyet university, computer engineering department"
+title: "Discrete Mathematics - Introduction"
+author: "Ammar Daskin"
+institute: "Istanbul Medeniyet University, Computer Engineering Department"
 urlcolor: red
 linkstyle: bold
-aspect-ratio: "16:9"
+aspectratio: 169
 theme: black
+transition: slide
+controls: true
+controlsTutorial: true
+slideNumber: true
+hash: true
 center: false
 align-items: left
 align-content: left
@@ -14,32 +19,52 @@ lang: tr
 output: revealjs::revealjs_presentation
 ---
 
+<style type="text/css">
+html *:not(h1):not(h2):not(h3):not(h4):not(code) {
+  font-size: 1.5vw;
+  max-width: 3000px; /* Optional: Adds a maximum width for long lines */
+
+}
+
+</style>
+
 ![logo](logo-tr.png)
 
-# Course Content
+# 📚 Course Content  
+
 This course teaches discrete mathematics that is used in Computer Science.
-- The basic understanding of what mathematics is and how mathematical definitions and proofs work.
-* The content and slides are mostly based on:
-  * textbook: Discrete mathematics and its applications, Seventh Edition Kenneth H. Rosen.
-  * Notes on Discrete Mathematics James Aspnes, [http://www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf](http://www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf)
+- The basic understanding of what mathematics is and how mathematical definitions and proofs work.  
+
+---
+
+## 📖 Primary Resources
+  - **textbook:** Discrete mathematics and its applications, Seventh Edition Kenneth H. Rosen.  
+  * [Notes on Discrete Mathematics by James Aspnes](http://www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf)
   * And DeepSeek
 
 
 ---
 
-## So why do I need to learn all this nasty mathematics?
-- Computation is something that 
-    - you can’t see and can’t touch, 
-    - but it obeys strict, well-defined rules 
-      - with astonishing accuracy over long periods of time.
-- Computations are too big for you to comprehend all at once.
+## 🤔 So why do I need to learn all this nasty mathematics?
+  <div class="fragment">
+    <pre><code>
+  Computation = {
+    abstract: true,
+    intangible: true, // you can't see or touch
+    governedBy: "strict, well-defined rules",
+    scale: "too big to comprehend all at once"
+  }
+</code></pre>
+</div>
 
 ---
 
-&rarr; So in order to understand computations, 
-- we need a language that allows us to reason about things
+## 🔍 To understand computation, we need:
+
+- **formal a language** that allows us to reason about things
   - we can’t see and can’t touch, 
   - that are too big for us to understand, but that nonetheless follow strict, simple, well-defined rules.
+- **Tools** to manage complexity  
 
 ---
 
@@ -49,15 +74,16 @@ This course teaches discrete mathematics that is used in Computer Science.
 ---
 
 
-🃏 [The Wason Selection Task](https://en.wikipedia.org/wiki/Wason_selection_task): Your Brain on Rules  
-Which card(s) must you turn over in order to test that if a card shows an even number on one face, then its opposite face is blue?  
+### 🧠 Your Brain on Rules  
+Cognitive Challenge: [ Wason Selection Task](https://en.wikipedia.org/wiki/Wason_selection_task): 
+ "Which cards must you flip to verify: **Even number ⇒ Blue back?**"
 
 <div style="display: flex; gap: 20px; justify-content: center; background-color: green;">
   <div style="border: 2px solid black; width: 80px; 
-  height: 120px; padding: 10px; text-align: center; background: red;">
+  height: 120px; padding: 10px; text-align: center; background: #ff4444;">
     <span style="font-size: 32px;color:white;"> red </span>
   </div>
-  <div style="border: 2px solid black; width: 80px; height: 120px; padding: 10px; text-align: center; background: blue;"\>
+  <div style="border: 2px solid black; width: 80px; height: 120px; padding: 10px; text-align: center; background: #3b5998;"\>
     <span style="font-size: 32px;color: white;"> blue </span>
   </div>
   <div style="border: 2px solid black; width: 80px; height: 120px; padding: 10px; text-align: center; background: white;"\>
@@ -69,15 +95,14 @@ Which card(s) must you turn over in order to test that if a card shows an even n
 </div>  
 
 
-
 - Abstract cards (e.g., numbers/letters) → Most get it wrong 😬
 - Social rules (e.g., "voting in an election? Must be 18+!") → Most nail it 🎯
 
 ---
 
-⚖️ Math vs. Legal Systems: Same DNA
+#### ⚖️ Math vs. Legal Reasoning: Same DNA
 
-| 1. Math Induction |  2. Royal Bloodline Rules|    
+| ➜ 1. Math Induction |  👑 2. Royal Bloodline Rules|    
 |-----------------|------------------------|  
 If $x$ is in $S$, then $x + 1$ is in $S$. | If $x$ is of royal blood, then $x$’s child is of royal blood.  
 *Builds infinite sets*| *Builds dynasties*   
@@ -87,7 +112,7 @@ If $x$ is in $S$, then $x + 1$ is in $S$. | If $x$ is of royal blood, then $x$�
 
 ---
 
-## Content: Foundations and logic
+## Content: Foundations and Logic
 Why: This is the assembly language of mathematics—the stuff at the bottom that everything else compiles to.
 
 - Propositional logic.
@@ -98,10 +123,13 @@ Why: This is the assembly language of mathematics—the stuff at the bottom that
 
 ---
 
-## Content: Basic mathematics on the real numbers
+## Content: Basic Math on the Real Numbers
 Why: You need to be able to understand, write, and prove equations and inequalities involving real numbers.
 - Standard functions and their properties: addition, multiplication, exponentiation, logarithms.
-- More specialized functions that come up in algorithm analysis: floor, ceiling, max, min.
+- More specialized functions that come up in algorithm analysis: floor, ceiling, max, min.  
+
+---
+
 - Techniques for proving inequalities, including:
   - General inequality axioms (transitivity, anti-symmetry, etc.)
   - Inequality axioms for R (i.e., how < interacts with addition,multiplication, etc.)
@@ -110,7 +138,7 @@ Why: You need to be able to understand, write, and prove equations and inequalit
 
 ---
 
-## Content: Fundamental mathematical objects 
+## Content: Fundamental Mathematical Objects 
 Why: These are the mathematical equivalent of data structures, the way that more complex objects are represented
 - set theory
 - functions
@@ -171,7 +199,7 @@ Handy if you go to Vegas.
 
 ---
 
-# How do we apply these to computers 🖥️ and AI 🧠?
+# How to apply these to computers 🖥️ and AI 🧠?
 
 ---
 
@@ -179,9 +207,17 @@ Handy if you go to Vegas.
 - AI Reasoning: rule-based systems (e.g., expert systems, automated theorem provers).  
 - Hardware Design: Digital circuits ("AND/OR/NOT" gates).  
 
+
+---  
+
+
 **Set Theory/Relations** 
 - Database design (SQL), 
 - state machines, and language grammars.
+
+
+---
+
 
 **Graph Theory**  
 - Neural Networks: Deep learning architectures are computational graphs.  
@@ -201,6 +237,8 @@ Handy if you go to Vegas.
 - Cryptography (RSA, blockchain)
 - error-correcting codes (e.g., HTTPS, Bitcoin).
 
+---
+
 **Probability**  
 - Randomized algorithms (e.g., quicksort) 
 - Machine Learning: Bayesian networks, reinforcement learning, and statistical NLP all rely on probability axioms.  
@@ -209,15 +247,20 @@ Handy if you go to Vegas.
 ---
 
 **The Math Behind Tech 🔐⚡**
+
 💡 **Key Insight:**
 Computers are discrete mathematical objects. 
 Their behavior is entirely governed by rules defined using logic, sets, functions, and combinatorics.
 
+---
+
 🔍 **The Wason Task Revisited:**
 Humans struggle with abstract logical rules; but AI systems thrive on them. 
-Discrete math gives machines their "rigor" advantage.
+Discrete math gives machines their "rigor" advantage.  
 
-**Fun fact:** A single GPT-4 inference pass involves ~1 trillion matrix operations!
+---
+
+**Fun fact:** A single GPT-4 inference pass involves ~1 trillion matrix operations!  
 
 ---
 
@@ -225,6 +268,9 @@ Discrete math gives machines their "rigor" advantage.
 - Attendance is not mandatory
 - Weekly assignments via canvas
 - Assignments are in group of 2,3, or max 4
+
+---
+
 - Some assignments will be peer graded
   - You will grade each others assignment anonymously. 
   - You will not see each others names
@@ -254,7 +300,8 @@ Discrete math gives machines their "rigor" advantage.
 
 ---
 
-# Mathematical Logic 🧠✨
+
+# First Topic: Mathematical Logic 🧠✨
 
 We want to model reality in a way that fits in our heads.  
 - **Ideal models** strip away irrelevant details and keep what matters.  
