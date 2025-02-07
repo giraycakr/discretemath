@@ -49,7 +49,7 @@ This course teaches discrete mathematics that is used in Computer Science.
 ---
 
 
-🃏 [The Wason Selection Task](https://en.wikipedia.org/wiki/Wason_selection_task): Your Brain on Rules
+🃏 [The Wason Selection Task](https://en.wikipedia.org/wiki/Wason_selection_task): Your Brain on Rules  
 Which card(s) must you turn over in order to test that if a card shows an even number on one face, then its opposite face is blue?  
 
 <div style="display: flex; gap: 20px; justify-content: center; background-color: green;">
@@ -77,10 +77,10 @@ Which card(s) must you turn over in order to test that if a card shows an even n
 
 ⚖️ Math vs. Legal Systems: Same DNA
 
-1. Math Induction |  2. Royal Bloodline Rules
-|---|--|
-If $x$ is in $S$, then $x + 1$ is in $S$.| If $x$ is of royal blood, then $x$’s child is of royal blood.
-*Builds infinite sets*| *Builds dynasties* 
+1. Math Induction |  2. Royal Bloodline Rules  
+|---|--|  
+If $x$ is in $S$, then $x + 1$ is in $S$.| If $x$ is of royal blood, then $x$’s child is of royal blood.  
+*Builds infinite sets*| *Builds dynasties*   
 
 - So why is statement (1) trickier to think about than statement (2)?
  - mathematical reasoning is very close to legal reasoning, which we do seem to be very good at.
