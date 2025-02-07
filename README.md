@@ -45,7 +45,8 @@ By the end of the course, students will:
 - **Topics**: Overview of discrete math, foundations and its role in computer science/AI.  Overview of logical reasoning.
 - **AI Integration**:  
   - Demo: Use DeepSeek to solve a simple logic puzzle.  
-  - Discussion: How discrete math underpins AI (e.g., algorithms, graphs).  
+  - Discussion: How discrete math underpins AI (e.g., algorithms, graphs).
+- **Lecture slides:** [1intro.md](lectures/1intro.md)  
 ---
 
 #### **Week 2–3: Mathematical Logic and Proofs: Propositional and Predicate Logic and Proof techniques**  
