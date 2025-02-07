@@ -77,7 +77,7 @@ Which card(s) must you turn over in order to test that if a card shows an even n
 
 ⚖️ Math vs. Legal Systems: Same DNA
 
-1. Math Induction |  2. Royal Bloodline Rules|    
+| 1. Math Induction |  2. Royal Bloodline Rules|    
 |-----------------|------------------------|  
 If $x$ is in $S$, then $x + 1$ is in $S$. | If $x$ is of royal blood, then $x$’s child is of royal blood.  
 *Builds infinite sets*| *Builds dynasties*   
