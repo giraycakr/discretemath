@@ -150,17 +150,32 @@ By the end of the course, students will:
 - **Final Exam**: Traditional problem-solving  with no AI tools.  
 
 ---
+
 ### **Assessment**  
 - **Exams (70%)**: Traditional problem-solving (no AI tools allowed).  
   - 30% midterm(7th or 8th week)
   - 40% final (15th or 16th week)
 - **Group Projects/assignments (30%)**: AI-integrated assignments (e.g., modeling with DeepSeek). 
   - Group of 2, 3 or max 4
-  - Assigned via classroom.google.com  
+  - Assigned via canvas 
   - No late submission
-  - Submissions through classroom.google.com
-  - Hand written or prepared in LaTeX (you can use in word too) or Markdown (submit only .pdf)
+  - Submissions through canvas
+  - Hand written or prepared in markdown/word with latex
+  - Some assignments are anonoumously peer graded. 
+
 ---
+
+### **Grade Letters**
+- $> 90$ or $\approx$ top 10% AA
+- $<35$ is FF.
+- For a median $x$ and a standard deviation $2s$ (we use half)
+  - BA: $\approx[x+3s, x+4s)$ 
+  - BB: $\approx[x+2s, x+3s]$ 
+  - BC: $\approx[x+1s, x+2s)$ 
+  - CC: $\approx[x-1s, x+1s)$ 
+  - DC: $\approx[x-2s, x-1s)$ 
+  - Depending on the value of $s$ and $x$, some slight changes may occur...  
+
 
 ### **Collaboration and Cheating Policy**  
   - Any kind of plagiarism and cheating are prohibited (Please, refer to the university cheating policy).
