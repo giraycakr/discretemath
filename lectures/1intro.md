@@ -20,12 +20,9 @@ output: revealjs::revealjs_presentation
 ---
 
 <style type="text/css">
-html *:not(h1):not(h2):not(h3):not(h4):not(code) {
-  font-size: 1.5vw;
-  max-width: 3000px; /* Optional: Adds a maximum width for long lines */
-
+div {
+  font-size: clamp(16px, 3vw, 32px);
 }
-
 </style>
 
 ![logo](logo-tr.png)
