@@ -207,6 +207,7 @@ Handy if you go to Vegas.
 - Error Handling: Checksums and probabilistic data structures (Bloom filters) use probability theory.  
 
 ---
+
 **The Math Behind Tech 🔐⚡**
 💡 **Key Insight:**
 Computers are discrete mathematical objects. 
@@ -341,3 +342,7 @@ If we don’t add enough axioms, the model becomes **underconstrained**.
   - **Predicates:** Stand-ins for properties (e.g., "is a fish").  
 
 ---
+
+## Next week
+
+More on logic..
