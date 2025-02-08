@@ -2,26 +2,13 @@
 title: "Discrete Mathematics - Introduction"
 author: "Ammar Daskin"
 institute: "Istanbul Medeniyet University, Computer Engineering Department"
-urlcolor: red
-linkstyle: bold
-aspectratio: 169
 theme: black
-transition: slide
-controls: true
-controlsTutorial: true
-slideNumber: true
-hash: true
-center: false
-align-items: left
-align-content: left
-justify-content: left
-lang: tr
-output: revealjs::revealjs_presentation
+
 ---
 
 <style type="text/css">
 div {
-  font-size: clamp(16px, 3vw, 32px);
+  font-size: clamp(11px, 3vw, 32px);
 }
 </style>
 
