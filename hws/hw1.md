@@ -1,6 +1,6 @@
 # Homework 1
 ## Preliminiraies
-- 1intro.md
+- [1intro.md](../lectures/1intro.md)
 - Markdown (.md files)  
   - see [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)
   - You can also use in canvas from the menu tools-> apps
