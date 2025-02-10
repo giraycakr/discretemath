@@ -21,11 +21,12 @@
    - To verify this; at the least, which cards should be reversed?
 3. Get AI to list all other options and explain why each of the option is enough or not enough to verify this statement?
 4. How much more difficult is this question in comparison to the version with two different texts and 2 different colors? Get AI answer this and indicate the difficulty on a scale of 10.
-5. Get AI to explain whether $x\times 1 = x$ and $x\times 0 = 0$ are propositions or not.
-6. Give examples statements that fit neither predicate logic
-7. Get AI to give an example for inconsistent theory by listing axioms for **a  recent news statements**  
-8. Get AI to give an example theory that applies to two different models
-9. Get AI to give an example from a recent news/social event for underconstrained model. 
+5. Get Ai to give an equivalent example from social rules to this version of the problem.
+6. Get AI to explain whether $x\times 1 = x$ and $x\times 0 = 0$ are propositions or not.
+7. Give examples statements that fit neither predicate logic
+8. Get AI to give an example for inconsistent theory by listing axioms for **a  recent news statements**  
+9. Get AI to give an example theory that applies to two different models
+10. Get AI to give an example from a recent news/social event for underconstrained model. 
 
 **- For each question, you should verify the answers, if they are not correct, you should correct them or get AI correct them. And explain your reasons.**
 
@@ -37,9 +38,8 @@ The homework is peer graded.
 
 - Each question is 10 points. For each question, the grading is as follows:
   - 0 missing answers
-  - 5 insufficient or not totally related answer
-  - 8 sufficient but not enough
-- 10 points for your reasons
+  - 5 insufficient or not totally related answer (unchecked AI output etc.)
+  - 8 sufficient but not enough 
  
 
 
