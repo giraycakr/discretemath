@@ -96,7 +96,20 @@ If $x$ is in $S$, then $x + 1$ is in $S$. | If $x$ is of royal blood, then $x$�
 
 ---
 
-## Content: Foundations and Logic
+#### How to get better at math?
+
+- **Mathematical maturity:** Learn the language (abstract concepts)
+- **Motivation:** Activate the part of your brain that are good at mathematics
+  - Imagine you are trying to stop your worst enemy to steal your prize
+  - you need to be fully engaged
+
+---
+
+## What we cover in this course?
+
+---
+
+### Content: Foundations and Logic
 Why: This is the assembly language of mathematics—the stuff at the bottom that everything else compiles to.
 
 - Propositional logic.
@@ -107,7 +120,7 @@ Why: This is the assembly language of mathematics—the stuff at the bottom that
 
 ---
 
-## Content: Basic Math on the Real Numbers
+### Content: Basic Math on the Real Numbers
 Why: You need to be able to understand, write, and prove equations and inequalities involving real numbers.
 - Standard functions and their properties: addition, multiplication, exponentiation, logarithms.
 - More specialized functions that come up in algorithm analysis: floor, ceiling, max, min.  
@@ -122,7 +135,7 @@ Why: You need to be able to understand, write, and prove equations and inequalit
 
 ---
 
-## Content: Fundamental Mathematical Objects 
+### Content: Fundamental Mathematical Objects 
 Why: These are the mathematical equivalent of data structures, the way that more complex objects are represented
 - set theory
 - functions
@@ -133,7 +146,7 @@ Why: These are the mathematical equivalent of data structures, the way that more
 
 ---
 
-## Content: Modular Arithmetic
+### Content: Modular Arithmetic
 Why: Basis of modern cryptography.
 - Arithmetic in $\mathbb{Z}_m$ .
 - Primes and divisibility.
@@ -144,7 +157,7 @@ Why: Basis of modern cryptography.
 
 ---
 
-## Content: Linear Algebra* (only basics in this course)
+### Content: Linear Algebra* (only basics in this course)
 Why: Shows up everywhere.
 - Vectors and matrices.
 - Matrix operations and matrix algebra.
@@ -153,7 +166,7 @@ Why: Shows up everywhere.
 
 ---
 
-## Content: Graphs
+### Content: Graphs
 Why: Good for modeling interactions. Basic tool for algorithm design.
 - Definitions: graphs, digraphs, multigraphs, etc.
 - Paths, connected components, and strongly-connected components.
@@ -162,7 +175,7 @@ Why: Good for modeling interactions. Basic tool for algorithm design.
 
 ---
 
-## Content: Counting
+### Content: Counting
 Why: Basic tool for knowing what resources your program is going to
 consume.
 - Basic combinatorial counting: sums, products, exponents, differences, and quotients.
@@ -171,7 +184,7 @@ consume.
 
 ---
 
-## Content: Probability
+### Content: Probability
 Why: Can’t understand randomized algorithms or average-case analysis without it.  
 Handy if you go to Vegas.
 - Discrete probability spaces.
@@ -183,7 +196,7 @@ Handy if you go to Vegas.
 
 ---
 
-# How to apply these to computers 🖥️ and AI 🧠?
+## How to apply these to computers 🖥️ and AI 🧠?
 
 ---
 
