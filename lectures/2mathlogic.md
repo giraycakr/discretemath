@@ -19,58 +19,6 @@ div {
 
 - The content is mostly based on  [Notes  by James Aspnes](http://www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf)
 * Slides are prepared with DeepSeek-R1  
-- [Mathematical Logic 🧠✨](#mathematical-logic-)
-  - [Basics 🌱](#basics-)
-    - [**Modeling Reality**](#modeling-reality)
-  - [Axioms \& Inference Rules ⚙️](#axioms--inference-rules-️)
-    - [Key Components 🔑](#key-components-)
-    - [Consistency (Tutarlılık) ⚖️](#consistency-tutarlılık-️)
-  - [Propositional Logic 📜](#propositional-logic-)
-    - [Propositions ✅❌](#propositions-)
-    - [Non-Propositions 🚫](#non-propositions-)
-    - [Operations on Propositions](#operations-on-propositions)
-      - [Logical Operations 🔄](#logical-operations-)
-      - [Precedence](#precedence)
-    - [Examples](#examples)
-    - [Truth Tables 🎰](#truth-tables-)
-      - [Truth Table for Negation](#truth-table-for-negation)
-      - [Implication (`p → q`)](#implication-p--q)
-      - [Truth Table for Logical Operations](#truth-table-for-logical-operations)
-    - [Tautologies and Logical Equivalence](#tautologies-and-logical-equivalence)
-      - [Proving Logical Equivalence](#proving-logical-equivalence)
-      - [Examples of Logical Equivalence](#examples-of-logical-equivalence)
-      - [Common Logical Equivalences](#common-logical-equivalences)
-      - [Proof by Contraposition](#proof-by-contraposition)
-      - [Inverse](#inverse)
-      - [Converse](#converse)
-      - [Equivalences Involving True and False](#equivalences-involving-true-and-false)
-    - [Normal Forms \& Resolution 🧩](#normal-forms--resolution-)
-      - [Converting to CNF](#converting-to-cnf)
-      - [Simplifying CNF](#simplifying-cnf)
-      - [Resolution in CNF 🔄](#resolution-in-cnf-)
-      - [Resolution Proof Walkthrough 🧩](#resolution-proof-walkthrough-)
-  - [Predicate Logic 🚀](#predicate-logic-)
-    - [Propositional Logic Limitation](#propositional-logic-limitation)
-    - [Variables and Predicates](#variables-and-predicates)
-    - [Predicates = Properties/Relations](#predicates--propertiesrelations)
-    - [Quantifiers: ∀ and ∃ 🌟](#quantifiers--and--)
-      - [Universal Quantifier (`∀`) 🌍](#universal-quantifier--)
-      - [Universal Quantifier ($\\forall$) 🌍](#universal-quantifier-forall-)
-      - [Existential Quantifier (`∃`) 🔍](#existential-quantifier--)
-      - [Negation of Quantifiers](#negation-of-quantifiers)
-      - [Restricting the Scope of a Quantifier](#restricting-the-scope-of-a-quantifier)
-      - [Nested Quantifiers 🔄](#nested-quantifiers-)
-  - [Summary: so far](#summary-so-far)
-    - [Functions](#functions)
-    - [⚖️ Equality ( $=$ )](#️-equality---)
-      - [Equality Axioms 🔗](#equality-axioms-)
-      - [Uniqueness ( $\\exists!$ ) 🦄](#uniqueness--exists--)
-    - [Models in Predicate Logic 🏛️](#models-in-predicate-logic-️)
-      - [Structures](#structures)
-      - [Examples 🌟](#examples-)
-      - [Use of Models for Theory 🏛️](#use-of-models-for-theory-️)
-        - [Consistency and Completeness of a Theorem](#consistency-and-completeness-of-a-theorem)
-      - [Standard Axiom Systems and Models 🔢](#standard-axiom-systems-and-models-)
 
 ---
 
@@ -86,11 +34,13 @@ div {
 
 ---
 
-## Axioms & Inference Rules ⚙️  
+### Axioms & Inference Rules ⚙️  
 **Problem:** Models can be *too big*.  
 **Solution:** Build theories with axioms and rules.  
 
-### Key Components 🔑  
+---
+
+**Key Components 🔑**  
 | Component          | Description                          | Example 💡 |  
 |--------------------|--------------------------------------|-----------|  
 | **Axioms**         | Foundational truths.                | "All fish are green." 🐟 |  
