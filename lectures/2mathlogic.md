@@ -84,7 +84,7 @@ A theory is **consistent** if it **cannot prove both P and not-P** for any P.
 
 ### Operations on Propositions
 
-We use placeholder names like $ p, q, r $ for propositions.
+We use placeholder names like $p, q, r$ for propositions.
 
 ---
 
@@ -102,41 +102,39 @@ We use placeholder names like $ p, q, r $ for propositions.
 ---
 
 **Exclusive OR:**  $p\oplus q$  
-- true when only one of $ p $ or $ q $ is true.
+- true when only one of $p$ or $q$ is true.
 - not used much in classical logic 
 - important for many computing applications:
   - It corresponds to addition modulo 2.
   - It has nice reversibility properties 
-    - e.g., $ p \oplus (p \oplus q) $ always has the same truth-value as $q$.
+    - e.g., $p \oplus (p \oplus q)$ always has the same truth-value as $q$.
 
 ---
 
-**More on AND:** $ p \land q $ is true only when both $p$ and $q$ are true.
+**More on AND:** $p \land q$ is true only when both $p$ and $q$ are true.
   - Example: "I like to eat ice cream and I own a private Caribbean island."
   - Translating from English: Sometimes "but" can also be used as "and":
     - "2 + 2 = 4 **but** 3 + 3 = 6" 
-      - translates to $ (2 + 2 = 4) \land (3 + 3 = 6) $.  
+      - translates to $(2 + 2 = 4) \land (3 + 3 = 6)$.  
 
 ---
 
 
 **Implication:** represents an `"if...then"` claim.
-  - If $ p $ implies $ q $, then we write $ p \rightarrow q $ or $ p \implies q $.
-  - In English: "If $ p $, then $ q $" 
+  - If $p$ implies $q$, then we write $p \rightarrow q$ or $p \implies q$.
+  - In English: "If $p$, then $q$" 
     - as in "If you step on your own head, it will hurt."
-  - $ p \rightarrow q $ 
-    - **true** when both $ p $ and $ q $ are **true**.
-  - $ p \rightarrow q \equiv \neg p \lor q $:
-    - When $ p $ is **false**, $ p \rightarrow q $ is **true** (no matter what truth value $ q $ has).
+  - $p \rightarrow q$ 
+    - **true** when both $p$ and $q$ are **true**.
+  - $p \rightarrow q \equiv \neg p \lor q$:
+    - When $p$ is **false**, $p \rightarrow q$ is **true** (no matter what truth value $q$ has).
 
 ---
 
-**Biconditional:** Suppose that $ p \implies q $ and $ q \implies p $, 
-  - either **both** $ p $ and $ q $ are **true** or **both** $ p $ and $ q $ are **false**.
+**Biconditional:** Suppose that $p \implies q$ and $q \implies p$, 
+  - either **both** $p$ and $q$ are **true** or **both** $p$ and $q$ are **false**.
   - In this case, 
-    $$
-    p \iff q \text{ or }  p \leftrightarrow q 
-    $$
+    $$p \iff q \text{ or }  p \leftrightarrow q$$
 
   - Example: "2 + 2 = 5 **if and only if** I am here!"
 
@@ -148,38 +146,37 @@ We use placeholder names like $ p, q, r $ for propositions.
 
 | Operator | Notation | Precedence |
 |----------|----------|------------|
-| NOT      | $ \neg p $, $ \overline{p} $, $ \sim{p} $ | Highest |
-| AND      | $ p \land q $ | |
-| XOR      | $ p \oplus q $ | |
-| OR       | $ p \lor q $ | |
-| Implies  | $ p \implies q $, $ p \rightarrow q $, $ p \supset q $ | |
-| IFF      | $ p \iff q $, $ p \leftrightarrow q $ | Lowest |
+| NOT      | $\neg p$, $\overline{p}$, $\sim{p}$ | Highest |
+| AND      | $p \land q$ | |
+| XOR      | $p \oplus q$ | |
+| OR       | $p \lor q$ | |
+| Implies  | $p \implies q$, $p \rightarrow q$, $p \supset q$ | |
+| IFF      | $p \iff q$, $p \leftrightarrow q$ | Lowest |
 
 ---
 
 ### Examples
 
-  $$ (\neg p \lor q \land r \rightarrow s \leftrightarrow t) 
- $$ 
--  $$ (\neg p \lor q \land r \rightarrow s \leftrightarrow t) 
- \equiv ((((\neg p) \lor (q \land r)) \leftarrow s) \leftrightarrow t) $$ <!-- .element: class="fragment" -->
+  $$(\neg p \lor q \land r \rightarrow s \leftrightarrow t)$$ 
+-  $$(\neg p \lor q \land r \rightarrow s \leftrightarrow t) 
+ \equiv ((((\neg p) \lor (q \land r)) \leftarrow s) \leftrightarrow t)$$ <!-- .element: class="fragment" -->
 
 ---
 
 
-$ \lor $ and $ \land $ are associative:  
-- $ (p \lor q \lor r) \equiv ((p \lor q) \lor r) \equiv (p \lor (q \lor r)) $ 
- - $ (p \land q \land r) \equiv ((p \land q) \land r) \equiv (p \land (q \land r)) $ 
+$\lor$ and $\land$ are associative:  
+- $(p \lor q \lor r) \equiv ((p \lor q) \lor r) \equiv (p \lor (q \lor r))$ 
+ - $(p \land q \land r) \equiv ((p \land q) \land r) \equiv (p \land (q \land r))$ 
   
 
-**This convention is not universal.** Many mathematicians give $ \lor $ and $ \land $ the same precedence: $ p \land q \lor r $ is ambiguous.
+**This convention is not universal.** Many mathematicians give $\lor$ and $\land$ the same precedence: $p \land q \lor r$ is ambiguous.
 
 ---
 
 
 **Implication** is not associative. The convention is that it binds to the right:
-   - $ a \rightarrow b \rightarrow c \equiv a \rightarrow (b \rightarrow c) $
-   - $ a \leftrightarrow b \leftrightarrow c \equiv ? $ **No idea without parentheses!**
+   - $a \rightarrow b \rightarrow c \equiv a \rightarrow (b \rightarrow c)$
+   - $a \leftrightarrow b \leftrightarrow c \equiv ?$ **No idea without parentheses!**
 
 ---
 
@@ -223,7 +220,7 @@ $ \lor $ and $ \land $ are associative:
 
 ### Truth Table for Logical Operations
 
-| $ p $ | $ q $ | $ p \lor q $ | $ p \oplus q $ | $ p \land q $ | $ p \implies q $ | $ p \iff q $ |
+| $p$ | $q$ | $p \lor q$ | $p \oplus q$ | $p \land q$ | $p \implies q$ | $p \iff q$ |
 |---------|---------|----------------|------------------|-----------------|--------------------|----------------|
 | `0`       | `0`       | 0              | 0                | 0               | 1                  | 1              |
 | `0`       | `1`       | 1              | 1                | 0               | 1                  | 0              |
@@ -241,9 +238,9 @@ $ \lor $ and $ \land $ are associative:
 
 **A tautology:** A compound proposition that is always true no matter what the truth-values of the propositional variables.
 
-- $ p \rightarrow p $
-- $ p \lor \neg p $
-- $ \neg(p \land \neg p) $
+- $p \rightarrow p$
+- $p \lor \neg p$
+- $\neg(p \land \neg p)$
 
 ---
 
@@ -253,37 +250,37 @@ $ \lor $ and $ \land $ are associative:
 
 ---
 
-**Logical equivalence:** The tautology of the form $ X \iff Y $.
+**Logical equivalence:** The tautology of the form $X \iff Y$.
 
-- $ X $ and $ Y $ are compound propositions.
-- $ X $ and $ Y $ are logically equivalent.
-- $ X \equiv Y $
-- "$ \equiv $" does the same thing for Boolean formulas that "$ = $" does for algebraic formulas.
+- $X$ and $Y$ are compound propositions.
+- $X$ and $Y$ are logically equivalent.
+- $X  \equiv Y $
+- "$\equiv $" does the same thing for Boolean formulas that "$=$" does for algebraic formulas.
 
 ---
 
 ### Proving Logical Equivalence
 
-1. Either construct a truth table to show $ X \iff Y $ is a tautology.
-2. Or transform $ X $ and $ Y $ into known logical equivalences.
+1. Either construct a truth table to show $X  \iff Y$ is a tautology.
+2. Or transform $X$ and $Y$ into known logical equivalences.
 
 ---
 
 ### Examples of Logical Equivalence
 
-1. $ p \land \neg p \equiv 0 $
-2. $ p \lor p \equiv p $
-3. $ p \implies q \equiv \neg p \lor q $
+1. $p \land \neg p \equiv 0$
+2. $p \lor p \equiv p$
+3. $p \implies q \equiv \neg p \lor q$
 
 ---
 
 4. De Morgan's laws:
-   - $ \neg(p \lor q) \equiv \neg p \land \neg q $
-   - $ \neg(p \land q) \equiv \neg p \lor \neg q $
+   - $\neg(p \lor q) \equiv \neg p \land \neg q$
+   - $\neg(p \land q) \equiv \neg p \lor \neg q$
 5. Distributive laws:
-   - $ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) $
-   - $ p \land (q \lor r) \equiv (p \land q) \lor (p \land r) $
-6. $ (p \implies r) \lor (q \implies r) \equiv (p \land q) \implies r $
+   - $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
+   - $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$
+6. $(p \implies r) \lor (q \implies r) \equiv (p \land q) \implies r$
 
 ---
 
@@ -291,60 +288,60 @@ $ \lor $ and $ \land $ are associative:
 
 | Equivalence | Description |
 |-------------|-------------|
-| $$ \neg \neg p \equiv p $$ | Double negation |
-| $$ \neg(p \land q) \equiv \neg p \lor \neg q $$ | De Morgan's law |
-| $$ \neg(p \lor q) \equiv \neg p \land \neg q $$ | De Morgan's law |
+| $$\neg \neg p \equiv p $$ | Double negation |
+| $$\neg(p \land q) \equiv \neg p \lor \neg q$$ | De Morgan's law |
+| $$\neg(p \lor q) \equiv \neg p \land \neg q$$ | De Morgan's law |
 
 ---
 
 |  |  |
 |-------------|-------------|
-| $$ p \land q \equiv q \land p $$ | Commutativity of AND |
-| $$ p \lor q \equiv q \lor p $$ | Commutativity of OR |
-| $$ p \land (q \land r) \equiv (p \land q) \land r $$ | Associativity of AND |
-| $$ p \lor (q \lor r) \equiv (p \lor q) \lor r $$ | Associativity of OR |
+| $$p \land q \equiv q \land p$$ | Commutativity of AND |
+| $$p \lor q \equiv q \lor p$$ | Commutativity of OR |
+| $$p \land (q \land r) \equiv (p \land q) \land r$$ | Associativity of AND |
+| $$p \lor (q \lor r) \equiv (p \lor q) \lor r$$ | Associativity of OR |
 
 
 ---
 
 |  |  |
 |-------------|-------------|
-| $$ p \land (q \lor r) \equiv (p \land q) \lor (p \land r) $$ | AND distributes over OR |
-| $$ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) $$ | OR distributes over AND |
-| $$ p \implies q \equiv \neg p \lor q $$ | Equivalence of implication and OR |
+| $$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$$ | AND distributes over OR |
+| $$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$$ | OR distributes over AND |
+| $$p \implies q \equiv \neg p \lor q$$ | Equivalence of implication and OR |
 
 ---
 
 
 |  |  |
 |-------------|-------------|
-| $$ p \implies q \equiv \neg q \implies \neg p $$ | Contraposition |
-| $$ p \iff q \equiv (p \implies q) \land (q \implies p) $$ | Expansion of IFF |
-| $$ p \iff q \equiv \neg p \iff \neg q $$ | Inverse of IFF |
-| $$ p \iff q \equiv q \iff p $$ | Commutativity of IFF |
+| $$p \implies q \equiv \neg q \implies \neg p$$ | Contraposition |
+| $$p \iff q \equiv (p \implies q) \land (q \implies p)$$ | Expansion of IFF |
+| $$p \iff q \equiv \neg p \iff \neg q$$ | Inverse of IFF |
+| $$p \iff q \equiv q \iff p$$ | Commutativity of IFF |
 
 ---
 
 ### Proof by Contraposition
 
-The contrapositive of $ p \rightarrow q $ is $ \neg q \rightarrow \neg p $.
+The contrapositive of $p \rightarrow q$ is $\neg q \rightarrow \neg p$.
 
-- $ p \rightarrow q $: 
+- $p \rightarrow q$: 
   - `"If I am a human, then I am a mammal."`
-- $ \neg q \rightarrow \neg p $: 
+- $\neg q \rightarrow \neg p$: 
   - `"If I am not a mammal, then I am not a human."`
 
-**Note:** Indirect proof assumes $ \neg p $ and derives a contradiction.
+**Note:** Indirect proof assumes $\neg p$ and derives a contradiction.
 
 ---
 
 ### Inverse
 
-The inverse of $ p \rightarrow q $ is $ \neg p \rightarrow \neg q $.
+The inverse of $p \rightarrow q$ is $\neg p \rightarrow \neg q$.
 
-- $ p \rightarrow q $: 
+- $p \rightarrow q$: 
   - `"If I am a human, then I am a mammal."`
-- $ \neg p \rightarrow \neg q $: 
+- $\neg p \rightarrow \neg q$: 
   - `"If I am not a human, then I am not a mammal."`
 - The truth values are different.
 
@@ -352,11 +349,11 @@ The inverse of $ p \rightarrow q $ is $ \neg p \rightarrow \neg q $.
 
 ### Converse
 
-The converse of $ p \rightarrow q $ is $ q \rightarrow p $.
+The converse of $p \rightarrow q$ is $q \rightarrow p$.
 
-- $ p \rightarrow q $: 
+- $p \rightarrow q$: 
   - `"If I am a human, then I am a mammal."`
-- $ q \rightarrow p $: 
+- $q \rightarrow p$: 
   - `"If I am a mammal, then I am a human."`
 - The truth values are different.
 
@@ -371,15 +368,15 @@ The converse of $ p \rightarrow q $ is $ q \rightarrow p $.
 
 **The law of excluded middle.**
 
-- $ P \lor \neg P \equiv 1 $: 
+- $P \lor \neg P \equiv 1$: 
   - "Either Socrates is mortal, or it is not the case that Socrates is mortal."
 
-We can do case analysis where we prove that some proposition $ Q $ holds by showing first $ P \rightarrow Q $ and then that also $ \neg P \rightarrow Q $.
+We can do case analysis where we prove that some proposition $Q$ holds by showing first $P \rightarrow Q$ and then that also $\neg P \rightarrow Q$.
   
 ---
 
 **The law of non-contradiction.** 
-- $ P \land \neg P \equiv 0 $: 
+- $P \land \neg P \equiv 0$: 
   - Nothing can both be and not be.
 
 ---
@@ -388,15 +385,15 @@ We can do case analysis where we prove that some proposition $ Q $ holds by show
 
 |    Equivalences   |------------| Equivalences  |
 |-------------| :-----: |-------------|
-| $ P \land 0 \equiv 0 $ ||  $ P \oplus 0 \equiv P $ |
-| $ P \lor 0 \equiv P $ || $ P \oplus 1 \equiv \neg P $ | |
-| $ P \land 1 \equiv P $ || $ P \rightarrow 0 \equiv \neg P $ | |
-| $ P \lor 1 \equiv 1 $ || $ P \rightarrow 1 \equiv 1 $ | |
-| $ P \iff 0 \equiv \neg P $ || $ 0 \rightarrow P \equiv 1 $ | |
-| $ P \iff 1 \equiv P $ || $ 1 \rightarrow P \equiv P $ | |
+| $P \land 0 \equiv 0$ ||  $P \oplus 0 \equiv P$ |
+| $P \lor 0 \equiv P$ || $P \oplus 1 \equiv \neg P$ | |
+| $P \land 1 \equiv P$ || $P \rightarrow 0 \equiv \neg P$ | |
+| $P \lor 1 \equiv 1$ || $P \rightarrow 1 \equiv 1$ | |
+| $P \iff 0 \equiv \neg P$ || $0 \rightarrow P \equiv 1$ | |
+| $P \iff 1 \equiv P$ || $1 \rightarrow P \equiv P$ | |
 
 
-**Example:** Compute $ (P \land (P \rightarrow Q)) \rightarrow Q \equiv ? $
+**Example:** Compute $(P \land (P \rightarrow Q)) \rightarrow Q \equiv ?$
 
 ---
 
@@ -421,24 +418,24 @@ We can do case analysis where we prove that some proposition $ Q $ holds by show
 
 **Conjunctive normal form (CNF):** A compound proposition ANDs of ORs of one or more variables.
 
-- $ P $
-- $ (P \lor Q) \land R $
-- $ (P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q \lor S \lor T \lor \neg U) $
+- $P$
+- $(P \lor Q) \land R$
+- $(P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q \lor S \lor T \lor \neg U)$
 
 ---
 
 ### Converting to CNF
 
 Using  
-- $ P \rightarrow Q \equiv \neg P \lor Q $, 
+- $P \rightarrow Q \equiv \neg P \lor Q$, 
 - De Morgan's laws, 
 - and the distributive law, 
 it is possible to rewrite any compound proposition in CNF.
 
 **Examples:**
 
-1. $ (P \lor Q) \land (P \lor \neg R) \land (\neg P \land Q) $
-2. $ (P \lor (Q \land R)) \land (P \lor \neg R) \land (\neg P \lor Q) $
+1. $(P \lor Q) \land (P \lor \neg R) \land (\neg P \land Q)$
+2. $(P \lor (Q \land R)) \land (P \lor \neg R) \land (\neg P \lor Q)$
 
 ---
 
@@ -467,20 +464,15 @@ This does not produce the simplest CNF.
 
 --- 
 
-   $$
-   (P \rightarrow Q) \land (\neg P \rightarrow Q) \equiv (\neg P \lor Q) \land (P \lor Q)
-   $$  
+   $$(P \rightarrow Q) \land (\neg P \rightarrow Q) \equiv (\neg P \lor Q) \land (P \lor Q)$$  
 2. Distribute and simplify:  
 
 ---
 
-  $$
-   (\neg P \land P) \lor (\neg P \land Q) \lor (Q \land P) \lor Q \equiv 0 \lor (\text{...}) \lor Q \equiv Q
-  $$  
+  $$(\neg P \land P) \lor (\neg P \land Q) \lor (Q \land P) \lor Q \equiv 0 \lor (\text{...}) \lor Q \equiv Q$$  
 
 3. **Conclusion:**  
-  $$   
-  Q \, \text{(I will cut off your head! 💀)}  $$  
+  $$Q \, \text{(I will cut off your head! 💀)}$$  
 
 ---
 
@@ -490,77 +482,59 @@ This does not produce the simplest CNF.
 ### How It Works 🛠️  
 1. **Premises:** CNF clauses.  
 2. **Look for:** A literal and its negation 
-   1. e.g., $\textbf{Snow}$  and $ \neg \textbf{Snow} $.  
+   1. e.g., $\textbf{Snow}$  and $\neg \textbf{Snow} $.  
 3. **Resolve:** Remove conflicting literals, merge clauses.  
 
 ---
 
 **Example:**  
-| Premise 1: $ Rain \lor \textbf{Snow}$ ☔️❄️ |  
-| Premise 2: $ \neg \textbf{Snow} \lor Traffic$ 🚗  |  
-| **Resolve to:** $ Rain \lor Traffic$ ☔️🚗  |  
+| Premise 1: $Rain \lor \textbf{Snow}$ ☔️❄️ |  
+| Premise 2: $\neg \textbf{Snow} \lor Traffic$ 🚗  |  
+| **Resolve to:** $Rain \lor Traffic$ ☔️🚗  |  
 
 ---
 
 ## Resolution Proof Walkthrough 🧩  
 
 ### Starting Clauses:  
-$$
-(P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R)
-$$  
+$$(P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R)$$  
 
 Inside CNF, look for a simple proposition and its negation and resolve them into a conclusion.
 
 ---
 
 ### Step-by-Step Resolution 🔄  
-1. **Add $ Q $:** (From $(P \lor Q) \land (\neg P \lor Q) $ )  
-   $$
-   \vdash (P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R) \land \mathbf{Q}
-   $$  
-2. **Resolve $ \neg Q \lor R $ with $ Q $:**  
-   $$
-   \vdash R \quad \text{(∴ Add $ R $)}
-   $$  
-3. **Resolve $ P \lor \neg R $ with $ R $:**  
-   $$
-   \vdash P \quad \text{(Boom! 💥)}
-   $$  
+1. **Add $Q$:** (From $(P \lor Q) \land (\neg P \lor Q)$ )  
+   $$\vdash (P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R) \land \mathbf{Q}$$  
+2. **Resolve $\neg Q \lor R$ with $Q $:**  
+   $$\vdash R \quad \text{(∴ Add $R$)}$$  
+3. **Resolve $P \lor \neg R$ with $R $:**  
+   $$\vdash P \quad \text{(Boom! 💥)}$$  
 
-**Final Conclusion:** $ P $ 
+**Final Conclusion:** $P$ 
 
 ---
 
 
 ### Simplifying CNF (Continued)
 
-$$
-(P \rightarrow Q) \land (\neg P \rightarrow Q) 
-$$
+$$(P \rightarrow Q) \land (\neg P \rightarrow Q)$$
 
 ---
 
 Simplifying $(P \rightarrow Q) \land (\neg P \rightarrow Q)$:
 
-$$
-\equiv    (\neg P \lor Q) \land (P \lor Q) 
-$$
+$$\equiv    (\neg P \lor Q) \land (P \lor Q)$$
 
-$$ 
-\equiv (\neg P \land P) \lor (\neg P \land Q) \lor (Q \land P) \lor (Q \land Q) 
-$$
+$$\equiv (\neg P \land P) \lor (\neg P \land Q) \lor (Q \land P) \lor (Q \land Q)$$
 
-$$
-\equiv 0 \lor (\neg P \land Q) \lor (Q \land P) \lor Q
-$$
+$$\equiv 0 \lor (\neg P \land Q) \lor (Q \land P) \lor Q$$
 
-$$
-\equiv (\neg P \land Q) \lor (Q \land P) \lor Q
-$$
+$$\equiv (\neg P \land Q) \lor (Q \land P) \lor Q$$
 
 The proposition is in **disjunctive normal form**.
 
-- If either of the other clauses are true, so is $ Q $.
+- If either of the other clauses are true, so is $Q$.
 - What the master just said was **"I will cut off your head."**
 
 ---
@@ -576,7 +550,7 @@ Using only **propositional logic**, we can express:
 2. If Socrates is a man, then Socrates is mortal.   **(axiom)**
 3. Therefore, Socrates is mortal. **(conclusion)**
 
-The inference rule **modus ponens**: From $ p $ and $ p \implies q $, you can deduce $ q $.
+The inference rule **modus ponens**: From $p$ and $p \implies q$, you can deduce $q$.
 
 ---
 
@@ -603,25 +577,25 @@ The inference rule **modus ponens**: From $ p $ and $ p \implies q $, you can de
 
 ### Variables and Predicates
 
-let $ x, y, z $, etc. stand for any element of our universe of discourse or domain.  
+let $x, y, z$, etc. stand for any element of our universe of discourse or domain.  
 
 **Predicates:** Statements whose truth value depends on the value of the objects.
 
-- “$ x $ is human.”
-- “$ x $ is the parent of $ y $.”
-- “$ x + 2 = x^2 $.”
+- “$x$ is human.”
+- “$x$ is the parent of $y$.”
+- “$x + 2 = x^2$.”
 
 ---
 
 ### Predicates = Properties/Relations 
 
-Predicates are abbreviated by capital letters and a list of arguments (like $ F(x) $):
+Predicates are abbreviated by capital letters and a list of arguments (like $F(x)$):
 
 | Predicate | Meaning | Example 💡 |  
 |-----------|---------|-----------|  
-| $ H(x) $ | $ x $ is human | $ H(\text{Socrates}) = \text{👨} $ |  
-| $ P(x, y) $ | $ x $ is $ y $’s parent | $ P(\text{Mom}, \text{Me}) = \text{👩👧} $ |  
-| $ Q(x) $ | $ x + 2 = x^2 $ | $ Q(2) = \text{✅}, Q(0) = \text{❌} $ |  
+| $H(x)$ | $x$ is human | $H(\text{Socrates}) = \text{👨}$ |  
+| $P(x, y)$ | $x$ is $y$’s parent | $P(\text{Mom}, \text{Me}) = \text{👩👧}$ |  
+| $Q(x)$ | $x + 2 = x^2$ | $Q(2) = \text{✅}, Q(0) = \text{❌}$ |  
 
 
 ---
@@ -636,12 +610,12 @@ Predicates are abbreviated by capital letters and a list of arguments (like $ F(
 
 ---
 
-### Universal Quantifier ($ \forall $) 🌍  
+### Universal Quantifier ($\forall$) 🌍  
 - **Meaning:** "For all..."  
 - **Example:** You can also use set-membership notation 
-  $$  \forall x \in Z: (x > 0 \rightarrow x + 1 > 0)  $$ 
+  $$\forall x \in Z: (x > 0 \rightarrow x + 1 > 0)$$ 
   - All positives stay positive ➕
-  - Or $\forall x: x \in Z \land (x > 0 \rightarrow x + 1 > 0)  $$ 
+  - Or $\forall x: x \in Z \land (x > 0 \rightarrow x + 1 > 0)$ 
 
  
 ---
@@ -656,19 +630,17 @@ Predicates are abbreviated by capital letters and a list of arguments (like $ F(
 
 
 
-### Existential Quantifier ($ \exists $) 🔍  
+### Existential Quantifier ($\exists$) 🔍  
 - **Meaning:** "There exists..."  
 - **Example:**  
-  $$
-  \exists x \in Z: (x^2 = 81) 
-  $$  
+  $$\exists x \in Z: (x^2 = 81)$$  
   - (Someone squared is 81! 9️⃣)
 
 ---
 
-### Existential Quantifier ($ \exists $) 🔍  
-- $ \exists x \in Z: (x = x^2) $ 
-  - $\exists x: x \in Z \land (x = x^2) $
+### Existential Quantifier ($\exists$) 🔍  
+- $\exists x \in Z: (x = x^2)$ 
+  - $\exists x: x \in Z \land (x = x^2)$
 -  $\exists x: P(x)$ is equvailent to a very large OR
   - $\exists x \in N: P(x)$ is equivalent to 
   $P(0) \lor P(1)\lor ...$
@@ -679,10 +651,10 @@ Predicates are abbreviated by capital letters and a list of arguments (like $ F(
 
 ### Negation of Quantifiers
 
-- $ \neg \forall x : P(x) \equiv \exists x : \neg P(x) $:
+- $\neg \forall x : P(x) \equiv \exists x : \neg P(x)$:
   - If you want to show that not all humans are mortal, it’s equivalent to finding some human that is not mortal.
   
-- $ \neg \exists x : P(x) \equiv \forall x : \neg P(x) $:
+- $\neg \exists x : P(x) \equiv \forall x : \neg P(x)$:
   - To show that no human is mortal, you have to show that all humans are not mortal.
 
 ---
@@ -690,8 +662,8 @@ Predicates are abbreviated by capital letters and a list of arguments (like $ F(
 ### Negating Quantifiers 🚫  
 | Quantifier | Negation | Example 🔄 |  
 |------------|----------|------------|  
-| $ \forall x P(x) $ | $ \exists x \neg P(x) $ | "Not all birds fly" ≡ "Some bird doesn’t fly 🐦✖️" |  
-| $ \exists x P(x) $ | $ \forall x \neg P(x) $ | "No unicorns exist" ≡ "All things are ¬unicorns 🦄❌" |  
+| $\forall x P(x)$ | $\exists x \neg P(x)$ | "Not all birds fly" ≡ "Some bird doesn’t fly 🐦✖️" |  
+| $\exists x P(x)$ | $\forall x \neg P(x)$ | "No unicorns exist" ≡ "All things are ¬unicorns 🦄❌" |  
 
 ---
 
@@ -702,40 +674,36 @@ Predicates are abbreviated by capital letters and a list of arguments (like $ F(
 - By restriction in the qualifier.
 
 **Example 1:**
-- $ \forall x : x > 0 \implies x - 1 \geq 0 $
-- $ \forall x > 0 : x - 1 \geq 0 $
+- $\forall x : x > 0 \implies x - 1 \geq 0$
+- $\forall x > 0 : x - 1 \geq 0 $
 
 **Example 2:**
-- $ \exists x : x > 0 \land x^2 = 81 $
-- $ \exists x > 0 : x^2 = 81 $
+- $\exists x : x > 0 \land x^2 = 81$
+- $\exists x > 0 : x^2 = 81$
 
 ---
 
 
-## Nested Quantifiers 🔄  
-### "No Largest Prime" 🔢  
-$$
-\forall x \exists y: (y > x \land \text{Prime}(y)) 
-$$  
-- “For any $ x $, there is a bigger $ y $ that is prime.”  (Primes go forever! ♾️)
+### Nested Quantifiers 🔄  
+ **"No Largest Prime"** 🔢  
+$$\forall x \exists y: (y > x \land \text{Prime}(y))$$  
+- “For any $x$, there is a bigger $y$ that is prime.”  (Primes go forever! ♾️)
 
-**Excersize:** “There does not exist an $ x $ that is prime and any $ y $ greater than $ x $ is not prime.”
+**Exercise:** “There does not exist an $x$ that is prime and any $y$ greater than $x$ is not prime.”
 
 ---
 
 ### "No Largest Prime" 🔢  
 
-$$
-\neg \exists x : (\text{Prime}(x) \land \forall y : y > x \implies \neg \text{Prime}(y))
-$$
+$$\neg \exists x : (\text{Prime}(x) \land \forall y : y > x \implies \neg \text{Prime}(y))$$
 
 ---
 
 ### Popularity Contest  
-$$ \forall x \exists y \, \text{likes}(x, y) $$
+$$\forall x \exists y \, \text{likes}(x, y)$$
 -  *Everyone likes someone.*  
 
-$$ \exists y \forall x \, \text{likes}(x, y) $$
+$$\exists y \forall x \, \text{likes}(x, y)$$
 - *Someone is universally liked! 🌟*  
 
 ---
@@ -774,9 +742,7 @@ $$ \exists y \forall x \, \text{likes}(x, y) $$
    *But what about Spocrates?*  
 
 **Predicate Logic Fix:**  
-$$
-\forall x \, (\text{Human}(x) \rightarrow \text{Mortal}(x)) \quad \text{(All humans are mortal!)}
-$$  
+$$\forall x \, (\text{Human}(x) \rightarrow \text{Mortal}(x)) \quad \text{(All humans are mortal!)}$$  
 
 ---
 
@@ -784,9 +750,9 @@ $$
 ### Predicates = Properties/Relations  
 | Predicate | Meaning | Example 💡 |  
 |-----------|---------|-----------|  
-| $ H(x) $ | $ x $ is human | $ H(\text{Socrates}) = \text{👨} $ |  
-| $ P(x, y) $ | $ x $ is $ y $’s parent | $ P(\text{Mom}, \text{Me}) = \text{👩👧} $ |  
-| $ Q(x) $ | $ x + 2 = x^2 $ | $ Q(2) = \text{✅}, Q(0) = \text{❌} $ |  
+| $H(x)$ | $x$ is human | $H(\text{Socrates}) = \text{👨}$ |  
+| $P(x, y)$ | $x$ is $y$’s parent | $P(\text{Mom}, \text{Me}) = \text{👩👧}$ |  
+| $Q(x)$ | $x + 2 = x^2$ | $Q(2) = \text{✅}, Q(0) = \text{❌}$ |  
 
 ---
 
@@ -796,10 +762,10 @@ $$
 
 A function symbol looks like a predicate but returns an object and does not compute the truth value.
 
-- $ 2 + 2 = 5 $:
+- $2 + 2 = 5 $:
   - Three constants: 2, 2, and 5.
-  - A two-argument function: $ + $.
-  - A predicate: $ = $.
+  - A two-argument function: $+$.
+  - A predicate: $=$.
 
 ---
 
@@ -807,28 +773,28 @@ A function symbol looks like a predicate but returns an object and does not comp
 
 Functions let us populate our universe without including a lot of axioms.  
 
-- **Example:** $ S(x) = \text{successor of } x $  (the next number)
-we can count in $\mathbb{N}$ 🔢  as:
-$$ 0, S(0), S(S(0)), S(S(S(0)))... $$  
+- **Example:** $S(x) = \text{successor of } x$  (the next number)
+we can count in $N$ 🔢  as:
+$$0, S(0), S(S(0)), S(S(S(0)))...$$  
 
 ---
 
 ### ⚖️ Equality ($ = $) 
 
-The equality predicate $ = $, included as a standard part of predicate logic.
+The equality predicate $=$, included as a standard part of predicate logic.
 
-- $ x = y $:
-  - $ x $ and $ y $ are the same elements of the domain.
+- $x = y$:
+  - $x$ and $y$ are the same elements of the domain.
 
 ---
 
 ### Equality Axioms 🔗  
 
-- **Reflexivity (yansima):** $ \forall x : x = x $
-- **Substitution(yerine koyma):** $ \forall x \forall y : x = y \implies (P(x) \leftrightarrow P(y)) $
-  - Substitution rule: $ x = y, P(x) \vdash P(y) $
-- **Symmetry:** $ \forall x \forall y : x = y \implies y = x $
-- **Transitivity(geciskenlik):** $ \forall x \forall y \forall z : x = y \land y = z \implies x = z $
+- **Reflexivity (yansima):** $\forall x : x = x$
+- **Substitution(yerine koyma):** $\forall x \forall y : x = y \implies (P(x) \leftrightarrow P(y))$
+  - Substitution rule: $x = y, P(x) \vdash P(y)$
+- **Symmetry:** $\forall x \forall y : x = y \implies y = x$
+- **Transitivity(geciskenlik):** $\forall x \forall y \forall z : x = y \land y = z \implies x = z$
 
 ---
 
@@ -836,38 +802,30 @@ The equality predicate $ = $, included as a standard part of predicate logic.
 *"There’s exactly one..."*  
 
 $$\exists!x P(x)$$
-There exists a **unique** $ x $ such that $ P(x) $.
+There exists a **unique** $x$ such that $P(x)$.
 
 ---
 
 ### Uniquenes
-$$
-\exists!x P(x) \equiv \exists x \left(P(x) \land \forall y \, (P(y) \rightarrow y = x)\right)
-$$  
-“There is an $ x $ for which $ P(x) $ is true, and any $ y $ for which $ P(y) $ is true is equal to $ x $.”
+$$\exists!x P(x) \equiv \exists x \left(P(x) \land \forall y \, (P(y) \rightarrow y = x)\right)$$  
+“There is an $x$ for which $P(x)$ is true, and any $y$ for which $P(y)$ is true is equal to $x$.”
 
 **Example:**  
-$$
-\exists!x : (x + 1 = 12) \quad \text{(Only $x = 11$ works! 1️⃣1️⃣)}
-$$  
-- To expand $ \exists!x P(x) $, apply $ P(y) \implies x = y $  
+$$\exists!x : (x + 1 = 12) \quad \text{(Only $x = 11$ works! 1️⃣1️⃣)}$$  
+- To expand $\exists!x P(x)$, apply $P(y) \implies x = y$  
 ---
 
 ### More on Expanding ($ \exists! $)
 
-$$
-\exists!x P(x) \equiv \exists x \left(P(x) \land (\forall y : x \neq y \implies \neg P(y))\right)
-$$
+$$\exists!x P(x) \equiv \exists x \left(P(x) \land (\forall y : x \neq y \implies \neg P(y))\right)$$
 
-“Any $ y $ that is not $ x $ doesn’t satisfy $ P $.”
+“Any $y$ that is not $x$ doesn’t satisfy $P$.”
 
 You can also apply De Morgan’s laws to this:
 
-$$
-\exists!x P(x) \equiv \exists x \left(P(x) \land (\neg \exists y : x \neq y \land P(y))\right)
-$$
+$$\exists!x P(x) \equiv \exists x \left(P(x) \land (\neg \exists y : x \neq y \land P(y))\right)$$
 
-“There is an $ x $ with $ P(x) $, but there is no $ y \neq x $ with $ P(y) $.”
+“There is an $x$ with $P(x)$, but there is no $y \neq x$ with $P(y)$.”
 
 ---
 
@@ -898,17 +856,17 @@ A structure is a **model** of a particular theory if each statement in the theor
 ### Examples 🌟  
 | Axiom | Model |  
 |-------|-------|  
-|$\neg \exists x $ | Only empty set ⚫ |  
-| $ \exists!x $ | Only single-element set 1️⃣ |  
+|$\neg \exists x$ | Only empty set ⚫ |  
+| $\exists!x$ | Only single-element set 1️⃣ |  
 | Family tree axioms(?) | Royal family tree 👑🌳 |  
 
 ---
 
 - The family tree of the kings of France is a model of the theory containing the two axioms:
-  - $ \forall x \forall y \forall z : \text{Parent}(x, y) \land \text{Parent}(y, z) \implies \text{GrandParent}(x, z) $
-  - $ \forall x \forall y : \text{Parent}(x, y) \implies \neg \text{Parent}(y, x) $
+  - $\forall x \forall y \forall z : \text{Parent}(x, y) \land \text{Parent}(y, z) \implies \text{GrandParent}(x, z)$
+  - $\forall x \forall y : \text{Parent}(x, y) \implies \neg \text{Parent}(y, x)$
 
-This still allows for the possibility that there are some $ x $ and $ y $ for which $ \text{Parent}(x, y) $ and $ \text{GrandParent}(y, x) $ are both true.
+This still allows for the possibility that there are some $x$ and $y$ for which $\text{Parent}(x, y)$ and $\text{GrandParent}(y, x)$ are both true.
 
 ---
 
@@ -924,10 +882,10 @@ This still allows for the possibility that there are some $ x $ and $ y $ for wh
 
 **Models: Consistency & Independence 📜**  
 1. **Consistency:** Find *any* model → theory is non-contradictory.  
-2. **Independence:** Find a model where $ S $ is false → $ S $ isn’t provable from the theory.  
+2. **Independence:** Find a model where $S$ is false → $S$ isn’t provable from the theory.  
 
 **Example:**  
-- Theory: $ \forall x \forall y \, \text{Parent}(x, y) \rightarrow \neg \text{Parent}(y, x) $.  
+- Theory: $\forall x \forall y \, \text{Parent}(x, y) \rightarrow \neg \text{Parent}(y, x)$.  
 - Model: Family tree where parents aren’t their own grandparents. 👪  
 
 ---
