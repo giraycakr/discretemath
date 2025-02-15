@@ -254,8 +254,8 @@ $\lor$ and $\land$ are associative:
 
 - $X$ and $Y$ are compound propositions.
 - $X$ and $Y$ are logically equivalent.
-- $X  \equiv Y $
-- "$\equiv $" does the same thing for Boolean formulas that "$=$" does for algebraic formulas.
+- $X  \equiv Y$
+- "$\equiv$" does the same thing for Boolean formulas that "$=$" does for algebraic formulas.
 
 ---
 
@@ -506,9 +506,9 @@ Inside CNF, look for a simple proposition and its negation and resolve them into
 ### Step-by-Step Resolution 🔄  
 1. **Add $Q$:** (From $(P \lor Q) \land (\neg P \lor Q)$ )  
    $$\vdash (P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R) \land \mathbf{Q}$$  
-2. **Resolve $\neg Q \lor R$ with $Q $:**  
+2. **Resolve $\neg Q \lor R$ with $Q$:**  
    $$\vdash R \quad \text{(∴ Add $R$)}$$  
-3. **Resolve $P \lor \neg R$ with $R $:**  
+3. **Resolve $P \lor \neg R$ with $R$:**  
    $$\vdash P \quad \text{(Boom! 💥)}$$  
 
 **Final Conclusion:** $P$ 
@@ -581,15 +581,15 @@ let $x, y, z$, etc. stand for any element of our universe of discourse or domain
 
 **Predicates:** Statements whose truth value depends on the value of the objects.
 
-- “$x$ is human.”
-- “$x$ is the parent of $y$.”
-- “$x + 2 = x^2$.”
+- “ $x$ is human. ”
+- “ $x$ is the parent of $y$. ”
+- “ $x + 2 = x^2$. ”
 
 ---
 
 ### Predicates = Properties/Relations 
 
-Predicates are abbreviated by capital letters and a list of arguments (like $F(x)$):
+Predicates are abbreviated by capital letters and a list of arguments (like $F(x)$ ):
 
 | Predicate | Meaning | Example 💡 |  
 |-----------|---------|-----------|  
@@ -779,7 +779,7 @@ $$0, S(0), S(S(0)), S(S(S(0)))...$$
 
 ---
 
-### ⚖️ Equality ($ = $) 
+### ⚖️ Equality ( $=$ ) 
 
 The equality predicate $=$, included as a standard part of predicate logic.
 
@@ -798,7 +798,7 @@ The equality predicate $=$, included as a standard part of predicate logic.
 
 ---
 
-## Uniqueness ($ \exists! $) 🦄  
+## Uniqueness ( $\exists!$ ) 🦄  
 *"There’s exactly one..."*  
 
 $$\exists!x P(x)$$
@@ -807,7 +807,7 @@ There exists a **unique** $x$ such that $P(x)$.
 ---
 
 ### Uniquenes
-$$\exists!x P(x) \equiv \exists x \left(P(x) \land \forall y \, (P(y) \rightarrow y = x)\right)$$  
+$$\exists! x P(x) \equiv \exists x \left(P(x) \land \forall y \, (P(y) \rightarrow y = x)\right)$$  
 “There is an $x$ for which $P(x)$ is true, and any $y$ for which $P(y)$ is true is equal to $x$.”
 
 **Example:**  
@@ -815,9 +815,9 @@ $$\exists!x : (x + 1 = 12) \quad \text{(Only $x = 11$ works! 1️⃣1️⃣)}$$
 - To expand $\exists!x P(x)$, apply $P(y) \implies x = y$  
 ---
 
-### More on Expanding ($ \exists! $)
+### More on Expanding ( $\exists!$ )
 
-$$\exists!x P(x) \equiv \exists x \left(P(x) \land (\forall y : x \neq y \implies \neg P(y))\right)$$
+$$\exists! x P(x) \equiv \exists x \left(P(x) \land (\forall y : x \neq y \implies \neg P(y))\right)$$
 
 “Any $y$ that is not $x$ doesn’t satisfy $P$.”
 
