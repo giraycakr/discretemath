@@ -19,6 +19,58 @@ div {
 
 - The content is mostly based on  [Notes  by James Aspnes](http://www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf)
 * Slides are prepared with DeepSeek-R1  
+- [Mathematical Logic 🧠✨](#mathematical-logic-)
+  - [Basics 🌱](#basics-)
+    - [**Modeling Reality**](#modeling-reality)
+  - [Axioms \& Inference Rules ⚙️](#axioms--inference-rules-️)
+    - [Key Components 🔑](#key-components-)
+    - [Consistency (Tutarlılık) ⚖️](#consistency-tutarlılık-️)
+  - [Propositional Logic 📜](#propositional-logic-)
+    - [Propositions ✅❌](#propositions-)
+    - [Non-Propositions 🚫](#non-propositions-)
+    - [Operations on Propositions](#operations-on-propositions)
+      - [Logical Operations 🔄](#logical-operations-)
+      - [Precedence](#precedence)
+    - [Examples](#examples)
+    - [Truth Tables 🎰](#truth-tables-)
+      - [Truth Table for Negation](#truth-table-for-negation)
+      - [Implication (`p → q`)](#implication-p--q)
+      - [Truth Table for Logical Operations](#truth-table-for-logical-operations)
+    - [Tautologies and Logical Equivalence](#tautologies-and-logical-equivalence)
+      - [Proving Logical Equivalence](#proving-logical-equivalence)
+      - [Examples of Logical Equivalence](#examples-of-logical-equivalence)
+      - [Common Logical Equivalences](#common-logical-equivalences)
+      - [Proof by Contraposition](#proof-by-contraposition)
+      - [Inverse](#inverse)
+      - [Converse](#converse)
+      - [Equivalences Involving True and False](#equivalences-involving-true-and-false)
+    - [Normal Forms \& Resolution 🧩](#normal-forms--resolution-)
+      - [Converting to CNF](#converting-to-cnf)
+      - [Simplifying CNF](#simplifying-cnf)
+      - [Resolution in CNF 🔄](#resolution-in-cnf-)
+      - [Resolution Proof Walkthrough 🧩](#resolution-proof-walkthrough-)
+  - [Predicate Logic 🚀](#predicate-logic-)
+    - [Propositional Logic Limitation](#propositional-logic-limitation)
+    - [Variables and Predicates](#variables-and-predicates)
+    - [Predicates = Properties/Relations](#predicates--propertiesrelations)
+    - [Quantifiers: ∀ and ∃ 🌟](#quantifiers--and--)
+      - [Universal Quantifier (`∀`) 🌍](#universal-quantifier--)
+      - [Universal Quantifier ($\\forall$) 🌍](#universal-quantifier-forall-)
+      - [Existential Quantifier (`∃`) 🔍](#existential-quantifier--)
+      - [Negation of Quantifiers](#negation-of-quantifiers)
+      - [Restricting the Scope of a Quantifier](#restricting-the-scope-of-a-quantifier)
+      - [Nested Quantifiers 🔄](#nested-quantifiers-)
+  - [Summary: so far](#summary-so-far)
+    - [Functions](#functions)
+    - [⚖️ Equality ( $=$ )](#️-equality---)
+      - [Equality Axioms 🔗](#equality-axioms-)
+      - [Uniqueness ( $\\exists!$ ) 🦄](#uniqueness--exists--)
+    - [Models in Predicate Logic 🏛️](#models-in-predicate-logic-️)
+      - [Structures](#structures)
+      - [Examples 🌟](#examples-)
+      - [Use of Models for Theory 🏛️](#use-of-models-for-theory-️)
+        - [Consistency and Completeness of a Theorem](#consistency-and-completeness-of-a-theorem)
+      - [Standard Axiom Systems and Models 🔢](#standard-axiom-systems-and-models-)
 
 ---
 
@@ -89,7 +141,7 @@ We use placeholder names like $p, q, r$ for propositions.
 ---
 
 
-## Logical Operations 🔄  
+#### Logical Operations 🔄  
 
 | Operator       | Symbol | Meaning                          | Example 💬 |  
 |----------------|--------|----------------------------------|-----------|  
@@ -140,7 +192,7 @@ We use placeholder names like $p, q, r$ for propositions.
 
 ---
 
-### Precedence
+#### Precedence
 
 **Compound proposition**: The result of any of these operations.
 
@@ -181,7 +233,7 @@ $\lor$ and $\land$ are associative:
 ---
 
 
-# Truth Tables 🎰  
+### Truth Tables 🎰  
 
 - **T** for true, **F** for false
 - Computer scientists use **1** for true, **0** for false
@@ -189,7 +241,7 @@ $\lor$ and $\land$ are associative:
 
 ---
 
-### Truth Table for Negation  
+#### Truth Table for Negation  
 | `p` | `¬p` |  
 |-----|-----|  
 | 0   | 1   |  
@@ -206,7 +258,7 @@ $\lor$ and $\land$ are associative:
 ---
 
 
-### Implication (`p → q`)  
+#### Implication (`p → q`)  
 | `p` | `q` | `p → q` |  
 |-----|-----|---------|  
 | T   | T   | T       |  
@@ -218,7 +270,7 @@ $\lor$ and $\land$ are associative:
 
 ---
 
-### Truth Table for Logical Operations
+#### Truth Table for Logical Operations
 
 | $p$ | $q$ | $p \lor q$ | $p \oplus q$ | $p \land q$ | $p \implies q$ | $p \iff q$ |
 |---------|---------|----------------|------------------|-----------------|--------------------|----------------|
@@ -232,7 +284,7 @@ $\lor$ and $\land$ are associative:
 
 ---
 
-# Tautologies and Logical Equivalence
+### Tautologies and Logical Equivalence
 
 ---
 
@@ -259,14 +311,14 @@ $\lor$ and $\land$ are associative:
 
 ---
 
-### Proving Logical Equivalence
+#### Proving Logical Equivalence
 
 1. Either construct a truth table to show $X  \iff Y$ is a tautology.
 2. Or transform $X$ and $Y$ into known logical equivalences.
 
 ---
 
-### Examples of Logical Equivalence
+#### Examples of Logical Equivalence
 
 1. $p \land \neg p \equiv 0$
 2. $p \lor p \equiv p$
@@ -284,7 +336,7 @@ $\lor$ and $\land$ are associative:
 
 ---
 
-### Common Logical Equivalences
+#### Common Logical Equivalences
 
 | Equivalence | Description |
 |-------------|-------------|
@@ -322,7 +374,7 @@ $\lor$ and $\land$ are associative:
 
 ---
 
-### Proof by Contraposition
+#### Proof by Contraposition
 
 The contrapositive of $p \rightarrow q$ is $\neg q \rightarrow \neg p$.
 
@@ -335,7 +387,7 @@ The contrapositive of $p \rightarrow q$ is $\neg q \rightarrow \neg p$.
 
 ---
 
-### Inverse
+#### Inverse
 
 The inverse of $p \rightarrow q$ is $\neg p \rightarrow \neg q$.
 
@@ -347,7 +399,7 @@ The inverse of $p \rightarrow q$ is $\neg p \rightarrow \neg q$.
 
 ---
 
-### Converse
+#### Converse
 
 The converse of $p \rightarrow q$ is $q \rightarrow p$.
 
@@ -359,7 +411,7 @@ The converse of $p \rightarrow q$ is $q \rightarrow p$.
 
 ---
 
-### Equivalences Involving True and False
+#### Equivalences Involving True and False
 
 **Any tautology** is equivalent to **true**; 
 **any contradiction** is equivalent to **false**.
@@ -381,7 +433,7 @@ We can do case analysis where we prove that some proposition $Q$ holds by showin
 
 ---
 
-### Absorption Laws
+**Absorption Laws**
 
 |    Equivalences   |------------| Equivalences  |
 |-------------| :-----: |-------------|
@@ -397,24 +449,20 @@ We can do case analysis where we prove that some proposition $Q$ holds by showin
 
 ---
 
-# Normal Forms
+### Normal Forms & Resolution 🧩 
 
 ---
 
-## Normal Forms & Resolution 🧩  
-
-### Conjunctive Normal Form (CNF)  
+**Conjunctive Normal Form (CNF)**
 - **Structure:** AND of OR clauses.  
   - *Example:*  
     `(A ∨ B) ∧ (¬C ∨ D)`  
 
-### Resolution Rule 💡  
+**Resolution Rule 💡**  
 - Combine clauses to deduce new truths:  
   - From `(A ∨ B)` and `(¬A ∨ C)`, derive `(B ∨ C)`.  
 
 ---
-
-### Conjunctive Normal Form (CNF)
 
 **Conjunctive normal form (CNF):** A compound proposition ANDs of ORs of one or more variables.
 
@@ -424,13 +472,14 @@ We can do case analysis where we prove that some proposition $Q$ holds by showin
 
 ---
 
-### Converting to CNF
+#### Converting to CNF
 
-Using  
-- $P \rightarrow Q \equiv \neg P \lor Q$, 
-- De Morgan's laws, 
-- and the distributive law, 
-it is possible to rewrite any compound proposition in CNF.
+```
+1. P → Q ≡ ¬P ∨ Q,
+2. De Morgan's laws,
+3. The distributive law,
+``` 
+it is possible to rewrite any compound proposition in CNF by using 1, 2, 3.
 
 **Examples:**
 
@@ -439,13 +488,13 @@ it is possible to rewrite any compound proposition in CNF.
 
 ---
 
-## Simplifying CNF
+#### Simplifying CNF
 
 This does not produce the simplest CNF.
 
 ---
 
-### Fun Example: The Head-Cutter’s Dilemma ⚔️  
+**Fun Example: The Head-Cutter’s Dilemma ⚔️** 
 *"If you draw your sword, I cut your head. If you don’t, I cut your head."*  
 
 ---
@@ -456,10 +505,10 @@ This does not produce the simplest CNF.
 ---
 
 
-## Simplifying CNF: The Head-Cutter’s Paradox ⚔️  
+**Simplifying CNF: The Head-Cutter’s Paradox ⚔️**  
 *"Draw your sword or not, your head rolls!"*  
 
-### Simplification Steps 🔍   $$(P \rightarrow Q) \land (\neg P \rightarrow Q)$$
+**Simplification Steps 🔍**   $$(P \rightarrow Q) \land (\neg P \rightarrow Q)$$
 1. Start with implications:  
 
 --- 
@@ -476,10 +525,10 @@ This does not produce the simplest CNF.
 
 ---
 
-## Resolution in CNF 🔄  
+#### Resolution in CNF 🔄  
 *A rule of inference for deducing truths.*  
 
-### How It Works 🛠️  
+**How It Works 🛠️** 
 1. **Premises:** CNF clauses.  
 2. **Look for:** A literal and its negation 
    1. e.g., $\textbf{Snow}$  and $\neg \textbf{Snow} $.  
@@ -494,20 +543,20 @@ This does not produce the simplest CNF.
 
 ---
 
-## Resolution Proof Walkthrough 🧩  
+#### Resolution Proof Walkthrough 🧩  
 
-### Starting Clauses:  
+**Starting Clauses:**  
 $$(P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R)$$  
 
 Inside CNF, look for a simple proposition and its negation and resolve them into a conclusion.
 
 ---
 
-### Step-by-Step Resolution 🔄  
+**Step-by-Step Resolution 🔄**  
 1. **Add $Q$:** (From $(P \lor Q) \land (\neg P \lor Q)$ )  
    $$\vdash (P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R) \land \mathbf{Q}$$  
 2. **Resolve $\neg Q \lor R$ with $Q$:** (∴ Add $R$)  
-   $$\vdash R \quad$$
+   $$\vdash R$$
 3. **Resolve $P \lor \neg R$ with $R$:**  
    $$\vdash P \quad \text{(Boom! 💥)}$$  
 
@@ -516,7 +565,7 @@ Inside CNF, look for a simple proposition and its negation and resolve them into
 ---
 
 
-### Simplifying CNF (Continued)
+**Simplifying CNF (Continued)**
 
 $$(P \rightarrow Q) \land (\neg P \rightarrow Q)$$
 
@@ -563,7 +612,7 @@ The inference rule **modus ponens**: From $p$ and $p \implies q$, you can deduce
 
 ---
 
-### We would like to argue that
+**We would like to argue that**
 
 1. Spocrates is a man.🧙
 2. If Spocrates is a man, then Spocrates is mortal.💀
@@ -600,9 +649,9 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-## Quantifiers: ∀ and ∃ 🌟  
+### Quantifiers: ∀ and ∃ 🌟  
 
-### Universal Quantifier (`∀`) 🌍  
+#### Universal Quantifier (`∀`) 🌍  
 - "For all x, P(x) holds."  
 - **Example:**  
     `∀x: (Human(x) → Mortal(x))`  
@@ -610,7 +659,7 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-### Universal Quantifier ($\forall$) 🌍  
+#### Universal Quantifier ($\forall$) 🌍  
 - **Meaning:** "For all..."  
 - **Example:** You can also use set-membership notation 
   $$\forall x \in Z: (x > 0 \rightarrow x + 1 > 0)$$ 
@@ -620,7 +669,7 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
  
 ---
 
-### Existential Quantifier (`∃`) 🔍  
+#### Existential Quantifier (`∃`) 🔍  
 - "There exists an x where P(x) holds."  
 - **Example:** 
     `∃x (Unicorn(x) ∧ Sparkly(x))`  
@@ -628,9 +677,6 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-
-
-### Existential Quantifier ($\exists$) 🔍  
 - **Meaning:** "There exists..."  
 - **Example:**  
   $$\exists x \in Z: (x^2 = 81)$$  
@@ -638,7 +684,6 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-### Existential Quantifier ($\exists$) 🔍  
 - $\exists x \in Z: (x = x^2)$ 
   - $\exists x: x \in Z \land (x = x^2)$
 -  $\exists x: P(x)$ is equvailent to a very large OR
@@ -647,9 +692,7 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-
-
-### Negation of Quantifiers
+#### Negation of Quantifiers
 
 - $\neg \forall x : P(x) \equiv \exists x : \neg P(x)$:
   - If you want to show that not all humans are mortal, it’s equivalent to finding some human that is not mortal.
@@ -659,7 +702,6 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-### Negating Quantifiers 🚫  
 | Quantifier | Negation | Example 🔄 |  
 |------------|----------|------------|  
 | $\forall x P(x)$ | $\exists x \neg P(x)$ | "Not all birds fly" ≡ "Some bird doesn’t fly 🐦✖️" |  
@@ -667,7 +709,7 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 
 ---
 
-### Restricting the Scope of a Quantifier
+#### Restricting the Scope of a Quantifier
 
 - By set-membership.
 - By implication.
@@ -684,7 +726,7 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 ---
 
 
-### Nested Quantifiers 🔄  
+#### Nested Quantifiers 🔄  
  **"No Largest Prime"** 🔢  
 $$\forall x \exists y: (y > x \land \text{Prime}(y))$$  
 - “For any $x$, there is a bigger $y$ that is prime.”  (Primes go forever! ♾️)
@@ -693,13 +735,13 @@ $$\forall x \exists y: (y > x \land \text{Prime}(y))$$
 
 ---
 
-### "No Largest Prime" 🔢  
+**"No Largest Prime" 🔢**  
 
 $$\neg \exists x : (\text{Prime}(x) \land \forall y : y > x \implies \neg \text{Prime}(y))$$
 
 ---
 
-### Popularity Contest  
+**Popularity Contest**  
 $$\forall x \exists y \, \text{likes}(x, y)$$
 -  *Everyone likes someone.*  
 
@@ -707,23 +749,20 @@ $$\exists y \forall x \, \text{likes}(x, y)$$
 - *Someone is universally liked! 🌟*  
 
 ---
+## Summary: so far
 
-#
-
-## Normal Forms & Resolution 🧩  
-
-### Conjunctive Normal Form (CNF)  
+**Conjunctive Normal Form (CNF)**
 - **Structure:** AND of OR clauses.  
   - *Example:*  
     `(A ∨ B) ∧ (¬C ∨ D)`  
 
-### Resolution Rule 💡  
+ **Resolution Rule 💡** 
 - Combine clauses to deduce new truths:  
   - From `(A ∨ B)` and `(¬A ∨ C)`, derive `(B ∨ C)`.  
 
 ---
 
-## Negation ✨  
+**Negation ✨**  
 1. **De Morgan’s Laws:**  
    - `¬(A ∧ B) ≡ ¬A ∨ ¬B`  
    - `¬(A ∨ B) ≡ ¬A ∧ ¬B`  
@@ -735,7 +774,7 @@ $$\exists y \forall x \, \text{likes}(x, y)$$
 ---
 
 
-## From Socrates to Spocrates 🧙♂️  
+**From Socrates to Spocrates 🧙♂️**  
 **Propositional Logic Limitation:**  
 1. Socrates is a man. 👨  
 2. Socrates is mortal. 💀  
@@ -746,8 +785,8 @@ $$\forall x \, (\text{Human}(x) \rightarrow \text{Mortal}(x)) \quad \text{(All h
 
 ---
 
-## Variables & Predicates 🔤  
-### Predicates = Properties/Relations  
+**Variables & Predicates 🔤**  
+**Predicates = Properties/Relations**  
 | Predicate | Meaning | Example 💡 |  
 |-----------|---------|-----------|  
 | $H(x)$ | $x$ is human | $H(\text{Socrates}) = \text{👨}$ |  
@@ -758,7 +797,7 @@ $$\forall x \, (\text{Human}(x) \rightarrow \text{Mortal}(x)) \quad \text{(All h
 
 
 
-## Functions 
+### Functions 
 
 A function symbol looks like a predicate but returns an object and does not compute the truth value.
 
@@ -768,8 +807,6 @@ A function symbol looks like a predicate but returns an object and does not comp
   - A predicate: $=$.
 
 ---
-
-### Functions 
 
 Functions let us populate our universe without including a lot of axioms.  
 
@@ -788,7 +825,7 @@ The equality predicate $=$, included as a standard part of predicate logic.
 
 ---
 
-### Equality Axioms 🔗  
+#### Equality Axioms 🔗  
 
 - **Reflexivity (yansima):** $\forall x : x = x$
 - **Substitution(yerine koyma):** $\forall x \forall y : x = y \implies (P(x) \leftrightarrow P(y))$
@@ -798,7 +835,7 @@ The equality predicate $=$, included as a standard part of predicate logic.
 
 ---
 
-## Uniqueness ( $\exists!$ ) 🦄  
+#### Uniqueness ( $\exists!$ ) 🦄  
 *"There’s exactly one..."*  
 
 $$\exists! x P(x)$$
@@ -806,7 +843,6 @@ There exists a **unique** $x$ such that $P(x)$.
 
 ---
 
-### Uniquenes
 $$\exists! x P(x) \equiv \exists x \left(P(x) \land \forall y \, (P(y) \rightarrow y = x)\right)$$  
 “There is an $x$ for which $P(x)$ is true, and any $y$ for which $P(y)$ is true is equal to $x$.”
 
@@ -815,7 +851,7 @@ $\exists! x : (x + 1 = 12)$ (Only $x = 11$ works!)
 - To expand $\exists!x P(x)$, apply $P(y) \implies x = y$  
 ---
 
-### More on Expanding ( $\exists!$ )
+**More on Expanding ( $\exists!$ )**
 
 $$\exists! x P(x) \equiv \exists x \left(P(x) \land (\forall y : x \neq y \implies \neg P(y))\right)$$
 
@@ -830,18 +866,18 @@ $$\exists!x P(x) \equiv \exists x \left(P(x) \land (\neg \exists y : x \neq y \l
 ---
 
 
-## Models in Predicate Logic 🏛️  
-**remember:** a  theory is a set of statements
+### Models in Predicate Logic 🏛️  
+**Reminder:** a  theory is a set of statements
 
 **Models in propositional logic:**, we can build truth tables that describe all possible settings of the truth-values of the literals.
 
-**Models in Predicate Logic:** We use **structures**    
+**Models in Predicate Logic:**     
 - **Structure:** Objects + relationships + functions.  
 - **Purpose:** Prove consistency or independence of theories.  
 
 ---
 
-### Structures
+#### Structures
 
 - A set of objects or elements (set theory).
 - Description of which elements fill in for the constant symbols.
@@ -853,7 +889,7 @@ A structure is a **model** of a particular theory if each statement in the theor
 
 ---
 
-### Examples 🌟  
+#### Examples 🌟  
 | Axiom | Model |  
 |-------|-------|  
 |$\neg \exists x$ | Only empty set ⚫ |  
@@ -870,9 +906,9 @@ This still allows for the possibility that there are some $x$ and $y$ for which 
 
 ---
 
-###  Use of Models for Theory 🏛️  
+####  Use of Models for Theory 🏛️  
 
-### Consistency and Completeness of a Theorem  
+##### Consistency and Completeness of a Theorem  
 | Concept         | Description                          |  
 |-----------------|--------------------------------------|  
 | **Consistency** | No contradictions (`P ∧ ¬P`).        |  
@@ -891,7 +927,7 @@ This still allows for the possibility that there are some $x$ and $y$ for which 
 ---
 
 
-###  Standard Axiom Systems and Models 🔢  
+####  Standard Axiom Systems and Models 🔢  
 1. **Peano Axioms** (`ℕ`): Defines natural numbers.  
 2. **The integers(`Z`)**
 3. **The rational numbers(`Q`)**: now we can divide
