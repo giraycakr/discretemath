@@ -255,7 +255,7 @@ $\lor$ and $\land$ are associative:
 - $X$ and $Y$ are compound propositions.
 - $X$ and $Y$ are logically equivalent.
 - $X  \equiv Y$
-- "$\equiv$" does the same thing for Boolean formulas that "$=$" does for algebraic formulas.
+- " $\equiv$ " does the same thing for Boolean formulas that " $=$ " does for algebraic formulas.
 
 ---
 
@@ -506,8 +506,8 @@ Inside CNF, look for a simple proposition and its negation and resolve them into
 ### Step-by-Step Resolution 🔄  
 1. **Add $Q$:** (From $(P \lor Q) \land (\neg P \lor Q)$ )  
    $$\vdash (P \lor Q) \land (P \lor \neg R) \land (\neg P \lor Q) \land (\neg Q \lor R) \land \mathbf{Q}$$  
-2. **Resolve $\neg Q \lor R$ with $Q$:**  
-   $$\vdash R \quad \text{(∴ Add $R$)}$$  
+2. **Resolve $\neg Q \lor R$ with $Q$:** (∴ Add $R$)  
+   $$\vdash R \quad$$
 3. **Resolve $P \lor \neg R$ with $R$:**  
    $$\vdash P \quad \text{(Boom! 💥)}$$  
 
@@ -801,7 +801,7 @@ The equality predicate $=$, included as a standard part of predicate logic.
 ## Uniqueness ( $\exists!$ ) 🦄  
 *"There’s exactly one..."*  
 
-$$\exists!x P(x)$$
+$$\exists! x P(x)$$
 There exists a **unique** $x$ such that $P(x)$.
 
 ---
