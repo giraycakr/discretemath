@@ -811,7 +811,7 @@ $$\exists! x P(x) \equiv \exists x \left(P(x) \land \forall y \, (P(y) \rightarr
 “There is an $x$ for which $P(x)$ is true, and any $y$ for which $P(y)$ is true is equal to $x$.”
 
 **Example:**  
-$$\exists! x : (x + 1 = 12) \quad \text{(Only $x = 11$ works! 1️⃣1️⃣)}$$  
+$\exists! x : (x + 1 = 12)$ (Only $x = 11$ works!)  
 - To expand $\exists!x P(x)$, apply $P(y) \implies x = y$  
 ---
 
