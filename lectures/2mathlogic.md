@@ -614,7 +614,8 @@ Predicates are abbreviated by capital letters and a list of arguments (like $F(x
 - **Example:** You can also use set-membership notation 
   $$\forall x \in Z: (x > 0 \rightarrow x + 1 > 0)$$ 
   - All positives stay positive ➕
-  - Or $\forall x: x \in Z \land (x > 0 \rightarrow x + 1 > 0)$ 
+  - Or $\forall x: x \in Z \rightarrow  (x > 0 \rightarrow x + 1 > 0)$ 
+  - Or $\forall x: (x \in Z \land x > 0) \rightarrow x + 1 > 0)$ 
 
  
 ---
