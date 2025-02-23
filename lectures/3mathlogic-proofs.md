@@ -1,3 +1,16 @@
+---
+title: "Discrete Mathematics - math logic"
+author: "Ammar Daskin"
+institute: "Istanbul Medeniyet University, Computer Engineering Department"
+theme: black
+
+---
+
+<style type="text/css">
+div {
+  font-size: clamp(11px, 3vw, 28px);
+}
+</style>
 
 # Mathematical Logic 🧠  
 *"Modeling reality with simplicity."*
@@ -5,6 +18,9 @@
   - Inference Rules
   - Proofs, implication, and natural deduction
 - Proof Techniques
+
+The content is mostly based on  [Notes  by James Aspnes](http://www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf)
+
 
 ---
 
@@ -42,6 +58,8 @@
    - *Lemmas* = Intermediate results 🔄  
 2. **Premises (P):** Assumptions for deriving consequences.  
 3. **Inference Rules:** Derive conclusions (Q) from premises.  
+
+---
 
 **Game Analogy 🎮:**  
 - **Start:** Axioms + Premises  
@@ -88,6 +106,7 @@ Build valid arguments where true premises guarantee true conclusions.
 3. ∴ Q            [Modus Ponens]
 ```
 
+---
 
 ### Modus Ponens 🎯  
 **Tautology:** `(P ∧ (P → Q)) → Q`  
@@ -114,7 +133,7 @@ Build valid arguments where true premises guarantee true conclusions.
 
 ---
 
-### Solution:
+**Solution:**
 
 - **Premise $p$:** $\sqrt{2} > \frac{3}{2}$
 - **Premise $p \implies q$:** If $\sqrt{2} > \frac{3}{2}$, then $2 > \frac{9}{4}$.
@@ -128,7 +147,7 @@ The argument is **valid** because it is constructed using modus ponens.
 
 ---
 
-### Argument Validity Example 🔢  
+**Argument Validity Example** 🔢  
 **Claim:**  
 *"If √2 > 3/2, then (√2)² > (3/2)². Since √2 > 3/2, then 2 > 9/4."*  
 
@@ -142,7 +161,7 @@ The argument is **valid** because it is constructed using modus ponens.
 
 ---
 
-### Mouse & Cookie Argument 🐭🍪  
+ **Mouse & Cookie Argument**🐭🍪  
 1. *Axiom 1:* "If you give a mouse a cookie, he’ll ask for milk." 🥛  
 2. *Axiom 2:* "If he asks for milk, he’ll want a straw." 🥤  
 3. *Premise:* "You gave a mouse a cookie." 🍪  
@@ -154,15 +173,17 @@ The argument is **valid** because it is constructed using modus ponens.
 
 ## Common Inference Rules 📜  
 
-| Rule | Format | Example | Emoji |  
-|------|--------|---------|-------|  
-| **Modus Ponens** | `P, P→Q ⊢ Q` | "Rain → Wet, Rain ⊢ Wet" ☔ | ✅ |  
-| **Modus Tollens** | `¬Q, P→Q ⊢ ¬P` | "¬Wet, Rain→Wet ⊢ ¬Rain" 🌞 | ❌ |  
-| **Hypothetical Syllogism** | `P→Q, Q→R ⊢ P→R` | "Study→Pass, Pass→Happy ⊢ Study→Happy" 😊 | 🔄 |  
-| **Disjunctive Syllogism** | `P∨Q, ¬P ⊢ Q` | "Pizza∨Salad, ¬Pizza ⊢ Salad" 🥗 | 🍕 |  
-| **Resolution** | `P∨Q, ¬P∨R ⊢ Q∨R` | "Rain∨Snow, ¬Snow∨Traffic ⊢ Rain∨Traffic" 🚗 | ⚖️ |  
+| Rule | Format | Example |
+|------|--------|---------|
+| **Modus Ponens** | `P, P→Q ⊢ Q` | "Rain → Wet, Rain ⊢ Wet" ☔ | 
+| **Modus Tollens** | `¬Q, P→Q ⊢ ¬P` | "¬Wet, Rain→Wet ⊢ ¬Rain" 🌞 | 
+| **Hypothetical Syllogism** | `P→Q, Q→R ⊢ P→R` | "Study→Pass, Pass→Happy ⊢ Study→Happy" 😊 | 
+| **Disjunctive Syllogism** | `P∨Q, ¬P ⊢ Q` | "Pizza∨Salad, ¬Pizza ⊢ Salad" 🥗 | 
+| **Resolution** | `P∨Q, ¬P∨R ⊢ Q∨R` | "Rain∨Snow, ¬Snow∨Traffic ⊢ Rain∨Traffic" 🚗 |
 
 ---
+
+
 | Inference Rule                         |   Name              |                         |
 |------------------------------|----------------------------------------|-----------------------------|
 | $p \vdash p \lor q$          | **Addition**                              |                    |
@@ -221,7 +242,7 @@ lead to the **conclusion:** “We will be home by sunset.”
 
 ---
 
-# Proofs, Implication, and Natural Deduction
+## Proofs, Implication, and Natural Deduction
 
 - $P \vdash Q$ means there is a proof of Q by applying inference rules to P.
   - Provability ($\vdash$) is outside the theory (it’s a statement about whether a proof exists or not).
@@ -343,7 +364,7 @@ For more, see [Natural Deduction on Wikipedia](https://en.wikipedia.org/wiki/Nat
 
 ---
 
-# Inference Rules for Equality
+### Inference Rules for Equality
 
 The equality predicate allows the **substitution rule**:
 $$

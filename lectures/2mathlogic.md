@@ -12,7 +12,6 @@ div {
 }
 </style>
 
-![logo](logo-tr.png)
 
 # Mathematical Logic 🧠✨  
 *"The art of reasoning about reasoning."*
