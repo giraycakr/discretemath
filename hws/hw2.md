@@ -1,4 +1,4 @@
-# Homework 1
+# Homework 2
 ## Preliminiraies
 - [1intro.md](../lectures/1intro.md)
 - [2mathlogic.md](../lectures/2mathlogic.md)
@@ -31,8 +31,8 @@
    1. First ask AI to define triominoes
    2. Then use colors to show that if it is possible.
 8.  Ask AI to find a contradiction in law/regulations related to anything in Turkey or any other country that is currently used. It may be regulations in university or sports (Only exception is politics).
-   1. In particular you can ask AI to find premises and assumptions that leads to contradictory conclusions. 
-   2. In this question, you can particularly direct AI to a field.
+    1.  In particular you can ask AI to find premises and assumptions that leads to contradictory conclusions. 
+    2.  In this question, you can particularly direct AI to a field.
 
 **- For each question, you should verify the answers, if they are not correct, you should correct them or get AI correct them. And explain your reasons.**
 
