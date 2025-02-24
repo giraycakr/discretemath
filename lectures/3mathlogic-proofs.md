@@ -560,6 +560,85 @@ Some theorems can be proved by examining a relatively small number of examples. 
 
 ---
 
+**Example**
+Show that there is a positive integer that can be written as the sum of cubes of positive integers in two different ways.
+
+**Solution with exhaustive search:** 1729=103 +93 =123 +13.
+**A Constructive Existence Proof** Just find an $a$ such taht $P(a)$ is true
+
+---
+
+**Example**
+Show that there exist irrational numbers x and y such that xy is rational.
+
+**Solution:** We know that $\sqrt{2}$ is irrational.
+- $\sqrt{2}^{\sqrt{2}}$ 
+  - if it is rational, we find x, y that gives rational.
+  - if not choose x = $\sqrt{2}^{\sqrt{2}}$ and y = $\sqrt{2}$
+    - $x^y = 2$ which is rational.
+
+**A Nonconstructive Existence Proof:** We proved it is true in someway or another.
+
+---
+
+**Example**
+
+Show that there are no solutions in integers x and y of $x^2 + 3y^2 = 8$.
+
+**Solution**
+Find cases from when $x^2 > 8$ and so on.
+- this gives x = −2,−1,0,1, or 2 and y equals −1, 0, or 1.
+
+**without loss of generality** If some of the cases are the same, you do not repeat the trivial cases. 
+
+---
+
+**Common pitfalls in exhaustive proofs**
+
+- draw incorrect conclusions from examples.
+- unwarranted assumptions that eliminates some cases.
+
+**Example:** If $x$ is a real number, then $x^2$ is a positive real number.
+- ❌ not considering $x=0 \to x^2=0$ case in the proof.
+
+---
+
+**Example 15 from book:** prove that 1 = 2?  
+**"proof":**
+What is wrong in these steps?
+1. a = b (Given)
+2. $a^2 = ab$ (Multiply  by a)
+3. $a^2 −b^2 =ab−b^2$ (Subtract $b^2$)
+4. $(a−b)(a+b)=b(a−b)$ (Factor)
+5. $a+b=b$ (Divide  by a − b)
+6. $2b = b$ (Replace a by b because a = b)
+7. $2=1$ (Divide  by b)
+
+❌ (a-b) is 0. Divisipn by 0.
+
+---
+
+**Example 16:** If $n^2$ is positive, then $n$ is positive.  
+What is wrong in the **proof**?  
+Suppose that $n^2$ is positive.   
+- Because “If $n$ is positive, then $n^2$ is positive” is true, 
+- we can conclude that n is positive.
+
+❌ ∀n(P(n) → Q(n)) we cannot conclude P(n) from Q(n).
+
+---
+
+**Example 18:** show that $n$ is an even integer whenever $n^2$ is an even integer.
+
+**Proof:** Suppose that $n^2$ is even. 
+- Then $n^2 = 2k$ for some integer k. 
+- Let $n = 2l$ for some integer $l$. This shows that $n$ is even.
+
+❌ **Circular reasoning:**
+No argument has been given to show that $n$ can be written as $2l$ for some integer $l$. This is also in the proof.
+
+---
+
 # Appendix
 
 ## Key Symbols
