@@ -169,28 +169,67 @@ Naive set theory allows paradoxes (e.g., Russell’s Paradox). **Zermelo-Fraenke
 
 ---
 
+### Key points (Short version)
+you can construct sets by
+- listing their members, 
+- taking the union of other sets, 
+- taking the set of all subsets of a set, 
+- using some predicate to pick out elements or subsets of some set. 
+
+---
+
 ### Key Axioms of ZFC  
 1. **Extensionality**:  
    - Sets with the same elements are equal:  
      $$\forall x, y: (x = y) \leftrightarrow (\forall z: z \in x \leftrightarrow z \in y)$$  
+2. **Existence:** The empty set `∅` is a set. 
+  `∃x : ∀y : y ∉ x`.
 
-2. **Pairing**:  
+3. **Pairing**:  
    - For any sets $x, y$, the pair $\{x, y\}$ exists.  
 
-3. **Union**:  
+4. **Union**:  
    - For any set of sets $S$, the union $\bigcup S$ exists.  
 
-4. **Power Set**:  
+---
+
+5. **Power Set**:  
    - For any set $S$, the power set $\mathcal{P}(S)$ (all subsets of $S$) exists.  
+   - **Example:** Power set of `{0, 1, 2}`?
+     - `{∅, {0}, {1},{2}, {0,1}, {0,2}, {1,2}, {0,1,2}}`
 
-5. **Specification (Restricted Comprehension)**:  
-   - For any set $S$ and predicate $P$, $\{x \in S \mid P(x)\}$ exists.  
+---
 
-6. **Infinity**:  
-   - A set containing $\emptyset$ and closed under $x \mapsto x \cup \{x\}$ exists (encodes $\mathbb{N}$).  
+6. **Specification (Restricted Comprehension)**:  
+   - For any set $S$ and predicate $P$, $\{x \in S \mid P(x)\}$ exists.     
+     - it generates infinite list of axioms, one for each possible P 
+     - limits constructing subsets of existing sets , we can’t construct `S = {x | x ∉x}`. 
+     -  we can try to construct `S = {x ∈ T | x ∉ x}`,
+        -   S isn’t an element of T, 
+        -   so it doesn’t contain itself but also doesn’t create a contradiction.
 
-7. **Choice**:  
+---
+
+7. **Infinity**: existence of at least one infinite set 
+   - There is a set containing $\emptyset$  and $x \cup \{x\}$ whenever it has $x$.  
+     - `∃x : ∅ ∈ x ∧ ∀y ∈ x : y ∪ {y} ∈ x`.
+   - This encodes $\mathbb{N}$
+     - where `∅` represents `0` 
+     - and `x ∪ {x}` represents `x + 1`. 
+     - 3 = {0, 1, 2} = {∅, {∅} , {∅, {∅}}}
+     - each number n is represented by a set with n elements.
+
+
+---
+
+
+8. **Choice**:  
    - For any set of nonempty sets, there exists a function selecting one element from each.  
+
+9. **Foundation:** Every nonempty set A contains a set B with `A∩B = ∅`. 
+- `∀x ∉ ∅ : ∃y ∈ x : x ∩ y = ∅.`
+- **No set is an element of itself**
+
 
 ---
 
@@ -199,7 +238,7 @@ Naive set theory allows paradoxes (e.g., Russell’s Paradox). **Zermelo-Fraenke
 ### Ordered Pairs  
 - **Definition**: $(a, b) = \{\{a\}, \{a, b\}\}$ (ensures order matters).  
 - $\{a, b\} \neq (a, b)$ and $(a, b) \neq (b, a)$ unless $a = b$.  
-
+- The sets were **unordered!**
 ---
 
 ### Cartesian Product  
@@ -210,6 +249,14 @@ Naive set theory allows paradoxes (e.g., Russell’s Paradox). **Zermelo-Fraenke
   - $|A \times B| = |A| \cdot |B|$  
 
 ⚠️ **Non-commutative**: $A \times B \neq B \times A$ unless $A = B$.  
+
+---
+
+⚠️ **Non-commutative**: $A \times B \neq B \times A$ unless $A = B$.  
+- {1, 2} × {3, 4} = {(1, 3), (1, 4), (2, 3), (2, 4)}
+- {3, 4}  × {1, 2} = {(3, 1), (3, 2), (4, 1), (4, 2)}
+- {(1, 3), (1, 4), (2, 3), (2, 4)} ≠ {(3, 1), (3, 2), (4, 1), (4, 2)} 
+- When are they equal?
 
 ---
 
@@ -234,6 +281,24 @@ A function $f: A \to B$ is a relation where:
 - **Domain**: $A$ (input set).  
 - **Codomain**: $B$ (output set).  
 - **Image**: $\{f(x) \mid x \in A\}$ (actual outputs).  
+- The set of all functions from $A \to B$ is written as $B^A$. 
+
+---
+
+
+- For **finite domains**, we use explicit table or a formula
+  - e.g. from {0, 1, 2, 3, 4} to {a, b, c}, then a table shows the mapping form A to B.
+  -  $f(x) = x^2$.
+
+---
+
+- single rule gives different functions:
+-  $f(x) = x^2$.
+   -  `f: R → R`, 
+   - `f: Z → Z`, 
+   - `f: N → N`, 
+   - `f: Z → N`. 
+   - Changing the domain or codomain changes the function.
 
 ---
 
@@ -252,12 +317,22 @@ A function $f: A \to B$ is a relation where:
   $$(g \circ f)(x) = g(f(x))$$  
 - **Example**:  
   - $f(x) = x^2$, $g(x) = x + 1$ → $(g \circ f)(x) = x^2 + 1$.  
+- **Example**: 
+  - $g(x) = x + 1$, $h(x) = x^2$ → $(g \circ h)(x)$ = ? 
 
 ---
 
 ### Function Types  
+ `f: A → B`
+ - how many elements x of the domain A get mapped to each element y of the codomain B.
+- f is **surjective**:
+  - If every y is the image of at least one x.
+- f is **injective**: 
+  - If every y is the image of at most one x.
+- f is **bijective**: 
+  - If every y is the image of exactly one x.
 
-![function types](./figures/functions.png)
+---
 
 | **Type**       | **Definition**                              | **Example**                     |  
 |----------------|---------------------------------------------|---------------------------------|  
@@ -266,6 +341,16 @@ A function $f: A \to B$ is a relation where:
 | **Bijective**  | Both injective and surjective               | $f(x) = x + 1$ on $\mathbb{Z}$  |  
 
 ---
+
+![function types](./figures/functions.png)
+
+---
+
+Examples:
+- $f(x) = x^2$ from N to N
+- $f(x) = x + 1$ from N to N
+-  $f(x) = x + 1$ from Z to Z
+-  $f(x) = x^2$ from Z to Z
 
 ## Sequences & Cardinality  
 
@@ -277,10 +362,122 @@ A function $f: A \to B$ is a relation where:
 
 ### Cardinality  
 - **Definition**: $|A| = |B|$ iff there’s a bijection $A \leftrightarrow B$.  
+  - **Examples:**
+    - `|∅| = 0`, 
+    - `|{Larry, Moe, Curly}| = 3`
+    - `|{x ∈ N | x < 100 ∧ x is prime}|= 25`
+
+--- 
+
+**Finding size with arithmetics:**
+
+**Disjoint sets:**  If `A∩B = ∅`; 
+- then `|A ∪ B| = |A| + |B|`.
+
+**Example:** 
+- 2-element set {0, 1}
+- 3-element set {Wakko, Jakko, Dot} 
+- `|A ∪ B| = |A| + |B|` 5-element set {0, 1, Wakko, Jakko, Dot}.
+
+---
+
+**The size of a Cartesian product:**
+```
+  |A × B| = |A|·|B|.
+  |A × B| = |B × A|.
+```
+```
+  A = {a, b}
+  B = {0, 1, 2}
+  |A × B| = 6
+```
+
+---
+For a given set S with n elements, the power set P(S)  
+
+**The size of power set**
+$|P(S)| = 2^{|S|}$.
+
+- The special case of $|A^B|$, 
+- the size of the set of all functions from B to A,  
+  - $|A^B| = |A|^{|B|}$ 
+
+---
+### Infinite sets
+ - **cardinal arithmetic**: Using addition, multiplication as in cardinals, 
+- **cardinal numbers**: the sizes
+  - finite cardinal numbers are just number: 0,1,2,3
+  - $\aleph_0$: aleph-zero, aleph-null, or aleph-nought
+    - first infinite cardinal
+    - $\aleph_1$ next infinite
+ - $N^∗$ = {all finite sequences of elements of N} has size $\aleph_0$.
+
+---
+
+
+
 - **Countable Sets**: $\mathbb{N}, \mathbb{Z}, \mathbb{Q}$ (same size as $\mathbb{N}$).  
 - **Uncountable Sets**: $\mathbb{R}, \mathcal{P}(\mathbb{N})$ (strictly larger than $\mathbb{N}$).  
 
 ---
+
+- **Countable**: anything you can write down using finitely many symbols
+- they can be put into a bijection with N or one of its subsets
+  - a set is countable if it has the same cardinality as some subset of the set of natural numbers N = {0, 1, 2, 3, ...}. 
+    - every element in S corresponds to a different element in N (injection).  
+
+the set of all computer programs in any particular programming language is countable.
+
+---
+
+Show that the set of all integers({0, 1, −1, 2, −2, . . . .
+}) is countable.
+- find a one-to-one correspondence between the set of positive integers and the set of all integers.
+  - `f(n) = n/2` when `n` is `even` 
+  - and `f(n) = −(n − 1)/2` when `n` is `odd`.
+
+
+---
+
+Show that the set of **positive rational numbers** is countable.
+- a sequence r1 , r2 , . . . , rn , . . . . 
+- every positive rational number is the quotient `p/q` of two positive integers.
+```
+  1/1, 2/1, 3/1 ....
+  1/2, 2/2, 3/2 ...
+  1/3, 2/3, 3/3, ...
+``` 
+
+---
+
+The set of real numbers is an **uncountable** set
+
+- If it is countable, then the subset of all real numbers that fall between 0 and 1 would also be countable
+- real numbers in [0, 1] 
+  - r1, r2, r3, . . . . 
+  - $r_i = 0.d_{i1}d_{i2}d_{i3}d_{i4}$
+- Consider number $r = 0.d_1d_2d_3...$ 
+  - given by the rule:
+  - $d_i =  4$ if $d_{ii}=4$, 
+  - $d_i = 5$ if $d_{ii}\neq 4$.
+- This is not any of $r_i$ since it differs at $d_{ii}$ digit.
+
+
+---
+
+**Cantor's theorem:** Let S be any set. Then there is no surjection `f: S → P(S)`. 
+
+
+**Exercise:** There are functions `f: N → {0, 1}` that are not computed by any computer program.
+
+---
+
+
+### Function of more than one argument
+- If `f: A × B → C`, we write `f(a, b)` for `f((a, b))`.   
+
+  - a function of k arguments is just a function from a domain of the form `A1 × A2 × . . . Ak` to some codomain `B`.
+
 
 ---
 
@@ -368,3 +565,179 @@ $$A \odot B = \begin{bmatrix} (1 \land 1) \lor (0 \land 0) & (1 \land 1) \lor (0
 | Zero-One Matrix    | Entries are 0 or 1                       |  
 
 ---
+
+## Vectors and Vector Spaces
+
+- A **vector** is a sequence of `n` values (coordinates) from a field (typically `ℝ`).  
+- **Dimension**: The number of coordinates in a vector.  
+- **Vector Space**: The set of all vectors over a field (e.g., `ℝ^n`) forms a vector space.  
+
+### Geometric Interpretation
+- A vector represents a point in `n`-dimensional space.  
+- Example: Latitude and longitude on Earth can be represented as `⟨latitude, longitude⟩`, with `⟨0, 0⟩` as the origin.
+
+---
+
+## Vector Operations
+### Vector Addition
+For vectors `x` and `y`, their sum `x + y` is defined by:  
+`(x + y)_i = x_i + y_i` for each index `i`.
+
+### Example: Pirate Treasure Instructions
+1. Start at `⟨0, 0, 0⟩`.  
+2. Add `⟨10, 0, 0⟩` (10 paces north).  
+3. Add `⟨0, 5, 0⟩` (5 paces east).  
+4. Add `⟨−20, 0, 0⟩` (20 paces south).  
+5. Add `⟨6, −6, 0⟩` (6√2 paces northwest).  
+6. Add `⟨0, 0, −8⟩` (dig 8 paces down).  
+7. Add `⟨0, 0, 6⟩` (climb back up 6 paces).  
+
+**Result**:  
+```
+⟨0,0,0⟩ + ⟨10,0,0⟩ + ⟨0,5,0⟩ + ⟨−20,0,0⟩ + ⟨6,−6,0⟩ + ⟨0,0,−8⟩ + ⟨0,0,6⟩ = ⟨−4,−1,−2⟩
+```  
+*Interpretation*: Walk 4 paces south, 1 pace west, and dig 2 paces down.
+
+---
+
+### Scaling Vectors
+Scaling a vector by a scalar `c`:  
+`c⟨a₁, a₂, ..., aₙ⟩ = ⟨c⋅a₁, c⋅a₂, ..., c⋅aₙ⟩`.  
+
+**Example**:  
+`2⟨−4, −1, −2⟩ = ⟨−8, −2, −4⟩`.
+
+---
+
+## Abstract Vector Spaces
+- A **vector space** is any set supporting vector addition and scalar multiplication.  
+- Vectors form an additive Abelian group; scalars satisfy distributive laws.  
+
+---
+
+# Matrices
+- A **matrix** is a function from an index set (e.g., `{1...n} × {1...m}`) to a codomain.  
+- **Dimension**: Number of rows and columns (e.g., `m × n`).  
+- **Square Matrix**: Equal rows and columns.  
+
+### Matrix Operations
+- **Transpose**: Swap rows and columns.  
+- **Symmetric Matrix**: Equal to its transpose (`A = A^T`).  
+- **Sum**: Defined for matrices of the same dimensions.  
+
+---
+
+## Matrix Multiplication
+- **Product `QC`**: For matrices `Q` (from `D` to `F`) and `C` (from `O` to `D`), the entry `(QC)_{ik}` is:  
+  \[
+  (QC)_{ik} = \sum_j Q_{ij} C_{jk}
+  \]  
+- **Compatibility**: Columns of `Q` must match rows of `C`.  
+
+### Identity Matrix
+- Denoted `I`, where `I_{ii} = 1` and `I_{ij} = 0` for `i ≠ j`.  
+- Property: `IA = A` and `BI = B` for compatible matrices.  
+
+### Inverse Matrix
+- A matrix `A` is **invertible** if there exists `A⁻¹` such that `AA⁻¹ = A⁻¹A = I`.  
+- Only square matrices can be invertible.  
+
+---
+
+## Matrix Properties
+- **Non-Commutative**: `AB ≠ BA` in general.  
+- **Associative**: `A(BC) = (AB)C`.  
+
+---
+
+# Vectors as Matrices
+- **Row Vector**: `1 × n` matrix.  
+- **Column Vector**: `n × 1` matrix.  
+- **Norm**: The length (magnitude) of a vector.  
+- **Unit Vector**: A vector with norm 1.  
+
+---
+
+# Linear Combinations and Subspaces
+- **Linear Combination**: A vector `y = ∑c_i x_i` for scalars `c_i`.  
+- **Linear Independence**: No vector in a set can be written as a combination of others.  
+- **Basis**: A linearly independent set that spans the vector space.  
+
+### Theorems
+1. Every vector in a space has a unique representation in terms of a basis.  
+2. All bases of a vector space have the same size.  
+
+---
+
+# Linear Transformations
+- **Definition**: A function `A` such that `A(x + y) = Ax + Ay` and `A(cx) = cAx`.  
+- **Matrix Representation**: Multiplying a vector by a matrix applies a linear transformation.  
+
+### Column Space
+- The set `{Mx}` for all `x` is the **column space** of `M` (span of its columns).  
+  - Vector of **dot-products**
+  - Linear combination of the columns of $M$
+
+
+---
+
+### Example 1: Matrix-Vector Multiplication as a Linear Combination of Columns  
+Let $M = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ and $\mathbf{x} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}$.  
+
+---
+
+**Step 1: Express $M\mathbf{x}$ as a linear combination of columns of M:**  
+- Columns of $M$:  
+  $\mathbf{c_1} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$.
+
+- $M\mathbf{x} = 5\mathbf{c_1} + 6\mathbf{c_2} = 5\begin{bmatrix} 1 \\ 3 \end{bmatrix} + 6\begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 5 \\ 15 \end{bmatrix} + \begin{bmatrix} 12 \\ 24 \end{bmatrix} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}$.  
+
+---
+
+**Step 2: Verify using dot products (row perspective):**  
+- First entry: $(1 \cdot 5) + (2 \cdot 6) = 5 + 12 = 17$.  
+- Second entry: $(3 \cdot 5) + (4 \cdot 6) = 15 + 24 = 39$.  
+- Result: $M\mathbf{x} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}$.  
+
+---
+
+### Example 2: Matrix-Vector Multiplication as Dot Products  
+Let $M = \begin{bmatrix} 1 & -1 \\ 2 & 0 \\ 3 & 4 \end{bmatrix}$ and $\mathbf{x} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$.  
+
+---
+
+**Step 1: Compute $M\mathbf{x}$ using dot products:**  
+- First row: $\mathbf{r_1} = [1, -1]$, dot product with $\mathbf{x}$:  
+  $1 \cdot 2 + (-1) \cdot 3 = 2 - 3 = -1$.  
+- Second row: $\mathbf{r_2} = [2, 0]$, dot product with $\mathbf{x}$:  
+  $2 \cdot 2 + 0 \cdot 3 = 4 + 0 = 4$.  
+- Third row: $\mathbf{r_3} = [3, 4]$, dot product with $\mathbf{x}$:  
+  $3 \cdot 2 + 4 \cdot 3 = 6 + 12 = 18$.  
+- Result: $M\mathbf{x} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}$.  
+
+---
+
+**Step 2: Verify using column combination:**  
+- Columns of $M$:  
+  $\mathbf{c_1} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix}$.  
+- $M\mathbf{x} = 2\mathbf{c_1} + 3\mathbf{c_2} = 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 3\begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix} + \begin{bmatrix} -3 \\ 0 \\ 12 \end{bmatrix} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}$.  
+
+---
+
+### Key Takeaways  
+1. **Linear Combination of Columns**:  
+   $M\mathbf{x} = x_1\mathbf{c_1} + x_2\mathbf{c_2} + \cdots + x_n\mathbf{c_n}$,  
+   where $\mathbf{c_i}$ are the columns of $M$.  
+
+2. **Dot Product with Rows**:  
+   Each entry of $M\mathbf{x}$ is the dot product of a row of $M$ and $\mathbf{x}$.  
+
+---
+
+
+## Geometric Interpretation
+- Linear transformations alter basis vectors, stretching, rotating, or shearing the space.  
+- Example: Changing from standard basis vectors `x` and `y` to a new basis.  
+
+![alt text](figures/4geometric.png)
+
