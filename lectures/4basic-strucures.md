@@ -321,10 +321,11 @@ A \times B = \{(x, y) \mid x \in A \land y \in B\}
 ### Relations  
 - A **relation** between $A$ and $B$ is any subset of $A \times B$.  
 - **Example**:  
-  - "$<$" on $\mathbb{N}$: 
-  ```math
-  \{(1,2), (1,3), (2,3), \dots\}
-  ```
+  - $<$ on $\mathbb{N}$: 
+```math
+\{(1,2), (1,3), (2,3), \dots\}
+```
+
   - Functions are a special type of relation (see below).  
 
 ---
