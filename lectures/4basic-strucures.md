@@ -520,8 +520,8 @@ The set of real numbers is an **uncountable** set
   - $r_i = 0.d_{i1}d_{i2}d_{i3}d_{i4}$
 - Consider number $r = 0.d_1d_2d_3...$ 
   - given by the rule:
-  - $d_i =  4$ if $d_{ii}=4$, 
-  - $d_i = 5$ if $d_{ii}\neq 4$.
+  - $d_i =  5$ if $d_{ii}=4$, 
+  - $d_i = 4$ if $d_{ii}\neq 4$.
 - This is not any of $r_i$ since it differs at $d_{ii}$ digit.
 
 
