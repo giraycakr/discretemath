@@ -70,9 +70,9 @@ Define sets using rules (**set-builder notation**):
   \{2x \mid x \in \mathbb{N}\} 
 ```
 - **Small naturals**: 
-  ```math
-  \{x \in \mathbb{N} \mid x < 12\}
-  ```
+```math
+\{x \in \mathbb{N} \mid x < 12\}
+```
 
 ---
 
@@ -220,16 +220,16 @@ you can construct sets by
 ### Key Axioms of ZFC  
 1. **Extensionality**:  
    - Sets with the same elements are equal:  
- ```math
- \forall x, y: (x = y) \leftrightarrow (\forall z: z \in x \leftrightarrow z \in y)
- ``` 
-1. **Existence:** The empty set `∅` is a set. 
+```math
+\forall x, y: (x = y) \leftrightarrow (\forall z: z \in x \leftrightarrow z \in y)
+``` 
+2. **Existence:** The empty set `∅` is a set. 
   `∃x : ∀y : y ∉ x`.
 
-1. **Pairing**:  
+3. **Pairing**:  
    - For any sets $x, y$, the pair $\{x, y\}$ exists.  
 
-2. **Union**:  
+4. **Union**:  
    - For any set of sets $S$, the union $\bigcup S$ exists.  
 
 ---
@@ -283,9 +283,9 @@ you can construct sets by
 \{a, b\} \neq (a, b)
 ```
  and 
- ```math
- (a, b) \neq (b, a) \text{ unless $a = b$.}
- ```
+```math
+(a, b) \neq (b, a) \text{ unless $a = b$.}
+```
 
 - The sets were **unordered!**
 
@@ -298,13 +298,13 @@ A \times B = \{(x, y) \mid x \in A \land y \in B\}
 ```
 - **Example**:  
   - 
-  ```math
-  \{1, 2\} \times \{3, 4\} = \{(1,3), (1,4), (2,3), (2,4)\}
-  ```  
+```math
+\{1, 2\} \times \{3, 4\} = \{(1,3), (1,4), (2,3), (2,4)\}
+```  
   - 
-  ```math
-  |A \times B| = |A| \cdot |B|
-  ```  
+```math
+|A \times B| = |A| \cdot |B|
+```  
 
 ⚠️ **Non-commutative**: $A \times B \neq B \times A$ unless $A = B$.  
 
@@ -550,9 +550,14 @@ A **matrix** is a rectangular array of numbers (or elements) arranged in **rows*
 - An $m \times n$ matrix has $m$ rows and $n$ columns.  
 - **Square matrix**: $m = n$.  
 - **Notation**:  
-  ```math
-  A = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{bmatrix}
-  ```
+```math
+A = \begin{bmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} 
+\\ a_{21} & a_{22} & \cdots & a_{2n} 
+\\ \vdots & \vdots & \ddots & \vdots 
+\\ a_{m1} & a_{m2} & \cdots & a_{mn} 
+\end{bmatrix}
+```
 
 ---
 
@@ -575,7 +580,19 @@ A **matrix** is a rectangular array of numbers (or elements) arranged in **rows*
 ``` 
 - **Example**:  
 ```math
-\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 1\cdot5 + 2\cdot7 & 1\cdot6 + 2\cdot8 \\ 3\cdot5 + 4\cdot7 & 3\cdot6 + 4\cdot8 \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
+\begin{bmatrix}
+ 1 & 2 \\ 
+ 3 & 4 
+ \end{bmatrix} 
+ \begin{bmatrix} 
+ 5 & 6 \\ 
+ 7 & 8 
+ \end{bmatrix} 
+ = 
+ \begin{bmatrix} 
+ 1\cdot5 + 2\cdot7 & 1\cdot6 + 2\cdot8 \\ 3\cdot5 + 4\cdot7 & 3\cdot6 + 4\cdot8 \end{bmatrix} 
+ = 
+ \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
 ``` 
 
 ⚠️ **Non-commutative**: $AB \neq BA$ in general.  
@@ -639,7 +656,15 @@ A = \begin{bmatrix} 1 & 0 \\
 B = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}
 ```
 ```math
-A \odot B = \begin{bmatrix} (1 \land 1) \lor (0 \land 0) & (1 \land 1) \lor (0 \land 1) \\ (0 \land 1) \lor (1 \land 0) & (0 \land 1) \lor (1 \land 1) \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}
+A \odot B = 
+\begin{bmatrix} 
+(1 \land 1) \lor (0 \land 0) & (1 \land 1) \lor (0 \land 1) \\ 
+(0 \land 1) \lor (1 \land 0) & (0 \land 1) \lor (1 \land 1) 
+\end{bmatrix} 
+```
+```math
+= 
+\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}
 ```
 
 ---
@@ -717,9 +742,9 @@ Scaling a vector by a scalar `c`:
 
 ### Matrix Multiplication
 - **Product `QC`**: For matrices `Q` (from `D` to `F`) and `C` (from `O` to `D`), the entry `(QC)_{ik}` is:  
- ```math
- (QC)_{ik} = \sum_j Q_{ij} C_{jk}
- ```
+```math
+(QC)_{ik} = \sum_j Q_{ij} C_{jk}
+```
 - **Compatibility**: Columns of `Q` must match rows of `C`.  
 
 ### Identity Matrix
@@ -814,30 +839,30 @@ M = \begin{bmatrix} 1 & -1 \\ 2 & 0 \\ 3 & 4 \end{bmatrix} \text{ and }
 
 **Step 1: Compute $M\mathbf{x}$ using dot products:**  
 - First row:  $[1, -1]$, dot product with $\mathbf{x}$:  
-  ```math
-  1 \cdot 2 + (-1) \cdot 3 = 2 - 3 = -1.
-  ```  
+```math
+1 \cdot 2 + (-1) \cdot 3 = 2 - 3 = -1.
+```  
 - Second row: $[2, 0]$, dot product with $\mathbf{x}$:  
-  ```math
-  2 \cdot 2 + 0 \cdot 3 = 4 + 0 = 4.
-  ```
+```math
+2 \cdot 2 + 0 \cdot 3 = 4 + 0 = 4.
+```
 
 - Third row: $[3, 4]$, dot product with $\mathbf{x}$:  
-  ```math
-  3 \cdot 2 + 4 \cdot 3 = 6 + 12 = 18.
-  ```  
+```math
+3 \cdot 2 + 4 \cdot 3 = 6 + 12 = 18.
+```  
 - Result:
-  ```math
-  M\mathbf{x} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}.
-  ```  
+```math
+M\mathbf{x} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}.
+```  
 
 ---
 
 **Step 2: Verify using column combination:**  
 - Columns of $M$:  
-  ```math
-  \mathbf{c_1} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix}.
-  ```  
+```math
+\mathbf{c_1} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix}.
+```  
 -  
 ```math 
 M\mathbf{x} = 2\mathbf{c_1} + 3\mathbf{c_2}
