@@ -9,6 +9,7 @@ theme: black
 div {
   font-size: clamp(11px, 3vw, 28px);
 }
+
 </style>
 
 # Basic Structures: Sets, Functions, Matrices  
@@ -30,9 +31,9 @@ div {
 - All set operations can be derived from $\in$.  
 
 **Examples**:  
-- $\text{Tom} \in \{\text{Tom}, \text{Jerry}\}$  
+- Tom $\in$ {Tom,Jerry}  
 - $4 \in \mathbb{N}$  
-- $1 \notin \{\{1\}\}$ (membership is not transitive!)  
+- 1 $\notin$ \{\{1\}\} (membership is not transitive!)  
 
 **Symbols**:  
 - $\notin$: "Not an element of"  
@@ -46,25 +47,39 @@ div {
 
 **Examples**:  
 - Explicit notation:  
-  - $\emptyset = \{\}$ (empty set)  
-  - $\{\text{Tom}, \text{Jerry}\}$  
-  - $\mathbb{N} = \{0, 1, 2, \dots\}$  
-  - $\{\emptyset, \{0\}, \{1\}, \{0,1\}, 7\}$  
+  - `∅ = {}` (empty set)  
+  - `{Tom}, {Jerry}`  
+  - `N={0,1,2,…}`
+  - `{∅,{0},{1},{0,1},7}` 
 
-⚠️ **Warning**: Unrestricted set comprehension leads to paradoxes (e.g., Russell’s Paradox: $\{S \mid S \notin S\}$).  
+⚠️ **Warning**: Unrestricted set comprehension leads to paradoxes( Russell’s Paradox:) 
+```math
+\{ S \mid S \notin S \}
+```
 
 ---
 
 ### Set Comprehension  
 Define sets using rules (**set-builder notation**):  
-- **Primes**: $\{x \in \mathbb{N} \mid x > 1 \land (\forall y,z \in \mathbb{N},\ yz = x \implies y=1 \lor z=1)\}$  
-- **Even numbers**: $\{2x \mid x \in \mathbb{N}\}$  
-- **Small naturals**: $\{x \in \mathbb{N} \mid x < 12\}$  
+- **Primes**: 
+```math
+\{x \in \mathbb{N} \mid x > 1 \land (\forall y,z \in \mathbb{N},\ yz = x \implies y=1 \lor z=1)\} 
+```
+- **Even numbers**: 
+```math
+  \{2x \mid x \in \mathbb{N}\} 
+```
+- **Small naturals**: 
+  ```math
+  \{x \in \mathbb{N} \mid x < 12\}
+  ```
 
 ---
 
 **Programming Analogy** (**List Comprehension**):  
-set comprehension: ${ x | 0 ≤ x ≤ 100, x = 1 (mod 2) }$
+
+set comprehension: `{ x | 0 ≤ x ≤ 100, x = 1 (mod 2) }`
+  
 **List Comprehension:**
 ```python  
 # Python  
@@ -80,10 +95,22 @@ set comprehension: ${ x | 0 ≤ x ≤ 100, x = 1 (mod 2) }$
 ## Operations on Sets  
 
 ### Fundamental Operations  
-- **Union**: $A \cup B = \{x \mid x \in A \lor x \in B\}$  
-- **Intersection**: $A \cap B = \{x \mid x \in A \land x \in B\}$  
-- **Difference**: $A \setminus B = \{x \mid x \in A \land x \notin B\}$  
-- **Symmetric Difference**: $A \Delta B = \{x \mid x \in A \oplus x \in B\}$  
+- **Union**: 
+  ```math
+  A \cup B = \{x \mid x \in A \lor x \in B\}
+  ``` 
+- **Intersection**: 
+  ```math
+  A \cap B = \{x \mid x \in A \land x \in B\}
+  ``` 
+- **Difference**: 
+  ```math
+  A \setminus B = \{x \mid x \in A \land x \notin B\}
+  ```
+- **Symmetric Difference**: 
+  ```math
+  A \Delta B = \{x \mid x \in A \oplus x \in B\}
+  ```
 
 ---
 
@@ -94,10 +121,21 @@ set comprehension: ${ x | 0 ≤ x ≤ 100, x = 1 (mod 2) }$
 
 ⚠️ **Ambiguity Alert**:  
 - "$A$ is **in** $B$" could mean $A \in B$ (membership) or $A \subseteq B$ (subset).  
-- Example: $\{12\} \in \{\text{Moe}, \text{Larry}, \text{Curly}, \{12\}\}$ but $\{12\} \not\subseteq$ the same set.  
+- Example: 
+```math
+\{12\} \in \{\text{Moe}, \text{Larry}, \text{Curly}, \{12\}\}
+```
+  - but $\{12\} \not\subseteq$ the same set.  
+
+---
 
 ### Complement  
-- **Complement**: $\overline{A} = \{x \mid x \notin A\}$ (requires a fixed **universe** $U$).  
+
+- **Complement**: 
+```math
+\overline{A} = \{x \mid x \notin A\}
+```
+ (requires a fixed **universe** $U$).  
 - In practice, use $U \setminus A$ instead of $\overline{A}$ to avoid paradoxes.  
 
 ---
@@ -123,8 +161,9 @@ set comprehension: ${ x | 0 ≤ x ≤ 100, x = 1 (mod 2) }$
 **Lemma**: For all sets $S, T$ and predicate $P$:  
 1. $S \supseteq S \cap T$  
 2. $S \subseteq S \cup T$  
-3. $S \supseteq \{x \in S \mid P(x)\}$  
+3. `S ⊇ {x ∈ S ∣ P(x)}`
 4. $S = (S \cap T) \cup (S \setminus T)$  
+
 
 ---
 
@@ -145,8 +184,8 @@ set comprehension: ${ x | 0 ≤ x ≤ 100, x = 1 (mod 2) }$
 
 ---
 
-#### 3. $S \supseteq \{x \in S \mid P(x)\}$  
-- Let $x \in \{x \in S \mid P(x)\}$.  
+#### 3. `S ⊇ {x ∈ S ∣ P(x)}`  
+- Let `x ∈ { x ∈ S ∣ P(x) }`.  
 - By definition, $x \in S$ (regardless of $P(x)$).  
 
 ---
@@ -181,14 +220,16 @@ you can construct sets by
 ### Key Axioms of ZFC  
 1. **Extensionality**:  
    - Sets with the same elements are equal:  
-     $$\forall x, y: (x = y) \leftrightarrow (\forall z: z \in x \leftrightarrow z \in y)$$  
-2. **Existence:** The empty set `∅` is a set. 
+ ```math
+ \forall x, y: (x = y) \leftrightarrow (\forall z: z \in x \leftrightarrow z \in y)
+ ``` 
+1. **Existence:** The empty set `∅` is a set. 
   `∃x : ∀y : y ∉ x`.
 
-3. **Pairing**:  
+1. **Pairing**:  
    - For any sets $x, y$, the pair $\{x, y\}$ exists.  
 
-4. **Union**:  
+2. **Union**:  
    - For any set of sets $S$, the union $\bigcup S$ exists.  
 
 ---
@@ -211,7 +252,7 @@ you can construct sets by
 ---
 
 7. **Infinity**: existence of at least one infinite set 
-   - There is a set containing $\emptyset$  and $x \cup \{x\}$ whenever it has $x$.  
+   - There is a set containing `∅`  and `x ∪ {x}` whenever it has `x`.  
      - `∃x : ∅ ∈ x ∧ ∀y ∈ x : y ∪ {y} ∈ x`.
    - This encodes $\mathbb{N}$
      - where `∅` represents `0` 
@@ -223,10 +264,10 @@ you can construct sets by
 ---
 
 
-8. **Choice**:  
+1. **Choice**:  
    - For any set of nonempty sets, there exists a function selecting one element from each.  
 
-9. **Foundation:** Every nonempty set A contains a set B with `A∩B = ∅`. 
+2. **Foundation:** Every nonempty set A contains a set B with `A∩B = ∅`. 
 - `∀x ∉ ∅ : ∃y ∈ x : x ∩ y = ∅.`
 - **No set is an element of itself**
 
@@ -237,16 +278,33 @@ you can construct sets by
 
 ### Ordered Pairs  
 - **Definition**: $(a, b) = \{\{a\}, \{a, b\}\}$ (ensures order matters).  
-- $\{a, b\} \neq (a, b)$ and $(a, b) \neq (b, a)$ unless $a = b$.  
+- 
+```math
+\{a, b\} \neq (a, b)
+```
+ and 
+ ```math
+ (a, b) \neq (b, a) \text{ unless $a = b$.}
+ ```
+
 - The sets were **unordered!**
+
 ---
 
 ### Cartesian Product  
 - **Definition**:  
-  $$A \times B = \{(x, y) \mid x \in A \land y \in B\}$$  
+```math
+A \times B = \{(x, y) \mid x \in A \land y \in B\}
+```
 - **Example**:  
-  - $\{1, 2\} \times \{3, 4\} = \{(1,3), (1,4), (2,3), (2,4)\}$  
-  - $|A \times B| = |A| \cdot |B|$  
+  - 
+  ```math
+  \{1, 2\} \times \{3, 4\} = \{(1,3), (1,4), (2,3), (2,4)\}
+  ```  
+  - 
+  ```math
+  |A \times B| = |A| \cdot |B|
+  ```  
 
 ⚠️ **Non-commutative**: $A \times B \neq B \times A$ unless $A = B$.  
 
@@ -263,7 +321,10 @@ you can construct sets by
 ### Relations  
 - A **relation** between $A$ and $B$ is any subset of $A \times B$.  
 - **Example**:  
-  - "$<$" on $\mathbb{N}$: $\{(1,2), (1,3), (2,3), \dots\}$  
+  - "$<$" on $\mathbb{N}$: 
+  ```math
+  \{(1,2), (1,3), (2,3), \dots\}
+  ```
   - Functions are a special type of relation (see below).  
 
 ---
@@ -488,7 +549,9 @@ A **matrix** is a rectangular array of numbers (or elements) arranged in **rows*
 - An $m \times n$ matrix has $m$ rows and $n$ columns.  
 - **Square matrix**: $m = n$.  
 - **Notation**:  
-  $$A = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{bmatrix}$$  
+  ```math
+  A = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{bmatrix}
+  ```
 
 ---
 
@@ -496,15 +559,23 @@ A **matrix** is a rectangular array of numbers (or elements) arranged in **rows*
 
 #### 1. **Matrix Sum**  
 - **Definition**: If $A$ and $B$ are $m \times n$ matrices, then $A + B$ is the $m \times n$ matrix with entries:  
-  $$(A + B)_{ij} = A_{ij} + B_{ij}$$  
+```math
+(A + B)_{ij} = A_{ij} + B_{ij}
+```
 - **Example**:  
-  $$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} + \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}$$  
+```math
+\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} + \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}
+```
 
 #### 2. **Matrix Product**  
 - **Definition**: If $A$ is $m \times k$ and $B$ is $k \times n$, then $AB$ is the $m \times n$ matrix where:  
-  $$(AB)_{ij} = \sum_{r=1}^k A_{ir} B_{rj}$$  
+```math
+(AB)_{ij} = \sum_{r=1}^k A_{ir} B_{rj}
+``` 
 - **Example**:  
-  $$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 1\cdot5 + 2\cdot7 & 1\cdot6 + 2\cdot8 \\ 3\cdot5 + 4\cdot7 & 3\cdot6 + 4\cdot8 \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$  
+```math
+\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 1\cdot5 + 2\cdot7 & 1\cdot6 + 2\cdot8 \\ 3\cdot5 + 4\cdot7 & 3\cdot6 + 4\cdot8 \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
+``` 
 
 ⚠️ **Non-commutative**: $AB \neq BA$ in general.  
 
@@ -514,7 +585,9 @@ A **matrix** is a rectangular array of numbers (or elements) arranged in **rows*
 
 #### 1. **Identity Matrix**  
 - A square $n \times n$ matrix with $1$s on the diagonal and $0$s elsewhere:  
-  $$I_n = \begin{bmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & 1 \end{bmatrix}$$  
+```math
+I_n = \begin{bmatrix} 1 & 0 & \cdots & 0 \\ 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & 1 \end{bmatrix}
+```  
 - **Property**: For any $m \times n$ matrix $A$, $A I_n = A$ and $I_m A = A$.  
 
 #### 2. **Zero Matrix**  
@@ -523,14 +596,19 @@ A **matrix** is a rectangular array of numbers (or elements) arranged in **rows*
 #### 3. **Transpose**  
 - **Definition**: Flip rows and columns. If $A$ is $m \times n$, then $A^T$ is $n \times m$ with $(A^T)_{ij} = A_{ji}$.  
 - **Example**:  
-  $$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}^T = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$$  
+```math
+\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}^T = 
+\begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}
+``` 
 
 ---
 
 ### Powers of Square Matrices  
 - For a square matrix $A$, define $A^k = A \cdot A \cdot \ldots \cdot A$ ($k$ times).  
 - **Example**:  
-  $$A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix} \implies A^2 = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}, \quad A^3 = \begin{bmatrix} 1 & 3 \\ 0 & 1 \end{bmatrix}$$  
+```math
+A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix} \implies A^2 = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}, \quad A^3 = \begin{bmatrix} 1 & 3 \\ 0 & 1 \end{bmatrix}
+``` 
 
 ---
 
@@ -547,12 +625,21 @@ Matrices where all entries are **0 or 1**. Used in Boolean algebra and graph the
 
 ### Boolean Product  
 - **Definition**: For $A$ ($m \times k$) and $B$ ($k \times n$), the Boolean product $A \odot B$ is:  
-  $$(A \odot B)_{ij} = \bigvee_{r=1}^k (A_{ir} \land B_{rj})$$  
+```math
+(A \odot B)_{ij} = \bigvee_{r=1}^k (A_{ir} \land B_{rj})
+```
   - **AND** ($\land$) for multiplication, **OR** ($\lor$) for summation.  
 
 **Example**:  
-$$A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, \quad B = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$$  
-$$A \odot B = \begin{bmatrix} (1 \land 1) \lor (0 \land 0) & (1 \land 1) \lor (0 \land 1) \\ (0 \land 1) \lor (1 \land 0) & (0 \land 1) \lor (1 \land 1) \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$$  
+```math
+A = \begin{bmatrix} 1 & 0 \\ 
+0 & 1 \end{bmatrix}, 
+\quad 
+B = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}
+```
+```math
+A \odot B = \begin{bmatrix} (1 \land 1) \lor (0 \land 0) & (1 \land 1) \lor (0 \land 1) \\ (0 \land 1) \lor (1 \land 0) & (0 \land 1) \lor (1 \land 1) \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}
+```
 
 ---
 
@@ -615,7 +702,7 @@ Scaling a vector by a scalar `c`:
 
 ---
 
-# Matrices
+### Matrices
 - A **matrix** is a function from an index set (e.g., `{1...n} × {1...m}`) to a codomain.  
 - **Dimension**: Number of rows and columns (e.g., `m × n`).  
 - **Square Matrix**: Equal rows and columns.  
@@ -627,11 +714,11 @@ Scaling a vector by a scalar `c`:
 
 ---
 
-## Matrix Multiplication
+### Matrix Multiplication
 - **Product `QC`**: For matrices `Q` (from `D` to `F`) and `C` (from `O` to `D`), the entry `(QC)_{ik}` is:  
-  \[
-  (QC)_{ik} = \sum_j Q_{ij} C_{jk}
-  \]  
+ ```math
+ (QC)_{ik} = \sum_j Q_{ij} C_{jk}
+ ```
 - **Compatibility**: Columns of `Q` must match rows of `C`.  
 
 ### Identity Matrix
@@ -644,13 +731,13 @@ Scaling a vector by a scalar `c`:
 
 ---
 
-## Matrix Properties
+### Matrix Properties
 - **Non-Commutative**: `AB ≠ BA` in general.  
 - **Associative**: `A(BC) = (AB)C`.  
 
 ---
 
-# Vectors as Matrices
+## Vectors as Matrices
 - **Row Vector**: `1 × n` matrix.  
 - **Column Vector**: `n × 1` matrix.  
 - **Norm**: The length (magnitude) of a vector.  
@@ -658,7 +745,7 @@ Scaling a vector by a scalar `c`:
 
 ---
 
-# Linear Combinations and Subspaces
+## Linear Combinations and Subspaces
 - **Linear Combination**: A vector `y = ∑c_i x_i` for scalars `c_i`.  
 - **Linear Independence**: No vector in a set can be written as a combination of others.  
 - **Basis**: A linearly independent set that spans the vector space.  
@@ -669,7 +756,7 @@ Scaling a vector by a scalar `c`:
 
 ---
 
-# Linear Transformations
+## Linear Transformations
 - **Definition**: A function `A` such that `A(x + y) = Ax + Ay` and `A(cx) = cAx`.  
 - **Matrix Representation**: Multiplying a vector by a matrix applies a linear transformation.  
 
@@ -682,7 +769,12 @@ Scaling a vector by a scalar `c`:
 ---
 
 ### Example 1: Matrix-Vector Multiplication as a Linear Combination of Columns  
-Let $M = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ and $\mathbf{x} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}$.  
+Let 
+
+```math
+M = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+\text{ and } \mathbf{x} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}.
+```
 
 ---
 
@@ -690,37 +782,68 @@ Let $M = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ and $\mathbf{x} = \begin{
 - Columns of $M$:  
   $\mathbf{c_1} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$.
 
-- $M\mathbf{x} = 5\mathbf{c_1} + 6\mathbf{c_2} = 5\begin{bmatrix} 1 \\ 3 \end{bmatrix} + 6\begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 5 \\ 15 \end{bmatrix} + \begin{bmatrix} 12 \\ 24 \end{bmatrix} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}$.  
+- 
+```math
+M\mathbf{x} = 5\mathbf{c_1} + 6\mathbf{c_2}
+```
+```math
+ = 5\begin{bmatrix} 1 \\ 3 \end{bmatrix} + 6\begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 5 \\ 15 \end{bmatrix} + \begin{bmatrix} 12 \\ 24 \end{bmatrix} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}.
+```  
 
 ---
 
 **Step 2: Verify using dot products (row perspective):**  
 - First entry: $(1 \cdot 5) + (2 \cdot 6) = 5 + 12 = 17$.  
 - Second entry: $(3 \cdot 5) + (4 \cdot 6) = 15 + 24 = 39$.  
-- Result: $M\mathbf{x} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}$.  
+- Result: 
+```math 
+M\mathbf{x} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}.
+```  
 
 ---
 
 ### Example 2: Matrix-Vector Multiplication as Dot Products  
-Let $M = \begin{bmatrix} 1 & -1 \\ 2 & 0 \\ 3 & 4 \end{bmatrix}$ and $\mathbf{x} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$.  
-
+Let 
+```math 
+M = \begin{bmatrix} 1 & -1 \\ 2 & 0 \\ 3 & 4 \end{bmatrix} \text{ and } 
+\mathbf{x} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}.
+```
+ 
 ---
 
 **Step 1: Compute $M\mathbf{x}$ using dot products:**  
-- First row: $\mathbf{r_1} = [1, -1]$, dot product with $\mathbf{x}$:  
-  $1 \cdot 2 + (-1) \cdot 3 = 2 - 3 = -1$.  
-- Second row: $\mathbf{r_2} = [2, 0]$, dot product with $\mathbf{x}$:  
-  $2 \cdot 2 + 0 \cdot 3 = 4 + 0 = 4$.  
-- Third row: $\mathbf{r_3} = [3, 4]$, dot product with $\mathbf{x}$:  
-  $3 \cdot 2 + 4 \cdot 3 = 6 + 12 = 18$.  
-- Result: $M\mathbf{x} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}$.  
+- First row:  $[1, -1]$, dot product with $\mathbf{x}$:  
+  ```math
+  1 \cdot 2 + (-1) \cdot 3 = 2 - 3 = -1.
+  ```  
+- Second row: $[2, 0]$, dot product with $\mathbf{x}$:  
+  ```math
+  2 \cdot 2 + 0 \cdot 3 = 4 + 0 = 4.
+  ```
+
+- Third row: $[3, 4]$, dot product with $\mathbf{x}$:  
+  ```math
+  3 \cdot 2 + 4 \cdot 3 = 6 + 12 = 18.
+  ```  
+- Result:
+  ```math
+  M\mathbf{x} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}.
+  ```  
 
 ---
 
 **Step 2: Verify using column combination:**  
 - Columns of $M$:  
-  $\mathbf{c_1} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix}$.  
-- $M\mathbf{x} = 2\mathbf{c_1} + 3\mathbf{c_2} = 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 3\begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix} + \begin{bmatrix} -3 \\ 0 \\ 12 \end{bmatrix} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}$.  
+  ```math
+  \mathbf{c_1} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{c_2} = \begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix}.
+  ```  
+-  
+```math 
+M\mathbf{x} = 2\mathbf{c_1} + 3\mathbf{c_2}
+```
+```math 
+= 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 3\begin{bmatrix} -1 \\ 0 \\ 4 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix} + \begin{bmatrix} -3 \\ 0 \\ 12 \end{bmatrix} = \begin{bmatrix} -1 \\ 4 \\ 18 \end{bmatrix}.
+```  
 
 ---
 
