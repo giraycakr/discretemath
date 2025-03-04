@@ -210,12 +210,12 @@ $(x)$ has $n + 1$ left and right parentheses, which is equal.
 # Summation Notation
 
 Given a sequence $x_a , x_{a+1} , . . . , x_b$ , $x_a + x_{a+1}+ . . .  +x_b$
-is written as the \textbf{summation}:
+is written as the **summation**:
 ```math
 \sum_{i=a}^{b}x_i.
 ```
 
-- The variable $i$ is  \textbf{the index of summation}
+- The variable $i$ is  **the index of summation**
 - $a$ is **the lower bound**
 - $b$ is **the upper bound(or limit)**
 
@@ -224,10 +224,10 @@ is written as the \textbf{summation}:
 ## Formal definition
 We define the **summation** with the recurrence:
 ```math
-\sum_{i=a}^{b}f(i)= \left\lbrace\begin{matrix}
-0 & \text{if } b<a\\
-f(a)+\sum_{i=a+1}^{b}f(i) &\text{otherwise}
-\end{matrix}\right.
+\sum_{i=a}^{b}f(i)= \left\lbrace\begin{align*}
+&0 & \text{if } b<a\\
+&f(a)+\sum_{i=a+1}^{b}f(i) &\text{otherwise}
+\end{align*}\right.
 ```
 
 ---
@@ -247,10 +247,10 @@ f(a)+\sum_{i=a+1}^{b}f(i) &\text{otherwise}
 
 If $b-a$ is an integer, then
 ```math
-\sum_{i=a}^{b}f(i)= \left\lbrace\begin{matrix}
-0 & \text{if } b<a\\
-f(b)+\sum_{i=a}^{b-1}f(i) &\text{otherwise}
-\end{matrix}\right.
+\sum_{i=a}^{b}f(i)= \left\lbrace\begin{align*}
+&0 & \text{if } b<a\\
+&f(b)+\sum_{i=a}^{b-1}f(i) &\text{otherwise}
+\end{align*}\right.
 ```
 
 ---
@@ -260,12 +260,20 @@ f(b)+\sum_{i=a}^{b-1}f(i) &\text{otherwise}
 - For $b<a$, it is 0.
 - For $b\geq a$, prove by induction:
 
-- \textbf{Base case: } If $b-a= 0$, then $\sum_{i=a}^{b}f(i)= f(a) = f(b)=f(b)+\sum_{i=a}^{b-1}f(i)$.
-- \textbf{Inductive step:} If $b-a> 0$, then 
+- **Base case:** If $b-a = 0$, then 
 ```math
-\sum_{i=a}^{b}f(i) = f(a)+\sum_{i=a+1}^{b}f(i)= f(a)+f(b)+\sum_{i=a+1}^{b-1}f(i)=f(b)+\sum_{i=a}^{b-1}f(i). \\
+\sum_{i=a}^{b}f(i)= f(a) = f(b)=f(b)+\sum_{i=a}^{b-1}f(i).
 ```
- $b - (a + 1) = b - a - 1 < b - a$, so the middle step uses the inductive step.
+---
+
+- **Inductive step:** If $b-a> 0$, then 
+```math
+\sum_{i=a}^{b}f(i) = 
+f(a)+\sum_{i=a+1}^{b}f(i)
+= f(a)+f(b)+\sum_{i=a+1}^{b-1}f(i)=f(b)+\sum_{i=a}^{b-1}f(i). 
+```
+
+$b - (a + 1) = b - a - 1 < b - a$, so the middle step uses the inductive step.
 
 ---
 
@@ -273,10 +281,12 @@ f(b)+\sum_{i=a}^{b-1}f(i) &\text{otherwise}
 ```math
 \sum_{i=1}^{n} i^2 +1 =\left(\sum_{i=1}^{n} i^2 \right)+1 
 ```
+
 **The scope in addition:**
 ```math
 \sum_{i=1}^{n} i^2 +\sum_{i=1}^{n} i =\left(\sum_{i=1}^{n} i^2 \right)+\left(\sum_{i=1}^{n} i \right) 
 ```
+
 ---
 
 ## Summation Identities
@@ -339,7 +349,7 @@ n && S(n)\\
 5 &&1+3+5+7=9=25\\
 \end{align*}
 ```
-**Guess:** $S(n) = n^2.$ Verify it by induction... 
+**Guess:** $S(n) = n^2$. Verify it by induction... 
 
 ---
 #### Ansatzes
