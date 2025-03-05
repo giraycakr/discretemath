@@ -300,8 +300,7 @@ $b - (a + 1) = b - a - 1 < b - a$, so the middle step uses the inductive step.
 ---
 
 ## Summation Identities
-The summation is **linear**.
-That means:
+The summation is **linear**. That means:
 ```math
 \sum_{i=n}^{m} ax_i  =a\sum_{i=n}^{m} x_i
 ```
@@ -374,6 +373,9 @@ Guess is made with parameters:
 
 - If $n=0$, then  $\sum_{i=0}^{n}i^2 = 0 = c_0$.
 - Plugging small n values, such as $n=1, n=2, n=3...$
+
+---
+
 ```math
 \begin{align*}
 \text{for } n=1, & &0+1 = 1 = c_3+c_2+c_1\\
@@ -414,6 +416,9 @@ Other big operators
 \bigvee_{x\in S}^{} P(x) \equiv P (x_1 ) \lor P (x_2 ) \lor \dots 
 \equiv \exists x \in S : P(x).
 ```
+
+---
+
 - Big Intersection:
 ```math
 \bigcap_{i=1}^{n} A_i = A_1\cap A_2 \cap \dots \cap A_n.
