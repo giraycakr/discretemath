@@ -234,10 +234,8 @@ is written as the **summation**:
 ## Formal definition
 We define the **summation** with the recurrence:
 ```math
-\sum_{i=a}^{b}f(i)= 
-\begin{cases} 
-&0 & \text{if } b<a\\
-&f(a)+\sum_{i=a+1}^{b}f(i) &\text{otherwise}
+\sum_{i=a}^{b}f(i)= \begin{cases} 0 & \text{if } b < a\\
+f(a)+\sum_{i=a+1}^{b}f(i) &\text{otherwise}
 \end{cases}.
 ```
 
@@ -260,7 +258,7 @@ If $b-a$ is an integer, then
 ```math
 \sum_{i=a}^{b}f(i)= 
 \begin{cases}
-&0 & \text{if } b<a\\
+&0 & \text{if } b < a\\
 &f(b)+\sum_{i=a}^{b-1}f(i) &\text{otherwise}
 \end{cases}.
 ```
