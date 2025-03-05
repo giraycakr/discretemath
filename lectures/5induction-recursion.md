@@ -1,4 +1,9 @@
-
+---
+marp: true
+paginate: true
+size: 16:10
+theme: default
+class: invert
 ---
 
 # Induction and recursion
@@ -35,7 +40,7 @@ This is **an example of a recursive definition!**
 ## Induction schema
 
 ```math
-(P(0) \land \forall x \in N : (P (x) \to P (x + 1))) \to \forall x \in N : P (x).
+(P(0) \land \forall x \in N : (P (x) \to P (x + 1))) \to \forall x \in N : P(x).
 ```
 
 This means showing that $P(0)$ is true and that $P(x)$ implies $P(x + 1)$.
@@ -51,6 +56,8 @@ $P(x) \to P(x + 1)$.
 **Example:**
 show that for all $n \in N$, either
 $n = 0$ or there exists $n'$ such that $n = n' + 1$.
+
+---
 
 **Proof:**
 Let P(n) be $x = 0 \lor (\exists x': x = x' + 1)$  
@@ -70,6 +77,7 @@ We are trying to show that P(n) holds for all n.
 x^0 = 1,\\ 
 x^{n+1} = x\cdot x^n.
 ```
+
 This is a recursive definition: 
 ```math
 2^4 = 2\cdot 2^3 = 2\cdot2\cdot 2^2 = 2\cdot2\cdot 2\cdot 2^1 =2\cdot2\cdot2\cdot2\cdot 2^0 = 2\cdot2\cdot2\cdot2\cdot 1 = 16
@@ -79,6 +87,8 @@ This is a recursive definition:
 
 **Example:**
 If $a>1$, then $a^n>1$ for all $n>0$.
+
+---
 
 **Proof:**
 - **Base case:** if $n=0$, then $n\ngeq 0$.
@@ -175,10 +185,10 @@ we prove strong induction:
 A definition of a class of structures can often look like inductive proof, where we give a base case and a rule for building bigger structures from smaller
 ones.
 
-**Example:**
-Complete binary trees A complete binary tree consists of either (a) a
-leaf node, or (b) an internal node (the root) with two complete binary
-trees as children (or subtrees).
+**Example:** Complete binary trees 
+- A complete binary tree consists of either 
+    1. a leaf node,  
+    2. or an internal node (the root) with two complete binary trees as children (or subtrees).
 
 ---
 
@@ -224,22 +234,23 @@ is written as the **summation**:
 ## Formal definition
 We define the **summation** with the recurrence:
 ```math
-\sum_{i=a}^{b}f(i)= \left\lbrace\begin{align*}
+\sum_{i=a}^{b}f(i)= 
+\begin{cases} 
 &0 & \text{if } b<a\\
 &f(a)+\sum_{i=a+1}^{b}f(i) &\text{otherwise}
-\end{align*}\right.
+\end{cases}.
 ```
 
 ---
 
-**example:**
+**Example:**
 ```math
 \sum_{i=1}^3i = 1+ \sum_{i=2}^3i= 1+2+ \sum_{i=3}^3i = 1+2+3+\sum_{i=4}^3i = 1+2+3+0=6.
 ```
 
 ---
 
-**example:**
+**Example:**
 ```math
 \sum_{i=1/2}^{9/4}i = 1/2+ \sum_{i=3/2}^{9/4}i = 1/2+ 3/2 +\sum_{i=5/2}^{9/4}i= 1/2+ 3/2 +0
 ```
@@ -247,10 +258,11 @@ We define the **summation** with the recurrence:
 
 If $b-a$ is an integer, then
 ```math
-\sum_{i=a}^{b}f(i)= \left\lbrace\begin{align*}
+\sum_{i=a}^{b}f(i)= 
+\begin{cases}
 &0 & \text{if } b<a\\
 &f(b)+\sum_{i=a}^{b-1}f(i) &\text{otherwise}
-\end{align*}\right.
+\end{cases}.
 ```
 
 ---
