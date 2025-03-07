@@ -6,6 +6,26 @@ theme: default
 class: invert
 ---
 
+### Examples for basic structures
+
+```math
+A = \begin{bmatrix}
+1&0&0&1\\
+0&1&0&1\\
+1&1&1&1
+\end{bmatrix}, 
+B = \begin{bmatrix}
+1&0\\
+0&1\\
+1&0
+\end{bmatrix}
+```
+- Find $A \lor B$
+- Find the Boolean product for $A$ and $B$: $A \odot B$
+- Find $A^{[2]}$, the 2nd Boolean product of $A$
+
+---
+
 # Induction and recursion
 slides are based on
 [www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf](www.cs.yale.edu/homes/aspnes/classes/202/notes.pdf)
@@ -182,8 +202,7 @@ we prove strong induction:
 
 ## Recursively defined structures
 
-A definition of a class of structures can often look like inductive proof, where we give a base case and a rule for building bigger structures from smaller
-ones.
+A definition of a class of structures can often look like inductive proof, where we give a base case and a rule for building bigger structures from smaller ones.
 
 **Example:** Complete binary trees 
 - A complete binary tree consists of either 
@@ -192,18 +211,64 @@ ones.
 
 ---
 
-## Structural induction
-Structural induction is used to prove that some proposition P(x) holds for all x of some sort of recursively defined structure, such as formulas, lists, or trees.
+### Functions on recursive structures
+**Factorial**: 
+- Let `0! = 1`. 
+- For `n > 0, let n! = n · ((n − 1)!)`.  
+
+**The Fibonacci series** 
+- Let `F(0) = F (1) = 1`. 
+- For `n > 1`, let `F(n) = F(n − 1) + F(n − 2)`.
+
+---
+
+### Structural induction
+
+- Recursively-defined objects and functions also lend themselves easily to
+induction proofs
+
+- **Structural induction** is used to prove that some proposition `P(x)` holds for all `x` of some sort of recursively defined structure, such as formulas, lists, or trees.
 
 ---  
 
+**Example**
+Binary tree with $n$ leaves has $n-1$ internal nodes
+
+---
+
+- **Base case:** a tree with 1 leaf
+  - $n = 1$, $n-1 = 0$ leaf nodes
+- **Induction step:** Let $n_1$ and $n_2$ be number of leaves in two subtrees.
+  - $n_1+n_2 = n$. 
+  - The number of internal nodes:
+    - $(n_1-1)+(n_2-1) +1 (\text{the root})  = n-1$. 
+
+---
+
+
+**Example**
+Show that a binary tree with depth $d$ has at most $2^{d+1} − 1$ nodes.
+
+---
+
+- **Base case:** a tree with 1 leaf
+  - $d = 0$, $2^{0+1} − 1 = 1$ nodes
+- **Induction step:** Given a tree of depth $d > 1$: it has 1 root node, two subtrees with at most depth $d-1$
+  - nodes in one subtree $2^{d-1+1} − 1 = 2^d - 1$. 
+  - The number of internal nodes:
+    - $(2^d - 1)+(2^d - 1) +1  = 2^{d+1} - 1$. 
+
+---
+
+
+
 **Example:**
-Consider the following recursively defined set S :
+Consider the following recursively defined set $S$:
 
 - $a \in S$
-- If $x \in S$ , then $(x ) \in S$
+- If $x \in S$ , then $( x ) \in S$
 
-Prove that every element of S contains
+Prove that every element of $S$ contains
 an equal number of right and left parentheses.
 
 ---  
