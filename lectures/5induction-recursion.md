@@ -10,9 +10,9 @@ class: invert
 
 ```math
 A = \begin{bmatrix}
-1&0&0&1\\
-0&1&0&1\\
-1&1&1&1
+1&0&0\\
+0&1&0\\
+1&1&1
 \end{bmatrix}, 
 B = \begin{bmatrix}
 1&0\\
