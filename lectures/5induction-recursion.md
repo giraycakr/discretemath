@@ -48,9 +48,8 @@ definitions instead of proofs:
 - we use this to show that something is true for all natural numbers.
 
 - Most definitions of the natural numbers $\mathtt{N}$ has  the following basic pattern
-
- - 0 is a natural number.
-- If $x$ is a natural number, so is $x + 1$.
+  - 0 is a natural number.
+  - If $x$ is a natural number, so is $x + 1$.
 
 
 This is **an example of a recursive definition!**
@@ -111,12 +110,41 @@ If $a>1$, then $a^n>1$ for all $n>0$.
 ---
 
 **Proof:**
-- **Base case:** if $n=0$, then $n\ngeq 0$.
-- **Inductive step:** Suppose it holds for $n$. For $n+1$, we have two cases:
+- **Base case:** if $n=0$, then $n \ngtr  0$.
+- **Inductive step:** Suppose it holds for $n$: $n > 0 \to a^n > 1$. 
+  - For $n+1$, we have two cases:
     - if $n=0$, then $a^1 =a\cdot a^0 = a > 1$
     - if $n>0$, then $a^{n+1} = a\cdot a^n > a\cdot 1 > 1$ 
 
 ---  
+
+**Example**
+```math
+1+2+ \dots n = \frac{n(n+1)}{2}
+```
+
+---
+
+**Example**
+```math
+1+2+2^2+ \dots 2^n = 2^{n+1}-1
+```
+
+---
+
+**Example**
+when $r \neq 1$ and $n \in N$;
+```math
+a+ar+ar^2+\dots ar^n = \frac{ar^{n+1}-a}{r-1}
+```
+
+---
+
+
+**Example**
+Prove that $n^3-n$ is divisible by 3 when $n\in N$.
+
+---
 
 ### Alternative base case:
 Generalized version of induction schema:
@@ -169,7 +197,7 @@ Then there is a function $f$ with this property.
 **Proof:**
 Suppose that there is some $f'$ such that $f'(0) = x_0$ and $f'(n + 1) =
 g(f'(n))$.
-
+Use induction to show $f' = f$:
 - base case:$f'(0) = x_0 = f(0)$
 - induction step: If $f'(n) = f(n)$, then $f'(n+1) = g(f'(n)) = g(f(n)) = f(n+1).$   
 
@@ -197,6 +225,54 @@ we prove strong induction:
 ```math
 \forall k : (\forall m \leq k : Q(m)) \to Q(k + 1).
 ```
+
+---
+
+**Example**
+
+Every $n > 1$ can be factored into a product of one or more prime numbers.
+
+---
+
+**Proof**
+
+**The base case**: $n = 2$, 2 = 2 (one prime factor)  
+**Induction step**:
+- If $n$ is prime $n = n$ is prime factorization
+- If $n$ is not prime, $n =  ab$ for some $a > 1,b > 1$.
+- From the hypotheses
+  - $a = p_1p_2\dots p_k$ and $b = q_1\dots q_r$
+  - Then, $n =  p_1p_2\dots p_kq_1\dots q_r$ is a prime factorization.
+
+---
+
+**Example**: 🔥 🥢 Consider a game in which two players take turns removing matches from one of two piles of matches. 
+- The player who removes the last match wins the game.
+
+Show that if the two piles contain the same number of matches initially, the second player can
+always guarantee a win.
+
+---
+
+Let $n$ be the number of matches in each pile.
+
+**Proof**:
+**Base case:** When $n = 1$, 
+- The firs player removes 1 from one pile.
+- The second player removes 1 from the other pile and wins.
+
+
+**Induction Step**: 
+Induction hypothesis: $P(j)$ is true for all $1 \leq j \leq n$ 
+For $n+1$;
+
+Suppose the first player removes $r$ matches from one of the piles $1 \leq r \leq n$
+- This leaves $1 \leq n+1 - r \leq n$ matches.
+The second player removes the same  from the other pile
+- This also leaves $1 \leq n+1 - r \leq n$ matches.
+
+Since we assumed it is true for all $1 \leq j \leq n$, 
+then it is also true for the remaining matches.
 
 ---
 
