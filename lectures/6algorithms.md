@@ -1,3 +1,11 @@
+---
+marp: false
+paginate: true
+size: 16:10
+theme: default
+class: invert
+---
+
 # Growth of Functions and Algorithms
 
 Edited by DeepSeek-R1
@@ -52,8 +60,29 @@ An algorithm must have:
 
 ---
 
-## Greedy Algorithms
+## Searching Algorithms
 
+- linear search
+- binary search
+
+---
+
+## Sorting Algorithms
+
+- Buble Sort
+- Insertion Sort
+
+---
+
+## Greedy Algorithms
+- **optimization problems.**
+The goal of such problems is to find a solution to the given problem that either minimizes or maximizes the value of some parameter.
+
+- **Purpose**: Solve optimization problems (minimize/maximize a parameter).
+
+---
+
+## Greedy Algorithms
 - **Purpose**: Solve optimization problems (minimize/maximize a parameter).
 - **Approach**:  
   Select the **locally optimal choice** at each step.
@@ -64,6 +93,7 @@ An algorithm must have:
 
 ---
 
+
 ## The Halting Problem
 
 **Question**:  
@@ -71,6 +101,9 @@ Can a procedure determine if a program `P` with input `I` will halt?
 
 **Answer**:  
 No. The halting problem is **unsolvable**.
+
+---
+
 
 **Proof by Contradiction**:
 1. Assume a solution `H(P, I)` exists.
@@ -82,11 +115,27 @@ No. The halting problem is **unsolvable**.
 
 ---
 
+![alt text](./figures/6halting.png)
+*Taken from textbook: figure-2*
+
+---
+
+## Growth of Functions
+Consider function $f(x)=x^2+2x+1$
+
+The growth of functions is often described using **asymptotic notations**. 
+- a tool for describing the behavior of functions on large values
+- used in the analysis of algorithms
+
+---
+
 ## Asymptotic Notations: Big-O
 
 **Definition**:  
 `f(n) = O(g(n))` if ∃ constants `c > 0`, `n₀ > 0` such that  
 `|f(n)| ≤ c|g(n)|` for all `n > n₀`.
+
+---
 
 **Example**:  
 Prove `n = O(n³)`:
@@ -98,11 +147,41 @@ Hides machine-dependent constants and focuses on growth rates.
 
 ---
 
+**Example**:  
+Prove/disprove `n³ = O(n)`:
+
+---
+
+for all c > 0 and n0, there exists some n > n0 for which $n^3$ is not less than c|n|.
+- $n > n_0$ for which $n^3 > cn$
+  - $n > c^{1/2}$;
+  - setting $n > max(n0, c^{1/2})$ finishes the proof.
+
+---
+
+**Example**: 
+Prove If f1(n) is in O(g(n)) and f2(n)  is in O(g(n)), 
+then f1(n) + f2(n)  is in O(g(n)).
+
+---
+
+**Example**: 
+Let $f(x) = a_n x^n + a_{n-1} x^{n-1}  + · · · +a_1 x + a_0$ , where a0 , a1 , . . . , an are real numbers. 
+Then `f(x)` is $O(x^n)$.
+
+Prove: Use triangle inequality in
+$|f(x)| = x^n |a_n  + a_{n-1} 1/x  + · · · +a_1 1/x_{n-1} + a_01/x_{n}|$
+
+---
+
+
 ## Big-Ω and Big-Θ
 
 **Big-Ω (Lower Bound)**:  
 `f(n) = Ω(g(n))` if ∃ `c > 0`, `n₀ > 0` such that  
 `|f(n)| ≥ c|g(n)|` for all `n > n₀`.
+
+---
 
 **Big-Θ (Tight Bound)**:  
 `f(n) = Θ(g(n))` if `f(n) = O(g(n))` **and** `f(n) = Ω(g(n))`.
