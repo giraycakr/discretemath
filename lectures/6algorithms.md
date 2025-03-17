@@ -229,8 +229,9 @@ Solvable in polynomial time (e.g., sorting).
 - **Intractable**: No polynomial-time solution (e.g., TSP).
 - **Unsolvable**: No algorithm exists (e.g., halting problem).
 
+---
 
-# Proving Algorithm Correctness: Induction & Loop Invariants
+## Proving Algorithm Correctness: Induction & Loop Invariants
 
 ---
 
