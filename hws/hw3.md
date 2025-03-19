@@ -52,14 +52,14 @@
 ---
 
 6. **25 ve 40 dolarlık hediye çekleriyle oluşturulabilecek toplamları belirleyiniz (strong induction ile ispatlayınız).**  
-   *Determine the possible total amounts using 25 and 40 dollar gift certificates. Prove using strong induction.*
+Determine the possible total amounts using 25 and 40 dollar gift certificates. Prove using strong induction.
 
 
 
 ---
 
 7. **$a_0 = 1$, $a_1 = 2$, $a_n = a_{n-2} + a_{n-1}$ dizisi için $a_n \leq 2^n$ olduğunu gösteriniz.**  
-   *Show that $a_n \leq 2^n$ for the sequence defined by $a_0 = 1$, $a_1 = 2$, and $a_n = a_{n-2} + a_{n-1}$.*
+Show that $a_n \leq 2^n$ for the sequence defined by $a_0 = 1$, $a_1 = 2$, and $a_n = a_{n-2} + a_{n-1}$.
 
 ---
 
