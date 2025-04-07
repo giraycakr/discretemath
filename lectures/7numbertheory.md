@@ -402,14 +402,14 @@ x = 31^7 \equiv 4 \pmod{33}.
   - Computational advantage: Efficient modular arithmetic due to binary-friendly structure.  
 - **Role in Hashing**:  
   - Used in some hash functions (e.g., Mersenne Twister PRNG for seeding).  
-  - Potential for modulus operations: $ \text{hash}(x) = (ax + b) \mod (2^p - 1) $, leveraging fast bitwise operations.  
+  - Potential for modulus operations: $\text{hash}(x) = (ax + b) \mod (2^p - 1)$, leveraging fast bitwise operations.  
 
 ---
 
 **Prime Modulus in Hashing**  
 - **Prime Modulus**: Reduces collisions by ensuring uniform distribution.  
   - Hash tables often use prime-sized buckets.  
-  - Example: $ \text{hash}(k) = k \mod m $, where $m$ is prime.  
+  - Example: $\text{hash}(k) = k \mod m$, where $m$ is prime.  
 - **Double Hashing**: Uses primes to resolve collisions:  
 ```math  
 h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,  
