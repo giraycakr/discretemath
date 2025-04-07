@@ -1,6 +1,6 @@
 
 ---
-marp: true
+marp: false
 paginate: true
 size: 16:10
 theme: default
@@ -411,9 +411,9 @@ x = 31^7 \equiv 4 \pmod{33}.
   - Hash tables often use prime-sized buckets.  
   - Example: \( \text{hash}(k) = k \mod m \), where \(m\) is prime.  
 - **Double Hashing**: Uses primes to resolve collisions:  
-  ```  
-  h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,  
-  ```  
+```math  
+h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,  
+```  
   where \(h_2(k)\) and \(m\) are coprime (ensured via primes).  
 
 ---
@@ -421,9 +421,9 @@ x = 31^7 \equiv 4 \pmod{33}.
 **Polynomial Rolling Hash**  
 - **Number Theory Basis**: Treats strings as coefficients of a polynomial.  
   - For string \(s = s_0 s_1 \dots s_n\), compute:  
-    ```  
-    \text{hash}(s) = \sum_{i=0}^n s_i \cdot a^{n-i} \mod p,  
-    ```  
+```math  
+\text{hash}(s) = \sum_{i=0}^n s_i \cdot a^{n-i} \mod p,  
+```  
     where \(a\) is a constant (e.g., 31) and \(p\) is a large prime (e.g., Mersenne prime).  
 - **Collision Resistance**: Depends on choice of \(a\) and \(p\) (primes improve uniformity).  
 
@@ -451,9 +451,9 @@ x = 31^7 \equiv 4 \pmod{33}.
 1. Find \(\gcd(315, 84)\) using the Euclidean Algorithm.  
 2. Solve \(5x \equiv 2 \mod 11\).  
 3. Use CRT to solve:  
-   ```math
-   x \equiv 1 \mod 3, \quad x \equiv 4 \mod 5, \quad x \equiv 0 \mod 7.
-   ```  
+```math
+x \equiv 1 \mod 3, \quad x \equiv 4 \mod 5, \quad x \equiv 0 \mod 7.
+```  
 4. Compute \(\phi(60)\).  
 5. Encrypt \(x = 7\) with RSA using \(p = 5\), \(q = 11\), \(e = 3\).  
 
