@@ -1,4 +1,12 @@
 
+---
+marp: true
+paginate: true
+size: 16:10
+theme: default
+class: invert
+---
+
 # Number Theory (Sayılar Teorisi)
 
 ---
@@ -23,7 +31,7 @@
 
 ---
 
-** Prime and Composite Numbers**  
+**Prime and Composite Numbers**  
 - **Prime**: A number >1 divisible only by 1 and itself.  
 - **Composite**: A number >1 that is not prime.  
 - **Special Cases**: 0 and 1 are neither prime nor composite.  
@@ -33,9 +41,9 @@
 **Divisibility Properties**  
 1. If $d \mid m$ and $d \mid n$, then $d \mid (m+n)$. 
 
----
+--
 
-   *Proof*: $m = ad$, $n = bd$ ⇒ $m+n = (a+b)d$.  
+*Proof*: $m = ad$, $n = bd$ ⇒ $m+n = (a+b)d$.  
 
 ---
 
@@ -43,34 +51,31 @@
 
 ---
 
- *Proof*: $n = kd \geq d$ for $k \geq 1$.  
+*Proof*: $n = kd \geq d$ for $k \geq 1$.  
 
 ---
 
 3. For all $d$, $d \mid 0$.  
-   *Proof*: $0 = 0 \cdot d$.  
+*Proof*: $0 = 0 \cdot d$.  
 
 ---
 
 4. If $d \mid m$ and $d \mid n$, then $d \mid mn$.  
- 
----
-
-    *Proof*: $m = kd \implies mn = (kn)d$.  
+*Proof*: $m = kd \implies mn = (kn)d$.  
 
 ---
 
 5. If $p$ is prime, then $p \mid ab$ $\iff$ $p \mid a$ or $p \mid b$.  
 
-    *Proof*:  extended euclidean algorithm
+*Proof*:  extended euclidean algorithm
 
 ---
 
 ## Division Algorithm  
 **Theorem**: For integers $n, m \neq 0$, there exist unique integers $q$ (quotient) and $r$ (remainder) such that:  
-\[
+```math
 n = qm + r \quad \text{where } 0 \leq r < |m|.
-\]  
+```  
 - For positive $m$: $q = \lfloor n/m \rfloor$.  
 - For negative $m$: $q = \lceil n/m \rceil$.  
 
@@ -94,15 +99,34 @@ n = qm + r \quad \text{where } 0 \leq r < |m|.
 1. If $n$ is composite, it has a prime factor ≤ $\sqrt{n}$.  
 2. There are infinitely many primes.  
 3. For $a, b \in \mathbb{Z}^+$:   
-\[
+```math
 ab = \text{gcd}(a, b) \cdot \text{lcm}(a, b).
-\]  
+```  
 
 --- 
 
+**Proof**
+First show:  every integer n>1 can be expressed as a product of prime numbers.
+- use induction on n.
+  - Base Case: n=2
+  - strong induction: For n, it is true.
+    - n+1:
+      - case composite:
+        - (n+1) = ab where 2≤a,b<n+1. 
+      -  case prime. 
+---
+
+**Uniqueness** of Prime Factorization
+Assume two different prime factorization. 
+Divide each side by pi for (i = 1, ..., k)
+
+---
+
 **Bézout’s Theorem**  
 **Theorem**: For integers $a, b > 0$, there exist integers $s, t$ such that:  
-$$\gcd(a, b) = sa + tb.$$  
+```math
+\gcd(a, b) = sa + tb.
+```  
 - **Example**: $\gcd(6, 14) = 2 = (-2) \cdot 6 + 1 \cdot 14$.  
 - **Bézout coefficients**: Integers $s, t$.  
   - **Extended Euclidean Algorithm** computes $s$ and $t$.  
@@ -116,41 +140,41 @@ $$\gcd(a, b) = sa + tb.$$
 
 **Steps**:  
 1. Euclidean algorithm divisions:  
-   $$  
-   \begin{align*}  
-   252 &= 1 \cdot 198 + 54, \\  
-   198 &= 3 \cdot 54 + 36, \\  
-   54 &= 1 \cdot 36 + 18, \\  
-   36 &= 2 \cdot 18.  
-   \end{align*}  
-   $$  
+```math  
+\begin{align*}  
+252 &= 1 \cdot 198 + 54, \\  
+198 &= 3 \cdot 54 + 36, \\  
+54 &= 1 \cdot 36 + 18, \\  
+36 &= 2 \cdot 18.  
+\end{align*}  
+```  
 
 ---
 
 2. Back-substitute to express 18:  
-   $$  
-   18 = 54 - 1 \cdot 36 = 54 - 1 \cdot (198 - 3 \cdot 54) = 4 \cdot 54 - 1 \cdot 198.  
-   $$  
+```math  
+18 = 54 - 1 \cdot 36 = 54 - 1 \cdot (198 - 3 \cdot 54) = 4 \cdot 54 - 1 \cdot 198.  
+```  
    Substitute \(54 = 252 - 1 \cdot 198\):  
-   $$  
-   18 = 4 \cdot 252 - 5 \cdot 198.  
-   $$  
+```math  
+18 = 4 \cdot 252 - 5 \cdot 198.  
+```  
 
 ---
 
 **Euclidean Algorithm**  
 - **Recursive definition**:  
-  $$  
-  \gcd(m, n) =  
-  \begin{cases}  
-  n & \text{if } m = 0, \\  
-  \gcd(n \bmod m, m) & \text{if } m > 0.  
-  \end{cases}  
-  $$  
+```math  
+\gcd(m, n) =  
+\begin{cases}  
+n & \text{if } m = 0, \\  
+\gcd(n \bmod m, m) & \text{if } m > 0.  
+\end{cases}  
+```  
 - **Extended Euclidean Algorithm**: Finds coefficients \(s, t\) such that:  
-  $$  
-  s \cdot m + t \cdot n = \gcd(m, n).  
-  $$  
+```math  
+s \cdot m + t \cdot n = \gcd(m, n).  
+```  
 
 --- 
 
@@ -194,41 +218,41 @@ Solve $ax \equiv b \mod m$:
 **Solution**:  
 1. Find inverse of 3 modulo 7: \(-2\) (since \(3 \cdot (-2) \equiv -6 \equiv 1 \pmod{7}\)).  
 2. Multiply both sides by \(-2\):  
-   $$  
-   x \equiv (-2) \cdot 4 \equiv -8 \equiv 6 \pmod{7}.  
-   $$  
+```math  
+x \equiv (-2) \cdot 4 \equiv -8 \equiv 6 \pmod{7}.  
+```  
 
 ---
 
 **Chinese Remainder Theorem (CRT)**  
 **Problem**: Find \(x\) such that:  
-$$  
+```math  
 \begin{align*}  
 x &\equiv 2 \pmod{3}, \\  
 x &\equiv 3 \pmod{5}, \\  
 x &\equiv 2 \pmod{7}.  
 \end{align*}  
-$$  
+```  
 **Answer**: \(x = 23\) (smallest solution).  
 
 ---
 
 **Chinese Remainder Theorem (CRT)**  
 **Theorem**: Let $m_1, m_2, \dots, m_k$ be pairwise coprime. The system:  
-\[
+```math
 \begin{align*}
 x &\equiv n_1 \mod m_1, \\
 &\vdots \\
 x &\equiv n_k \mod m_k,
 \end{align*}
-\]  
+```  
 has a unique solution modulo $M = m_1m_2\cdots m_k$.  
 
 ---
 
-$$  
+```math 
 x \equiv n_i \pmod{m_i} \quad (i = 1, 2, \dots, k)  
-$$  
+```  
 has a **unique solution** modulo \(M = m_1 m_2 \cdots m_k\).  
 **Construction**:  
 1. Let \(M_i = M / m_i\).  
@@ -237,7 +261,7 @@ has a **unique solution** modulo \(M = m_1 m_2 \cdots m_k\).
 
 ---
 
-**Slide 13: Euler’s Totient Function**  
+**Euler’s Totient Function**  
 - **Definition**: $\phi(m)$ = number of integers in $\{1, 2, \dots, m-1\}$ coprime to $m$.  
 - **Properties**:  
   - For prime $p$: $\phi(p) = p - 1$.  
@@ -245,47 +269,47 @@ has a **unique solution** modulo \(M = m_1 m_2 \cdots m_k\).
   - For coprime $m, n$: $\phi(mn) = \phi(m)\phi(n)$.  
 - **Formula for composite $m$**:  
   If $m = p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$, then:  
-  $$  
-  \phi(m) = m \prod_{i=1}^k \left(1 - \frac{1}{p_i}\right).  
-  $$  
+```math  
+\phi(m) = m \prod_{i=1}^k \left(1 - \frac{1}{p_i}\right).  
+```  
 
 ---
 
-**Slide 14: Euler’s Theorem**  
+**Euler’s Theorem**  
 **Theorem**: If $\gcd(a, m) = 1$, then:  
-\[
+```math
 a^{\phi(m)} \equiv 1 \mod m.
-\]  
+```  
 **Fermat’s Little Theorem**: For prime $p$:  
-\[
+```math
 a^{p-1} \equiv 1 \mod p \quad (\text{if } p \nmid a).
-\]  
+```  
 
 ---
 
 **Proof**:  
 - Let $\mathbb{Z}_m^* = \{z_1, z_2, \dots, z_{\phi(m)}\}$.  
 - Multiplying all elements by $a$ permutes $\mathbb{Z}_m^*$ modulo $m$:  
-  $$  
-  \prod_{i=1}^{\phi(m)} z_i \equiv \prod_{i=1}^{\phi(m)} (a z_i) \equiv a^{\phi(m)} \prod_{i=1}^{\phi(m)} z_i \pmod{m}.  
-  $$  
+```math  
+\prod_{i=1}^{\phi(m)} z_i \equiv \prod_{i=1}^{\phi(m)} (a z_i) \equiv a^{\phi(m)} \prod_{i=1}^{\phi(m)} z_i \pmod{m}.  
+```  
 - Cancel $\prod z_i$ (since $\gcd(z_i, m) = 1$):  
-  $$  
-  a^{\phi(m)} \equiv 1 \pmod{m}.  
-  $$ 
+```math  
+a^{\phi(m)} \equiv 1 \pmod{m}.  
+``` 
 
 ---
 
 **Fermat’s Little Theorem**  
 **Corollary**: If $p$ is prime and $\gcd(a, p) = 1$, then:  
-$$  
+```math  
 a^{p-1} \equiv 1 \pmod{p}.  
-$$  
+```  
 - Directly follows from Euler’s theorem since $\phi(p) = p - 1$.  
 - **Example**: For $p = 5$ and $a = 2$:  
-  $$  
-  2^4 = 16 \equiv 1 \pmod{5}.  
-  $$  
+```math  
+2^4 = 16 \equiv 1 \pmod{5}.  
+```  
 
 ---
 
@@ -302,14 +326,14 @@ $$
 ---
 
 2. **Encryption**: For message \(x\) (\(0 \leq x < m\)):  
-   \[
-   \text{Ciphertext } y = x^e \mod m.
-   \]  
+```math
+\text{Ciphertext } y = x^e \mod m.
+```  
 
 3. **Decryption**:  
-   \[
-   x = y^d \mod m.
-   \]  
+```math
+x = y^d \mod m.
+```  
 
 ---
 
@@ -318,9 +342,9 @@ $$
 **Why \(x^{de} \equiv x \mod m\)?**  
 - **Case 1**: \(\gcd(x, m) = 1\):  
   By Euler’s Theorem:  
-  \[
-  x^{\phi(m)} \equiv 1 \mod m \implies x^{k\phi(m)+1} \equiv x \mod m.
-  \]  
+```math
+x^{\phi(m)} \equiv 1 \mod m \implies x^{k\phi(m)+1} \equiv x \mod m.
+```  
   Since Since $ed \equiv 1 \pmod{\phi(m)}$, 
   - \(de = 1 + k\phi(m)\) 
   - and \(x^{de} \equiv x \mod m\).  
@@ -330,13 +354,13 @@ $$
 - **Case 2**: \(\gcd(x, m) \neq 1\):  
   - \(x\) is divisible by \(p\) or \(q\) (but not both, as \(x < m = pq\)).  
   - Assume \(p \mid x\). By Fermat’s Little Theorem:  
-    \[
-    x^{q-1} \equiv 1 \mod q \implies x^{k(p-1)(q-1)} \equiv 1 \mod q.
-    \]  
+```math
+x^{q-1} \equiv 1 \mod q \implies x^{k(p-1)(q-1)} \equiv 1 \mod q.
+```  
   - Multiply both sides by \(x\):  
-    \[
-    x^{de} = x^{1 + k(p-1)(q-1)} \equiv x \mod q.
-    \]  
+```math
+x^{de} = x^{1 + k(p-1)(q-1)} \equiv x \mod q.
+```  
   - Similarly, \(x^{de} \equiv x \mod p\). By CRT, \(x^{de} \equiv x \mod m\).  
 
 ---
@@ -351,15 +375,15 @@ $$
 
 **Encryption**:  
 - Encrypt $x = 4$:  
-  $$  
-  c = 4^3 \equiv 64 \equiv 31 \pmod{33}.  
-  $$  
+```math  
+c = 4^3 \equiv 64 \equiv 31 \pmod{33}.  
+```  
 
 **Decryption**:  
 - Decrypt $c = 31$:  
-  $$  
-  x = 31^7 \equiv 4 \pmod{33}.  
-  $$  
+```math  
+x = 31^7 \equiv 4 \pmod{33}.  
+```  
 
 ---
 
@@ -387,9 +411,9 @@ $$
   - Hash tables often use prime-sized buckets.  
   - Example: \( \text{hash}(k) = k \mod m \), where \(m\) is prime.  
 - **Double Hashing**: Uses primes to resolve collisions:  
-  $$  
+  ```  
   h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,  
-  $$  
+  ```  
   where \(h_2(k)\) and \(m\) are coprime (ensured via primes).  
 
 ---
@@ -397,9 +421,9 @@ $$
 **Polynomial Rolling Hash**  
 - **Number Theory Basis**: Treats strings as coefficients of a polynomial.  
   - For string \(s = s_0 s_1 \dots s_n\), compute:  
-    $$  
+    ```  
     \text{hash}(s) = \sum_{i=0}^n s_i \cdot a^{n-i} \mod p,  
-    $$  
+    ```  
     where \(a\) is a constant (e.g., 31) and \(p\) is a large prime (e.g., Mersenne prime).  
 - **Collision Resistance**: Depends on choice of \(a\) and \(p\) (primes improve uniformity).  
 
@@ -427,9 +451,9 @@ $$
 1. Find \(\gcd(315, 84)\) using the Euclidean Algorithm.  
 2. Solve \(5x \equiv 2 \mod 11\).  
 3. Use CRT to solve:  
-   \[
+   ```math
    x \equiv 1 \mod 3, \quad x \equiv 4 \mod 5, \quad x \equiv 0 \mod 7.
-   \]  
+   ```  
 4. Compute \(\phi(60)\).  
 5. Encrypt \(x = 7\) with RSA using \(p = 5\), \(q = 11\), \(e = 3\).  
 
