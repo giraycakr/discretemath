@@ -41,7 +41,7 @@ class: invert
 **Divisibility Properties**  
 1. If $d \mid m$ and $d \mid n$, then $d \mid (m+n)$. 
 
---
+---
 
 *Proof*: $m = ad$, $n = bd$ ⇒ $m+n = (a+b)d$.  
 
@@ -155,7 +155,7 @@ Divide each side by pi for (i = 1, ..., k)
 ```math  
 18 = 54 - 1 \cdot 36 = 54 - 1 \cdot (198 - 3 \cdot 54) = 4 \cdot 54 - 1 \cdot 198.  
 ```  
-   Substitute \(54 = 252 - 1 \cdot 198\):  
+   Substitute $54 = 252 - 1 \cdot 198$:  
 ```math  
 18 = 4 \cdot 252 - 5 \cdot 198.  
 ```  
@@ -171,7 +171,7 @@ n & \text{if } m = 0, \\
 \gcd(n \bmod m, m) & \text{if } m > 0.  
 \end{cases}  
 ```  
-- **Extended Euclidean Algorithm**: Finds coefficients \(s, t\) such that:  
+- **Extended Euclidean Algorithm**: Finds coefficients $s, t$ such that:  
 ```math  
 s \cdot m + t \cdot n = \gcd(m, n).  
 ```  
@@ -186,16 +186,16 @@ s \cdot m + t \cdot n = \gcd(m, n).
 ---
 
 **Proof**:  
-1. By Bézout’s identity: \(sa + tb = 1\) for integers \(s, t\).  
-2. Multiply both sides by \(c\): \(sac + tbc = c\).  
-3. Since \(a \mid sac\) and \(a \mid tbc\), \(a \mid c\).   
+1. By Bézout’s identity: $sa + tb = 1$ for integers $s, t$.  
+2. Multiply both sides by $c$: $sac + tbc = c$.  
+3. Since $a \mid sac$ and $a \mid tbc$, $a \mid c$.   
 
 ---
 
 **If prime $p \mid a_1a_2\dots a_n$, then $p \mid a_i$ for some $i$:**  
 **Proof**:  
 - By uniqueness of prime factorization, 
-  - \(p\) must appear in the factorization of at least one \(a_i\).  
+  - $p$ must appear in the factorization of at least one $a_i$.  
 - If not, rearranging factors would violate uniqueness.  
 
 ---
@@ -205,19 +205,19 @@ s \cdot m + t \cdot n = \gcd(m, n).
 **Linear Congruence**  
 Solve $ax \equiv b \mod m$:  
 
-**Equation**: \(ax \equiv b \pmod{m}\).  
+**Equation**: $ax \equiv b \pmod{m}$.  
 **Steps**:  
-1. Check if \(\gcd(a, m) = 1\). If yes, \(a\) has an inverse modulo \(m\).  
-2. Find \(\bar{a}\) (inverse of \(a\)) such that \(\bar{a} \cdot a \equiv 1 \pmod{m}\).  
-3. Multiply both sides by \(\bar{a}\): \(x \equiv \bar{a} \cdot b \pmod{m}\).  
+1. Check if $\gcd(a, m) = 1$. If yes, $a$ has an inverse modulo $m$.  
+2. Find $\bar{a}$ (inverse of $a$) such that $\bar{a} \cdot a \equiv 1 \pmod{m}$.  
+3. Multiply both sides by $\bar{a}$: $x \equiv \bar{a} \cdot b \pmod{m}$.  
 
 ---
 
 **Example of Linear Congruence**  
-**Problem**: Solve \(3x \equiv 4 \pmod{7}\).  
+**Problem**: Solve $3x \equiv 4 \pmod{7}$.  
 **Solution**:  
-1. Find inverse of 3 modulo 7: \(-2\) (since \(3 \cdot (-2) \equiv -6 \equiv 1 \pmod{7}\)).  
-2. Multiply both sides by \(-2\):  
+1. Find inverse of 3 modulo 7: $-2$ (since $3 \cdot (-2) \equiv -6 \equiv 1 \pmod{7}$).  
+2. Multiply both sides by $-2$:  
 ```math  
 x \equiv (-2) \cdot 4 \equiv -8 \equiv 6 \pmod{7}.  
 ```  
@@ -225,7 +225,7 @@ x \equiv (-2) \cdot 4 \equiv -8 \equiv 6 \pmod{7}.
 ---
 
 **Chinese Remainder Theorem (CRT)**  
-**Problem**: Find \(x\) such that:  
+**Problem**: Find $x$ such that:  
 ```math  
 \begin{align*}  
 x &\equiv 2 \pmod{3}, \\  
@@ -233,7 +233,7 @@ x &\equiv 3 \pmod{5}, \\
 x &\equiv 2 \pmod{7}.  
 \end{align*}  
 ```  
-**Answer**: \(x = 23\) (smallest solution).  
+**Answer**: $x = 23$ (smallest solution).  
 
 ---
 
@@ -253,11 +253,11 @@ has a unique solution modulo $M = m_1m_2\cdots m_k$.
 ```math 
 x \equiv n_i \pmod{m_i} \quad (i = 1, 2, \dots, k)  
 ```  
-has a **unique solution** modulo \(M = m_1 m_2 \cdots m_k\).  
+has a **unique solution** modulo $M = m_1 m_2 \cdots m_k$.  
 **Construction**:  
-1. Let \(M_i = M / m_i\).  
-2. Find \(M_i^{-1} \pmod{m_i}\).  
-3. Solution: \(x = \sum_{i} n_i M_i M_i^{-1} \pmod{M}\).  
+1. Let $M_i = M / m_i$.  
+2. Find $M_i^{-1} \pmod{m_i}$.  
+3. Solution: $x = \sum_{i} n_i M_i M_i^{-1} \pmod{M}$.  
 
 ---
 
@@ -317,15 +317,15 @@ a^{p-1} \equiv 1 \pmod{p}.
 **Core Idea**: Security relies on the difficulty of factoring large primes.  
 **Steps**:  
 1. **Key Generation**:  
-   - Choose distinct primes \(p\) and \(q\).  
-   - Compute \(m = pq\) and \(\phi(m) = (p-1)(q-1)\).  
-   - Select \(e\) such that \(\gcd(e, \phi(m)) = 1\).  
-   - Find \(d\) (modular inverse of \(e\)): \(de \equiv 1 \mod \phi(m)\).  
-   - **Public Key**: \((e, m)\). **Private Key**: \((d, m)\).  
+   - Choose distinct primes $p$ and $q$.  
+   - Compute $m = pq$ and $\phi(m) = (p-1)(q-1)$.  
+   - Select $e$ such that $\gcd(e, \phi(m)) = 1$.  
+   - Find $d$ (modular inverse of $e$): $de \equiv 1 \mod \phi(m)$.  
+   - **Public Key**: $(e, m)$. **Private Key**: $(d, m)$.  
 
 ---
 
-2. **Encryption**: For message \(x\) (\(0 \leq x < m\)):  
+2. **Encryption**: For message $x$ ($0 \leq x < m$):  
 ```math
 \text{Ciphertext } y = x^e \mod m.
 ```  
@@ -339,29 +339,29 @@ x = y^d \mod m.
 
 
 **RSA Proof Using Euler’s Theorem**  
-**Why \(x^{de} \equiv x \mod m\)?**  
-- **Case 1**: \(\gcd(x, m) = 1\):  
+**Why $x^{de} \equiv x \mod m$?**  
+- **Case 1**: $\gcd(x, m) = 1$:  
   By Euler’s Theorem:  
 ```math
 x^{\phi(m)} \equiv 1 \mod m \implies x^{k\phi(m)+1} \equiv x \mod m.
 ```  
   Since Since $ed \equiv 1 \pmod{\phi(m)}$, 
-  - \(de = 1 + k\phi(m)\) 
-  - and \(x^{de} \equiv x \mod m\).  
+  - $de = 1 + k\phi(m)$ 
+  - and $x^{de} \equiv x \mod m$.  
 
 ---
 
-- **Case 2**: \(\gcd(x, m) \neq 1\):  
-  - \(x\) is divisible by \(p\) or \(q\) (but not both, as \(x < m = pq\)).  
-  - Assume \(p \mid x\). By Fermat’s Little Theorem:  
+- **Case 2**: $\gcd(x, m) \neq 1$:  
+  - $x$ is divisible by $p$ or $q$ (but not both, as $x < m = pq$).  
+  - Assume $p \mid x$. By Fermat’s Little Theorem:  
 ```math
 x^{q-1} \equiv 1 \mod q \implies x^{k(p-1)(q-1)} \equiv 1 \mod q.
 ```  
-  - Multiply both sides by \(x\):  
+  - Multiply both sides by $x$:  
 ```math
 x^{de} = x^{1 + k(p-1)(q-1)} \equiv x \mod q.
 ```  
-  - Similarly, \(x^{de} \equiv x \mod p\). By CRT, \(x^{de} \equiv x \mod m\).  
+  - Similarly, $x^{de} \equiv x \mod p$. By CRT, $x^{de} \equiv x \mod m$.  
 
 ---
 
@@ -397,41 +397,41 @@ x = 31^7 \equiv 4 \pmod{33}.
 ---
 
 ## Hashing and Number Theory  
-- **Mersenne Primes**: Primes of the form \(2^p - 1\) where \(p\) is prime.  
-  - Examples: \(3 = 2^2 - 1\), \(7 = 2^3 - 1\), \(127 = 2^7 - 1\).  
+- **Mersenne Primes**: Primes of the form $2^p - 1$ where $p$ is prime.  
+  - Examples: $3 = 2^2 - 1$, $7 = 2^3 - 1$, $127 = 2^7 - 1$.  
   - Computational advantage: Efficient modular arithmetic due to binary-friendly structure.  
 - **Role in Hashing**:  
   - Used in some hash functions (e.g., Mersenne Twister PRNG for seeding).  
-  - Potential for modulus operations: \( \text{hash}(x) = (ax + b) \mod (2^p - 1) \), leveraging fast bitwise operations.  
+  - Potential for modulus operations: $ \text{hash}(x) = (ax + b) \mod (2^p - 1) $, leveraging fast bitwise operations.  
 
 ---
 
 **Prime Modulus in Hashing**  
 - **Prime Modulus**: Reduces collisions by ensuring uniform distribution.  
   - Hash tables often use prime-sized buckets.  
-  - Example: \( \text{hash}(k) = k \mod m \), where \(m\) is prime.  
+  - Example: $ \text{hash}(k) = k \mod m $, where $m$ is prime.  
 - **Double Hashing**: Uses primes to resolve collisions:  
 ```math  
 h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,  
 ```  
-  where \(h_2(k)\) and \(m\) are coprime (ensured via primes).  
+  where $h_2(k)$ and $m$ are coprime (ensured via primes).  
 
 ---
 
 **Polynomial Rolling Hash**  
 - **Number Theory Basis**: Treats strings as coefficients of a polynomial.  
-  - For string \(s = s_0 s_1 \dots s_n\), compute:  
+  - For string $s = s_0 s_1 \dots s_n$, compute:  
 ```math  
 \text{hash}(s) = \sum_{i=0}^n s_i \cdot a^{n-i} \mod p,  
 ```  
-    where \(a\) is a constant (e.g., 31) and \(p\) is a large prime (e.g., Mersenne prime).  
-- **Collision Resistance**: Depends on choice of \(a\) and \(p\) (primes improve uniformity).  
+    where $a$ is a constant (e.g., 31) and $p$ is a large prime (e.g., Mersenne prime).  
+- **Collision Resistance**: Depends on choice of $a$ and $p$ (primes improve uniformity).  
 
 ---
 
 **Cryptographic Primes in Hashing**  
-- **Safe Primes**: Primes \(p = 2q + 1\) (where \(q\) is prime), used in hash-based cryptography.  
-- **Sophie Germain Primes**: Primes \(q\) where \(2q + 1\) is also prime.  
+- **Safe Primes**: Primes $p = 2q + 1$ (where $q$ is prime), used in hash-based cryptography.  
+- **Sophie Germain Primes**: Primes $q$ where $2q + 1$ is also prime.  
 - **Applications**:  
   - Key derivation functions (e.g., PBKDF2).  
   - **Mersenne Primes** in lattice-based cryptography (post-quantum security).  
@@ -440,7 +440,7 @@ h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,
 
 **Theoretical Limits and Open Problems**  
 - **Collision Resistance**: Tied to the difficulty of solving equations modulo primes.  
-  - Example: Finding \(x \neq y\) such that \(H(x) \equiv H(y) \mod p\).  
+  - Example: Finding $x \neq y$ such that $H(x) \equiv H(y) \mod p$.  
 - **Unsolved Questions**:  
   - Are there infinitely many Mersenne primes? (Only 51 known as of 2023).  
   - Can hash security be proven under number-theoretic conjectures (e.g., Riemann Hypothesis)?  
@@ -448,23 +448,23 @@ h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m,
 ---  
 
 **Exercises for Practice**  
-1. Find \(\gcd(315, 84)\) using the Euclidean Algorithm.  
-2. Solve \(5x \equiv 2 \mod 11\).  
+1. Find $\gcd(315, 84)$ using the Euclidean Algorithm.  
+2. Solve $5x \equiv 2 \mod 11$.  
 3. Use CRT to solve:  
 ```math
 x \equiv 1 \mod 3, \quad x \equiv 4 \mod 5, \quad x \equiv 0 \mod 7.
 ```  
-4. Compute \(\phi(60)\).  
-5. Encrypt \(x = 7\) with RSA using \(p = 5\), \(q = 11\), \(e = 3\).  
+4. Compute $\phi(60)$.  
+5. Encrypt $x = 7$ with RSA using $p = 5$, $q = 11$, $e = 3$.  
 
 ---
 
 **Answers to Exercises**  
-1. \(\gcd(315, 84) = 21\).  
-2. \(x \equiv 7 \mod 11\) (inverse of 5 mod 11 is 9).  
-3. \(x = 21 \mod 105\).  
-4. \(\phi(60) = \phi(2^2 \cdot 3 \cdot 5) = 2 \cdot 2 \cdot 4 = 16\).  
-5. \(m = 55\), \(\phi(m) = 40\), \(d = 27\) (since \(3 \cdot 27 = 81 \equiv 1 \mod 40\)).  
-   Encryption: \(7^3 \mod 55 = 343 \mod 55 = 13\).  
+1. $\gcd(315, 84) = 21$.  
+2. $x \equiv 7 \mod 11$ (inverse of 5 mod 11 is 9).  
+3. $x = 21 \mod 105$.  
+4. $\phi(60) = \phi(2^2 \cdot 3 \cdot 5) = 2 \cdot 2 \cdot 4 = 16$.  
+5. $m = 55$, $\phi(m) = 40$, $d = 27$ (since $3 \cdot 27 = 81 \equiv 1 \mod 40$).  
+   Encryption: $7^3 \mod 55 = 343 \mod 55 = 13$.  
 
 --- 
