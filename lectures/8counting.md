@@ -756,20 +756,6 @@ For $n = 6$ cents, there are **2 ways**:
 
 ---
 
-
-## **Basic Examples**
-### **Example: Coin Selection**
-- **Problem:** Count ways to choose coins (pennies, nickels).  
-- **Generating Functions:**  
-  - Penny: \(1 + x + x^2 + \cdots = \frac{1}{1-x}\)  
-  - Nickel: \(1 + x^5 + x^{10} + \cdots = \frac{1}{1-x^5}\)  
-- **Combined:**  
-  \[
-  G(x) = \frac{1}{(1-x)(1-x^5)}
-  \]
-
----
-
 ### **Example: Binary Strings**  
 - **Problem:** Count binary strings of length \(n\).  
 - **Generating Function:**  
@@ -871,6 +857,104 @@ This generating function can be used to extract coefficients corresponding to th
 - **Expansion:** Coefficients yield \(F(n)\).
 
 ---
+
+
+#### Fibonacci Sequence
+
+The Fibonacci sequence is defined by the recurrence relation:
+
+\[
+F(n) = F(n-1) + F(n-2)
+\]
+
+with initial conditions:
+
+\[
+F(0) = 0, \quad F(1) = 1
+\]
+
+This means that each term in the Fibonacci sequence is the sum of the two preceding terms.
+
+---
+
+### Step 1: Define the Generating Function
+
+To find a generating function for the Fibonacci sequence, we define the generating function \( G(x) \) as follows:
+
+\[
+G(x) = \sum_{n=0}^{\infty} F(n) x^n
+\]
+
+---
+
+### Step 2: Express the Recurrence Relation
+
+Using the recurrence relation, we can express \( G(x) \) in terms of itself:
+
+1. **Shift the series for \( F(n-1) \) and \( F(n-2) \)**:
+   - For \( F(n-1) \):
+     \[
+     \sum_{n=1}^{\infty} F(n-1) x^n = x \sum_{n=0}^{\infty} F(n) x^n = x G(x)
+     \]
+   - For \( F(n-2) \):
+     \[
+     \sum_{n=2}^{\infty} F(n-2) x^n = x^2 \sum_{n=0}^{\infty} F(n) x^n = x^2 G(x)
+     \]
+---
+
+2. **Combine these into the generating function**:
+   - The series for \( G(x) \) can be rewritten using the recurrence relation:
+   \[
+   G(x) = F(0) + F(1)x + \sum_{n=2}^{\infty} F(n) x^n
+   \]
+   - Substituting the recurrence relation into the sum:
+   \[
+   G(x) = 0 + 1 \cdot x + \sum_{n=2}^{\infty} (F(n-1) + F(n-2)) x^n
+   \]
+   - This gives:
+   \[
+   G(x) = x + x G(x) + x^2 G(x)
+   \]
+---
+
+### Step 3: Solve for \( G(x) \)
+
+Now we can rearrange the equation to isolate \( G(x) \):
+
+\[
+G(x) - x G(x) - x^2 G(x) = x
+\]
+
+Factoring out \( G(x) \):
+
+\[
+G(x)(1 - x - x^2) = x
+\]
+
+Thus, we have:
+
+\[
+G(x) = \frac{x}{1 - x - x^2}
+\]
+
+---
+
+### Step 4: Expansion and Coefficients
+
+The generating function \( G(x) = \frac{x}{1 - x - x^2} \) can be expanded using the method of partial fractions or by recognizing it as a power series. The coefficients of \( x^n \) in the expansion of \( G(x) \) correspond to the Fibonacci numbers \( F(n) \).
+
+---
+
+### Conclusion
+
+The generating function for the Fibonacci sequence is:
+
+\[
+G(x) = \frac{x}{1 - x - x^2}
+\]
+
+This function allows us to extract the Fibonacci numbers \( F(n) \) as coefficients of \( x^n \) in its series expansion. The recurrence relation and the generating function together provide a powerful method for analyzing and computing terms in the Fibonacci sequence.
+
 
 ## **Summary**
 1. **Generating Functions** encode sequences into polynomials/series.  
