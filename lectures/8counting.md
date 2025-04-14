@@ -51,7 +51,7 @@ bu ders counting1.pdf-counting2.pdf counting3.pdf slidelardan islendi
   - Total = `2^7 = 128`.  
 
 ### Example 2:  
-- **Problem**: The number of subsets of a set \( S \) with \( k \) elements.  
+- **Problem**: The number of subsets of a set $S$ with $k$ elements.  
   - Using bitstring representation (1 if an element is in the subset, 0 otherwise).  
   - Total subsets = `2^k`.  
 
@@ -78,18 +78,18 @@ bu ders counting1.pdf-counting2.pdf counting3.pdf slidelardan islendi
 ### Complex Problem Example: Passwords  
 - **Problem**: A password of length 6 to 8 with uppercase letters and digits, requiring at least one digit.  
 1. Use the **Sum Rule**:  
-   \( P = P_6 + P_7 + P_8 \)  
+   $P = P_6 + P_7 + P_8$  
 2. Use the **Product Rule**:
-   - \( P_{\text{6-all}} = 36^6 \)  
-   - \( P_{\text{6-no-digits}} = 26^6 \)  
-   - \( P_{\text{6-digits}} = P_{\text{6-all}} - P_{\text{6-no-digits}} \)  
+   - $P_{\text{6-all}} = 36^6$  
+   - $P_{\text{6-no-digits}} = 26^6$  
+   - $P_{\text{6-digits}} = P_{\text{6-all}} - P_{\text{6-no-digits}}$  
 
 ---
 
 ### Final Calculation:
-- \( P_6 = 36^6 - 26^6 \)  
-- \( P_7 = 36^7 - 26^7 \)  
-- \( P_8 = 36^8 - 26^8 \)  
+- $P_6 = 36^6 - 26^6$  
+- $P_7 = 36^7 - 26^7$  
+- $P_8 = 36^8 - 26^8$  
 - Total passwords:
   \[
   P = P_6 + P_7 + P_8
@@ -107,10 +107,10 @@ bu ders counting1.pdf-counting2.pdf counting3.pdf slidelardan islendi
 
 ### Example:
 - **Problem**: Bitstrings of length 8 starting with 1 or ending with 00.  
-  - Start with 1: \( 2^7 \)  
-  - End with 00: \( 2^6 \)  
-  - Start with 1 **and** end with 00: \( 2^5 \)  
-  - Total = \( 2^7 + 2^6 - 2^5 = 128 + 64 - 32 = 160 \).  
+  - Start with 1: $2^7$  
+  - End with 00: $2^6$  
+  - Start with 1 **and** end with 00: $2^5$  
+  - Total = $2^7 + 2^6 - 2^5 = 128 + 64 - 32 = 160$.  
 
 ---
 
@@ -174,10 +174,10 @@ Root (Start)
 
 ## Key Observations
 - **Rule:** If a `1` is chosen, the next bit must be `0`.  
-- **Total Valid Configurations:** 8 (matches the Fibonacci recurrence: \( F(4+2) = F(6) = 8 \)).  
+- **Total Valid Configurations:** 8 (matches the Fibonacci recurrence: $F(4+2) = F(6) = 8$).  
 
 **Formula:**  
-For bitstrings of length \( n \), the count is \( F(n+2) \), where \( F \) is the Fibonacci sequence.  
+For bitstrings of length $n$, the count is $F(n+2)$, where $F$ is the Fibonacci sequence.  
 
 ---
 
@@ -189,17 +189,17 @@ For bitstrings of length \( n \), the count is \( F(n+2) \), where \( F \) is th
 - 7 balls and 5 bins => at least one bin has more than 1 ball.  
 
 ### Theorem:
-- If there are \( k+1 \) objects and \( k \) bins, at least one bin has 2 or more objects.  
+- If there are $k+1$ objects and $k$ bins, at least one bin has 2 or more objects.  
 
 ---
 
 ## Generalized Pigeonhole Principle  
 **Theorem**:  
-- If \( N \) objects are placed into \( k \) bins, at least one bin contains at least \( \lceil N / k \rceil \) objects.  
+- If $N$ objects are placed into $k$ bins, at least one bin contains at least $\lceil N / k \rceil$ objects.  
 
 ### Example:
 - 100 people and 12 months:  
-  - \( \lceil 100 / 12 \rceil = 9 \)  
+  - $\lceil 100 / 12 \rceil = 9$  
   - At least 9 people share the same birth month.  
 
 ---
@@ -449,7 +449,7 @@ P(n, n) = n!
 \]
 
 ## Example:
-Permutations of \( S = \{a, b, c\} \):  
+Permutations of $S = \{a, b, c\}$:  
 \[
 abc, \ acb, \ bac, \ bca, \ cab, \ cba \quad (3! = 6)
 \]
@@ -532,14 +532,14 @@ First 5 rows:
 
 
 ## **Proof (Combinatorial Interpretation)**  
-Consider a set \( S \) with \( n+1 \) elements. We want to count the number of subsets of size \( k \).  
+Consider a set $S$ with $n+1$ elements. We want to count the number of subsets of size $k$.  
 - **Case 1:** The subset includes a specific element (e.g., the last element).  
-  - We need to choose \( k-1 \) elements from the remaining \( n \) elements:  
+  - We need to choose $k-1$ elements from the remaining $n$ elements:  
     \[
     \binom{n}{k-1}
     \]
 - **Case 2:** The subset does not include the specific element.  
-  - We choose all \( k \) elements from the remaining \( n \) elements:  
+  - We choose all $k$ elements from the remaining $n$ elements:  
     \[
     \binom{n}{k}
     \]  
@@ -551,7 +551,7 @@ Consider a set \( S \) with \( n+1 \) elements. We want to count the number of s
 ---
 
 ## **Example (Pascal's Triangle)**  
-For \( n = 4, k = 2 \):  
+For $n = 4, k = 2$:  
 \[
 \binom{5}{2} = \binom{4}{1} + \binom{4}{2} = 4 + 6 = 10
 \]
@@ -598,7 +598,7 @@ Number of 4-letter strings using 26 alphabets:
 
 ## **Proof with Stars and Bars**  
 Represent fruits as stars (`★`) and separators between types as bars (`|`):  
-- **Total symbols:** \( n + k - 1 = 4 + 3 - 1 = 6 \) (4 stars + 2 bars).  
+- **Total symbols:** $n + k - 1 = 4 + 3 - 1 = 6$ (4 stars + 2 bars).  
 - **Arrange stars and bars in 6 positions.**  
 
 ### **Examples:**  
@@ -614,7 +614,7 @@ Represent fruits as stars (`★`) and separators between types as bars (`|`):
   \binom{6}{4} = \frac{6!}{4!2!} = 15
   \]
 
-- The formula counts the number of ways to distribute \( n \) identical items into \( k \) distinct categories.
+- The formula counts the number of ways to distribute $n$ identical items into $k$ distinct categories.
 
 ---
 
@@ -684,7 +684,7 @@ For any positive integer $k$;
 
 ## Counting Coin Combinations with Generating Functions
 
-**Problem:** Count the number of ways to make \( n \) cents using pennies (1¢) and nickels (5¢).
+**Problem:** Count the number of ways to make $n$ cents using pennies (1¢) and nickels (5¢).
 
 ---
 
@@ -712,33 +712,33 @@ For any positive integer $k$;
   \[
   G(x) = G_{\text{penny}}(x) \cdot G_{\text{nickel}}(x) = \frac{1}{(1-x)(1-x^5)}
   \]  
-- **Key Insight:** The coefficient of \( x^n \) in \( G(x) \) gives the number of ways to make \( n \) cents.  
+- **Key Insight:** The coefficient of $x^n$ in $G(x)$ gives the number of ways to make $n$ cents.  
 
 ---
 
 ## **Step 3: Example Calculation**  
-### **For \( n = 6 \) cents:**  
-Expand \( G(x) \):  
+### **For $n = 6$ cents:**  
+Expand $G(x)$:  
 \[
 (1 + x + x^2 + x^3 + x^4 + x^5 + x^6 + \cdots)(1 + x^5 + x^{10} + \cdots)
 \]  
 - **Ways to make 6¢:**  
-  - **0 nickels + 6 pennies:** \( x^6 \cdot 1 = x^6 \)  
-  - **1 nickel + 1 penny:** \( x^5 \cdot x^1 = x^6 \)  
-- **Total:** Coefficient of \( x^6 = 2 \) → **2 ways**.  
+  - **0 nickels + 6 pennies:** $x^6 \cdot 1 = x^6$  
+  - **1 nickel + 1 penny:** $x^5 \cdot x^1 = x^6$  
+- **Total:** Coefficient of $x^6 = 2$ → **2 ways**.  
 
-### **For \( n = 10 \) cents:**  
-- **0 nickels + 10 pennies:** \( x^{10} \cdot 1 \)  
-- **1 nickel + 5 pennies:** \( x^5 \cdot x^5 \)  
-- **2 nickels + 0 pennies:** \( x^{10} \cdot 1 \)  
-- **Total:** Coefficient of \( x^{10} = 3 \) → **3 ways**.  
+### **For $n = 10$ cents:**  
+- **0 nickels + 10 pennies:** $x^{10} \cdot 1$  
+- **1 nickel + 5 pennies:** $x^5 \cdot x^5$  
+- **2 nickels + 0 pennies:** $x^{10} \cdot 1$  
+- **Total:** Coefficient of $x^{10} = 3$ → **3 ways**.  
 
 ---
 
 ## **Step 4: General Formula**  
-The number of ways to make \( n \) cents is the coefficient of \( x^n \) in:  
+The number of ways to make $n$ cents is the coefficient of $x^n$ in:  
 \[
-\frac{1}{(1-x)(1-x^5)} = \sum_{k=0}^{\infty} \left\lfloor \frac{n}{5} \right\rfloor + 1 \quad \text{(for \( n \geq 0 \))}
+\frac{1}{(1-x)(1-x^5)} = \sum_{k=0}^{\infty} \left\lfloor \frac{n}{5} \right\rfloor + 1 \quad \text{(for $n \geq 0$)}
 \]  
 **Interpretation:** For every 5¢ increment (nickel), add 1 way.  
 
@@ -750,7 +750,7 @@ The number of ways to make \( n \) cents is the coefficient of \( x^n \) in:
 3. **Coefficients** directly count valid combinations.  
 
 **Example Answer:**  
-For \( n = 6 \) cents, there are **2 ways**:  
+For $n = 6$ cents, there are **2 ways**:  
 - 6 pennies, or  
 - 1 nickel + 1 penny.  
 
@@ -773,9 +773,9 @@ For \( n = 6 \) cents, there are **2 ways**:
 ### **Example: Binary Strings**  
 - **Problem:** Count binary strings of length \(n\).  
 - **Generating Function:**  
-  \[
-  G(x) = (1 + x)^n \quad \text{(each bit: 0 or 1)}
-  \]
+\[
+G(x) = (1 + x)^n \quad \text{(each bit: 0 or 1)}
+\]
 
 ---
 
@@ -783,8 +783,8 @@ A binary string can consist of the characters '0' and '1'.
 
 **Step 1: Define the Generating Function**
 
-Let \( a_n \) be the number of binary strings of length \( n \). 
-For each position in the string, we have 2 choices: either '0' or '1'. Therefore, the number of binary strings of length \( n \) can be expressed as:
+Let $a_n$ be the number of binary strings of length $n$. 
+For each position in the string, we have 2 choices: either '0' or '1'. Therefore, the number of binary strings of length $n$ can be expressed as:
 
 \[
 a_n = 2^n
@@ -794,13 +794,13 @@ a_n = 2^n
 
 **Step 2: Construct the Generating Function**
 
-The generating function \( A(x) \) for the sequence \( a_n \) is defined as:
+The generating function $A(x)$ for the sequence $a_n$ is defined as:
 
 \[
 G(x) = \sum_{n=0}^{\infty} a_n x^n
 \]
 
-Substituting \( a_n = 2^n \):
+Substituting $a_n = 2^n$:
 
 \[
 G(x) = \sum_{n=0}^{\infty} 2^n x^n
@@ -810,13 +810,13 @@ G(x) = \sum_{n=0}^{\infty} 2^n x^n
 
 **Step 3: Recognize the Series**
 
-The series \( \sum_{n=0}^{\infty} (2x)^n \) is a geometric series with the first term \( 1 \) and common ratio \( 2x \). The sum of a geometric series can be expressed as:
+The series $\sum_{n=0}^{\infty} (2x)^n$ is a geometric series with the first term $1$ and common ratio $2x$. The sum of a geometric series can be expressed as:
 
 \[
 \sum_{n=0}^{\infty} r^n = \frac{1}{1 - r} \quad \text{for } |r| < 1
 \]
 
-In our case, \( r = 2x \). Thus, we have:
+In our case, $r = 2x$. Thus, we have:
 
 \[
 G(x) = \frac{1}{1 - 2x} \quad \text{for } |2x| < 1 \quad \text{or } |x| < \frac{1}{2}
@@ -826,13 +826,13 @@ G(x) = \frac{1}{1 - 2x} \quad \text{for } |2x| < 1 \quad \text{or } |x| < \frac{
 
 **Conclusion**
 
-The generating function for the number of binary strings of length \( n \) is:
+The generating function for the number of binary strings of length $n$ is:
 
 \[
 G(x) = \frac{1}{1 - 2x}
 \]
 
-This generating function can be used to extract coefficients corresponding to the number of binary strings of various lengths. The coefficient of \( x^n \) in the expansion of \( G(x) \) will give us \( a_n = 2^n \).
+This generating function can be used to extract coefficients corresponding to the number of binary strings of various lengths. The coefficient of $x^n$ in the expansion of $G(x)$ will give us $a_n = 2^n$.
 
 ---
 
@@ -948,14 +948,14 @@ How many ways can you choose **0 items** from **5 types**? Explain why.
 \binom{6 + 3 - 1}{6} = \binom{8}{6} = 28 \quad \text{solutions}.
 \]
 
-The number of non-negative integer solutions to the equation \( x_1 + x_2 + x_3 = 6 \) (where \( x_i \geq 0 \)) is **28**.  
+The number of non-negative integer solutions to the equation $x_1 + x_2 + x_3 = 6$ (where $x_i \geq 0$) is **28**.  
 
 ### **Explanation**  
 We use the **stars and bars** combinatorial method:  
-1. Represent the equation as distributing **6 identical "stars"** (\( \star \)) into **3 distinct groups** (for \( x_1, x_2, x_3 \)), separated by **2 bars** (\( | \)).  
-   - Example: \( \star\star|\star\star\star|\star \) represents \( x_1 = 2 \), \( x_2 = 3 \), \( x_3 = 1 \).  
+1. Represent the equation as distributing **6 identical "stars"** ($\star$) into **3 distinct groups** (for $x_1, x_2, x_3$), separated by **2 bars** ($|$).  
+   - Example: $\star\star|\star\star\star|\star$ represents $x_1 = 2$, $x_2 = 3$, $x_3 = 1$.  
 
-2. Total symbols = \( 6 \, \text{stars} + 2 \, \text{bars} = 8 \).  
+2. Total symbols = $6 \, \text{stars} + 2 \, \text{bars} = 8$.  
 3. The number of ways to arrange these symbols is the number of ways to choose positions for the **2 bars** (or equivalently, the **6 stars**):  
    \[
    \binom{8}{2} = \frac{8!}{2!6!} = 28.
