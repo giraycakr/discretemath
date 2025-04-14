@@ -626,6 +626,261 @@ Represent fruits as stars (`★`) and separators between types as bars (`|`):
 
 ---
 
+# Using Generating Functions To Count Things 
+
+---
+
+## **Introduction to Generating Functions**
+- **Definition:** A generating function encodes a sequence \(a_0, a_1, a_2, \dots\) into a formal power series:  
+  \[
+  G(x) = \sum_{n=0}^{\infty} a_n x^n
+  \]
+- **Purpose:** Simplify counting problems by translating combinatorial constraints into algebraic operations.
+
+---
+
+the coefficient of $𝑥^𝑟$ in $(1+𝑥)^n$, is $\binom{n}{r}$.
+- The generating function for bioniamial coefficients is
+\[
+(1+𝑥)^n
+\]
+The coefficient of $x^r$ is the number of ways of choosing the 𝑥 from 𝑟 of the 𝑛 factors
+
+---
+
+The grocery store sells paper plates in packages of 1, 5, 20, or 75. In how many different ways can we buy a total of 95 paper plates?
+- the coefficient of $𝑥^𝑛$ will represent the number of ways in which we can buy 𝑛 paper plates
+
+---
+
+Buying 1-paper plates;
+\[
+1 + x + x^2 + x^3 + x^4 + . . . = \sum_{i=0}^{\infty} x^i = \dfrac{1}{(1-x)}
+\]
+
+---
+
+Buying 5-paper plates;
+\[
+1 + x^5 + x^{10} + x^{15} + x^{20} + . . . = \sum_{i=0}^{\infty} x^{5i} = \dfrac{1}{(1-x^5)}
+\]
+
+---
+
+The generating function:
+\[
+(1 + x + x^2 + . . . + x^{95})(1 + x^5 + x^{10} + . . . + x^{95})(1 + x^{20} + x^{40} + x^{60} + x^{80})(1 + x^{75})
+\]
+- we are looking for the coefficient of $x^{95}$.
+
+---
+For any positive integer $k$;
+
+\[
+1 + x + x^2 + · · · + x^k = \dfrac{1-x^{k+1}}{1-x}
+\]
+
+---
+
+## Counting Coin Combinations with Generating Functions
+
+**Problem:** Count the number of ways to make \( n \) cents using pennies (1¢) and nickels (5¢).
+
+---
+
+## **Step 1: Define Generating Functions**
+### **Pennies (1¢)**  
+- Can use 0, 1, 2, 3, ... pennies.  
+- Generating function:  
+  \[
+  G_{\text{penny}}(x) = 1 + x + x^2 + x^3 + \cdots = \frac{1}{1-x}
+  \]  
+  *(Geometric series for unlimited 1¢ choices)*  
+
+### **Nickels (5¢)**  
+- Can use 0, 1, 2, 3, ... nickels.  
+- Generating function:  
+  \[
+  G_{\text{nickel}}(x) = 1 + x^5 + x^{10} + x^{15} + \cdots = \frac{1}{1-x^5}
+  \]  
+  *(Geometric series for 5¢ increments)*  
+
+---
+
+## **Step 2: Combine Generating Functions**  
+- Total ways to combine pennies and nickels:  
+  \[
+  G(x) = G_{\text{penny}}(x) \cdot G_{\text{nickel}}(x) = \frac{1}{(1-x)(1-x^5)}
+  \]  
+- **Key Insight:** The coefficient of \( x^n \) in \( G(x) \) gives the number of ways to make \( n \) cents.  
+
+---
+
+## **Step 3: Example Calculation**  
+### **For \( n = 6 \) cents:**  
+Expand \( G(x) \):  
+\[
+(1 + x + x^2 + x^3 + x^4 + x^5 + x^6 + \cdots)(1 + x^5 + x^{10} + \cdots)
+\]  
+- **Ways to make 6¢:**  
+  - **0 nickels + 6 pennies:** \( x^6 \cdot 1 = x^6 \)  
+  - **1 nickel + 1 penny:** \( x^5 \cdot x^1 = x^6 \)  
+- **Total:** Coefficient of \( x^6 = 2 \) → **2 ways**.  
+
+### **For \( n = 10 \) cents:**  
+- **0 nickels + 10 pennies:** \( x^{10} \cdot 1 \)  
+- **1 nickel + 5 pennies:** \( x^5 \cdot x^5 \)  
+- **2 nickels + 0 pennies:** \( x^{10} \cdot 1 \)  
+- **Total:** Coefficient of \( x^{10} = 3 \) → **3 ways**.  
+
+---
+
+## **Step 4: General Formula**  
+The number of ways to make \( n \) cents is the coefficient of \( x^n \) in:  
+\[
+\frac{1}{(1-x)(1-x^5)} = \sum_{k=0}^{\infty} \left\lfloor \frac{n}{5} \right\rfloor + 1 \quad \text{(for \( n \geq 0 \))}
+\]  
+**Interpretation:** For every 5¢ increment (nickel), add 1 way.  
+
+---
+
+## **Summary**  
+1. **Generating Functions** model unlimited choices per coin type.  
+2. **Multiplication** of series corresponds to combining choices.  
+3. **Coefficients** directly count valid combinations.  
+
+**Example Answer:**  
+For \( n = 6 \) cents, there are **2 ways**:  
+- 6 pennies, or  
+- 1 nickel + 1 penny.  
+
+---
+
+
+## **Basic Examples**
+### **Example: Coin Selection**
+- **Problem:** Count ways to choose coins (pennies, nickels).  
+- **Generating Functions:**  
+  - Penny: \(1 + x + x^2 + \cdots = \frac{1}{1-x}\)  
+  - Nickel: \(1 + x^5 + x^{10} + \cdots = \frac{1}{1-x^5}\)  
+- **Combined:**  
+  \[
+  G(x) = \frac{1}{(1-x)(1-x^5)}
+  \]
+
+---
+
+### **Example: Binary Strings**  
+- **Problem:** Count binary strings of length \(n\).  
+- **Generating Function:**  
+  \[
+  G(x) = (1 + x)^n \quad \text{(each bit: 0 or 1)}
+  \]
+
+---
+
+A binary string can consist of the characters '0' and '1'. 
+
+**Step 1: Define the Generating Function**
+
+Let \( a_n \) be the number of binary strings of length \( n \). 
+For each position in the string, we have 2 choices: either '0' or '1'. Therefore, the number of binary strings of length \( n \) can be expressed as:
+
+\[
+a_n = 2^n
+\]
+
+---
+
+**Step 2: Construct the Generating Function**
+
+The generating function \( A(x) \) for the sequence \( a_n \) is defined as:
+
+\[
+G(x) = \sum_{n=0}^{\infty} a_n x^n
+\]
+
+Substituting \( a_n = 2^n \):
+
+\[
+G(x) = \sum_{n=0}^{\infty} 2^n x^n
+\]
+
+---
+
+**Step 3: Recognize the Series**
+
+The series \( \sum_{n=0}^{\infty} (2x)^n \) is a geometric series with the first term \( 1 \) and common ratio \( 2x \). The sum of a geometric series can be expressed as:
+
+\[
+\sum_{n=0}^{\infty} r^n = \frac{1}{1 - r} \quad \text{for } |r| < 1
+\]
+
+In our case, \( r = 2x \). Thus, we have:
+
+\[
+G(x) = \frac{1}{1 - 2x} \quad \text{for } |2x| < 1 \quad \text{or } |x| < \frac{1}{2}
+\]
+
+---
+
+**Conclusion**
+
+The generating function for the number of binary strings of length \( n \) is:
+
+\[
+G(x) = \frac{1}{1 - 2x}
+\]
+
+This generating function can be used to extract coefficients corresponding to the number of binary strings of various lengths. The coefficient of \( x^n \) in the expansion of \( G(x) \) will give us \( a_n = 2^n \).
+
+---
+
+## **Product Rule for Generating Functions**
+- **Rule:** If choices are independent, multiply their generating functions.  
+- **Example:**  
+  - Apples: 0-2 allowed → \(1 + x + x^2\)  
+  - Oranges: 0-3 allowed → \(1 + x + x^2 + x^3\)  
+  - Total:  
+    \[
+    G(x) = (1 + x + x^2)(1 + x + x^2 + x^3) = 1 + 2x + 3x^2 + 3x^3 + 2x^4 + x^5
+    \]
+  - **Interpretation:** Coefficient of \(x^k\) = number of ways to choose \(k\) fruits.
+
+---
+
+## **Solving Combinatorial Problems**
+### **Example: Distributing Identical Objects**
+- **Problem:** Distribute \(n\) identical balls into 3 boxes (each box holds 0-2 balls).  
+- **Generating Function per Box:** \(1 + x + x^2\)  
+- **Total Generating Function:**  
+  \[
+  G(x) = (1 + x + x^2)^3 = 1 + 3x + 6x^2 + 7x^3 + 6x^4 + 3x^5 + x^6
+  \]
+- **Coefficient of \(x^3\):** 7 ways to distribute 3 balls.
+
+---
+
+## **Advanced Application: Recurrence Relations**
+### **Fibonacci Sequence**
+- **Recurrence:** \(F(n) = F(n-1) + F(n-2)\), with \(F(0)=0, F(1)=1\).  
+- **Generating Function:**  
+  \[
+  G(x) = \frac{x}{1 - x - x^2}
+  \]
+- **Expansion:** Coefficients yield \(F(n)\).
+
+---
+
+## **Summary**
+1. **Generating Functions** encode sequences into polynomials/series.  
+2. **Product Rule:** Multiply functions for independent choices.  
+3. **Coefficients** solve counting problems (e.g., distributions, selections).  
+4. **Applications:** Coin change, string counting, recurrence relations.
+
+---
+
+
 # Exercises: Combinations with Repetitions
 
 ### **Exercise 1**  
