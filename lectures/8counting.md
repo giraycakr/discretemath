@@ -227,56 +227,56 @@ For bitstrings of length $n$, the count is $F(n+2)$, where $F$ is the Fibonacci 
 ## Two Basic Decomposition Rules:
 1. **Product Rule**  
    - A count decomposes into a sequence of dependent counts.  
-   - *Example:* Choosing a meal with 3 appetizers and 4 main courses → \(3 \times 4 = 12\) options.
+   - *Example:* Choosing a meal with 3 appetizers and 4 main courses → $3 \times 4 = 12$ options.
 2. **Sum Rule**  
    - A count decomposes into a set of independent counts (alternatives).  
-   - *Example:* Choosing between 5 salads *or* 3 soups → \(5 + 3 = 8\) options.
+   - *Example:* Choosing between 5 salads *or* 3 soups → $5 + 3 = 8$ options.
 
 ---
 
 # Inclusion-Exclusion Principle
 
 **Used when counts overlap.**  
-If sets \(A\) and \(B\) overlap, the total count is:  
+If sets $A$ and $B$ overlap, the total count is:  
 \[
 |A \cup B| = |A| + |B| - |A \cap B|
 \]
 
 ### Example:
 How many bitstrings of length 8 start with 1 **or** end with 00?  
-- Start with 1: \(2^7 = 128\)  
-- End with 00: \(2^6 = 64\)  
-- Overlap (start with 1 **and** end with 00): \(2^5 = 32\)  
-- Total: \(128 + 64 - 32 = 160\).
+- Start with 1: $2^7 = 128$  
+- End with 00: $2^6 = 64$  
+- Overlap (start with 1 **and** end with 00): $2^5 = 32$  
+- Total: $128 + 64 - 32 = 160$.
 
 ---
 
 # Pigeonhole Principle
 
-- If \(N\) objects are placed into \(k\) bins, then at least one bin contains at least \(\lceil N/k \rceil\) objects.
+- If $N$ objects are placed into $k$ bins, then at least one bin contains at least $\lceil N/k \rceil$ objects.
 
 ### Example:
-- 100 people → At least \(\lceil 100/12 \rceil = 9\) people share a birth month.
+- 100 people → At least $\lceil 100/12 \rceil = 9$ people share a birth month.
 
 ---
 
 # Permutations
 
 A **permutation** is an *ordered arrangement* of distinct objects.  
-Number of permutations of \(n\) elements:  
+Number of permutations of $n$ elements:  
 \[
 P(n, n) = n!
 \]
 
 ### Example:
-Permutations of \(\{a, b, c\}\):  
-\(abc, acb, bac, bca, cab, cba\) → \(3! = 6\).
+Permutations of $\{a, b, c\}$:  
+$abc, acb, bac, bca, cab, cba$ → $3! = 6$.
 
 ---
 
-# \(k\)-Permutations
+# $k$-Permutations
 
-An ordered arrangement of \(k\) elements from a set of \(n\).  
+An ordered arrangement of $k$ elements from a set of $n$.  
 Formula:  
 \[
 P(n, k) = \frac{n!}{(n - k)!}
@@ -284,13 +284,13 @@ P(n, k) = \frac{n!}{(n - k)!}
 
 ### Example:
 Medals for 8 runners (gold, silver, bronze):  
-\(P(8, 3) = 8 \times 7 \times 6 = 336\).
+$P(8, 3) = 8 \times 7 \times 6 = 336$.
 
 ---
 
 # Combinations
 
-A **\(k\)-combination** is an *unordered* selection of \(k\) elements.  
+A **$k$-combination** is an *unordered* selection of $k$ elements.  
 Formula:  
 \[
 C(n, k) = \binom{n}{k} = \frac{n!}{k!(n - k)!}
@@ -303,14 +303,14 @@ Teams of 5 from 10 members:
 \]
 
 ### Properties:
-- \(\binom{n}{k} = \binom{n}{n - k}\)  
-- \(\binom{n}{0} = \binom{n}{n} = 1\)
+- $\binom{n}{k} = \binom{n}{n - k}$  
+- $\binom{n}{0} = \binom{n}{n} = 1$
 
 ---
 
 # Binomial Theorem
 
-Expanding \((a + b)^n\):  
+Expanding $(a + b)^n$:  
 \[
 (a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
 \]
@@ -332,10 +332,10 @@ C(n, k) = \binom{n}{k} = \frac{n!}{k!(n - k)!}
 ---
 
 ### **Key Properties**
-1. **Symmetry:** \(\binom{n}{k} = \binom{n}{n - k}\)  
-   - *Example:* \(\binom{10}{3} = \binom{10}{7} = 120\)
-2. **Boundary Cases:** \(\binom{n}{0} = \binom{n}{n} = 1\)  
-3. **Sum of Combinations:** \(\sum_{k=0}^n \binom{n}{k} = 2^n\) (total subsets of an *n*-element set).
+1. **Symmetry:** $\binom{n}{k} = \binom{n}{n - k}$  
+   - *Example:* $\binom{10}{3} = \binom{10}{7} = 120$
+2. **Boundary Cases:** $\binom{n}{0} = \binom{n}{n} = 1$  
+3. **Sum of Combinations:** $\sum_{k=0}^n \binom{n}{k} = 2^n$ (total subsets of an *n*-element set).
 
 ---
 
@@ -366,14 +366,14 @@ C(n, k) = \binom{n}{k} = \frac{n!}{k!(n - k)!}
 
 5. **Subsets with Restrictions**  
    *From the word "COMBINE" (7 letters), how many 3-letter subsets include at least 1 vowel (E, I, O)?*  
-   - Total subsets: \(\binom{7}{3} = 35\)  
-   - Subsets with no vowels (only consonants C, M, B, N): \(\binom{4}{3} = 4\)  
-   - Valid subsets: \(35 - 4 = 31\).
+   - Total subsets: $\binom{7}{3} = 35$  
+   - Subsets with no vowels (only consonants C, M, B, N): $\binom{4}{3} = 4$  
+   - Valid subsets: $35 - 4 = 31$.
 
 ---
 
 ## **Binomial Coefficients** (Deep Dive)
-The binomial coefficient \(\binom{n}{k}\) appears in the expansion of \((a + b)^n\).  
+The binomial coefficient $\binom{n}{k}$ appears in the expansion of $(a + b)^n$.  
 
 **Binomial Theorem:**  
 \[
@@ -383,21 +383,21 @@ The binomial coefficient \(\binom{n}{k}\) appears in the expansion of \((a + b)^
 ---
 
 ### **Extended Examples**
-1. **Expanding \((x + y)^5\)**  
+1. **Expanding $(x + y)^5$**  
    \[
    (x + y)^5 = \binom{5}{0}x^5 + \binom{5}{1}x^4y + \binom{5}{2}x^3y^2 + \binom{5}{3}x^2y^3 + \binom{5}{4}xy^4 + \binom{5}{5}y^5
    \]  
-   Coefficients: \(1, 5, 10, 10, 5, 1\).
+   Coefficients: $1, 5, 10, 10, 5, 1$.
 
 2. **Finding Specific Terms**  
-   *What is the coefficient of \(a^2b^3\) in \((a + b)^5\)?*  
+   *What is the coefficient of $a^2b^3$ in $(a + b)^5$?*  
    \[
    \binom{5}{3} = 10 \quad (\text{or } \binom{5}{2} = 10 \text{ by symmetry})
    \]
 
 3. **Pascal's Triangle Connection**  
-   - Row 5: \(1, 5, 10, 10, 5, 1\)  
-   - Each entry is \(\binom{n}{k}\) for \(n = 5\).
+   - Row 5: $1, 5, 10, 10, 5, 1$  
+   - Each entry is $\binom{n}{k}$ for $n = 5$.
 
 4. **Counting Paths**  
    *How many shortest paths from point A to B in a grid (3 right, 2 up)?*  
@@ -406,7 +406,7 @@ The binomial coefficient \(\binom{n}{k}\) appears in the expansion of \((a + b)^
    \]
 
 5. **Probability Distribution**  
-   In a binomial distribution, \(\binom{n}{k}\) counts the number of ways to get \(k\) successes in \(n\) trials.  
+   In a binomial distribution, $\binom{n}{k}$ counts the number of ways to get $k$ successes in $n$ trials.  
    *Example:* Probability of 3 heads in 5 coin flips:  
    \[
    \binom{5}{3} \left(\frac{1}{2}\right)^5 = 10 \times \frac{1}{32} = \frac{10}{32}
@@ -431,9 +431,9 @@ The binomial coefficient \(\binom{n}{k}\) appears in the expansion of \((a + b)^
 ## **Summary Table**
 | Concept               | Formula/Example                     | Use Case                     |
 |-----------------------|-------------------------------------|------------------------------|
-| **Combination**       | \(\binom{10}{5} = 252\)            | Selecting teams, lotteries   |
-| **Binomial Expansion**| \((a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4\) | Polynomial expansions |
-| **Symmetry**          | \(\binom{7}{2} = \binom{7}{5} = 21\) | Simplifying calculations |
+| **Combination**       | $\binom{10}{5} = 252$            | Selecting teams, lotteries   |
+| **Binomial Expansion**| $(a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$ | Polynomial expansions |
+| **Symmetry**          | $\binom{7}{2} = \binom{7}{5} = 21$ | Simplifying calculations |
 
 ---
 
@@ -456,16 +456,16 @@ abc, \ acb, \ bac, \ bca, \ cab, \ cba \quad (3! = 6)
 
 ---
 
-# \(k\)-Permutations
+# $k$-Permutations
 
-**Definition:** An ordered arrangement of \(k\) elements from a set of \(n\).  
+**Definition:** An ordered arrangement of $k$ elements from a set of $n$.  
 **Formula:**  
 \[
 P(n, k) = \frac{n!}{(n - k)!}
 \]
 
 **Example:**
-2-permutations of \(\{a, b, c\}\):  
+2-permutations of $\{a, b, c\}$:  
 \[
 ab, \ ba, \ ac, \ ca, \ bc, \ cb \quad (P(3, 2) = 6)
 \]
@@ -474,14 +474,14 @@ ab, \ ba, \ ac, \ ca, \ bc, \ cb \quad (P(3, 2) = 6)
 
 # Combinations
 
-**Definition:** A \(k\)-combination is an **unordered** selection of \(k\) elements.  
+**Definition:** A $k$-combination is an **unordered** selection of $k$ elements.  
 **Formula:**  
 \[
 C(n, k) = \binom{n}{k} = \frac{n!}{k!(n - k)!}
 \]
 
 **Example:**
-2-combinations of \(\{a, b, c\}\):  
+2-combinations of $\{a, b, c\}$:  
 \[
 \{a, b\}, \ \{a, c\}, \ \{b, c\} \quad \left(\binom{3}{2} = 3\right)
 \]
@@ -496,7 +496,7 @@ C(n, k) = \binom{n}{k} = \frac{n!}{k!(n - k)!}
 \]
 
 ## Example:
-Expansion of \((a + b)^3\):  
+Expansion of $(a + b)^3$:  
 \[
 a^3 + 3a^2b + 3ab^2 + b^3 \quad (\text{coefficients: } 1, 3, 3, 1)
 \]
@@ -504,10 +504,10 @@ a^3 + 3a^2b + 3ab^2 + b^3 \quad (\text{coefficients: } 1, 3, 3, 1)
 ---
 
 ## Key Corollaries:
-1. \(\sum_{k=0}^n \binom{n}{k} = 2^n\)  
-   *Proof:* Substitute \(a = 1, b = 1\).  
-2. \(\sum_{k=0}^n (-1)^k \binom{n}{k} = 0\)  
-   *Proof:* Substitute \(a = 1, b = -1\).  
+1. $\sum_{k=0}^n \binom{n}{k} = 2^n$  
+   *Proof:* Substitute $a = 1, b = 1$.  
+2. $\sum_{k=0}^n (-1)^k \binom{n}{k} = 0$  
+   *Proof:* Substitute $a = 1, b = -1$.  
 
 ---
 
@@ -577,7 +577,7 @@ Number of 4-letter strings using 26 alphabets:
 
 **Formula:**  
 \[
-\binom{n + k - 1}{n} \quad \text{(ways to choose \(n\) items from \(k\) types)}
+\binom{n + k - 1}{n} \quad \text{(ways to choose $n$ items from $k$ types)}
 \]
 
 \[
@@ -631,7 +631,7 @@ Represent fruits as stars (`★`) and separators between types as bars (`|`):
 ---
 
 ## **Introduction to Generating Functions**
-- **Definition:** A generating function encodes a sequence \(a_0, a_1, a_2, \dots\) into a formal power series:  
+- **Definition:** A generating function encodes a sequence $a_0, a_1, a_2, \dots$ into a formal power series:  
   \[
   G(x) = \sum_{n=0}^{\infty} a_n x^n
   \]
@@ -757,7 +757,7 @@ For $n = 6$ cents, there are **2 ways**:
 ---
 
 ### **Example: Binary Strings**  
-- **Problem:** Count binary strings of length \(n\).  
+- **Problem:** Count binary strings of length $n$.  
 - **Generating Function:**  
 \[
 G(x) = (1 + x)^n \quad \text{(each bit: 0 or 1)}
@@ -825,36 +825,36 @@ This generating function can be used to extract coefficients corresponding to th
 ## **Product Rule for Generating Functions**
 - **Rule:** If choices are independent, multiply their generating functions.  
 - **Example:**  
-  - Apples: 0-2 allowed → \(1 + x + x^2\)  
-  - Oranges: 0-3 allowed → \(1 + x + x^2 + x^3\)  
+  - Apples: 0-2 allowed → $1 + x + x^2$  
+  - Oranges: 0-3 allowed → $1 + x + x^2 + x^3$  
   - Total:  
     \[
     G(x) = (1 + x + x^2)(1 + x + x^2 + x^3) = 1 + 2x + 3x^2 + 3x^3 + 2x^4 + x^5
     \]
-  - **Interpretation:** Coefficient of \(x^k\) = number of ways to choose \(k\) fruits.
+  - **Interpretation:** Coefficient of $x^k$ = number of ways to choose $k$ fruits.
 
 ---
 
 ## **Solving Combinatorial Problems**
 ### **Example: Distributing Identical Objects**
-- **Problem:** Distribute \(n\) identical balls into 3 boxes (each box holds 0-2 balls).  
-- **Generating Function per Box:** \(1 + x + x^2\)  
+- **Problem:** Distribute $n$ identical balls into 3 boxes (each box holds 0-2 balls).  
+- **Generating Function per Box:** $1 + x + x^2$  
 - **Total Generating Function:**  
   \[
   G(x) = (1 + x + x^2)^3 = 1 + 3x + 6x^2 + 7x^3 + 6x^4 + 3x^5 + x^6
   \]
-- **Coefficient of \(x^3\):** 7 ways to distribute 3 balls.
+- **Coefficient of $x^3$:** 7 ways to distribute 3 balls.
 
 ---
 
 ## **Advanced Application: Recurrence Relations**
 ### **Fibonacci Sequence**
-- **Recurrence:** \(F(n) = F(n-1) + F(n-2)\), with \(F(0)=0, F(1)=1\).  
+- **Recurrence:** $F(n) = F(n-1) + F(n-2)$, with $F(0)=0, F(1)=1$.  
 - **Generating Function:**  
   \[
   G(x) = \frac{x}{1 - x - x^2}
   \]
-- **Expansion:** Coefficients yield \(F(n)\).
+- **Expansion:** Coefficients yield $F(n)$.
 
 ---
 
@@ -879,7 +879,7 @@ This means that each term in the Fibonacci sequence is the sum of the two preced
 
 ### Step 1: Define the Generating Function
 
-To find a generating function for the Fibonacci sequence, we define the generating function \( G(x) \) as follows:
+To find a generating function for the Fibonacci sequence, we define the generating function $G(x)$ as follows:
 
 \[
 G(x) = \sum_{n=0}^{\infty} F(n) x^n
@@ -889,21 +889,21 @@ G(x) = \sum_{n=0}^{\infty} F(n) x^n
 
 ### Step 2: Express the Recurrence Relation
 
-Using the recurrence relation, we can express \( G(x) \) in terms of itself:
+Using the recurrence relation, we can express $G(x)$ in terms of itself:
 
-1. **Shift the series for \( F(n-1) \) and \( F(n-2) \)**:
-   - For \( F(n-1) \):
+1. **Shift the series for $F(n-1)$ and $F(n-2)$**:
+   - For $F(n-1)$:
      \[
      \sum_{n=1}^{\infty} F(n-1) x^n = x \sum_{n=0}^{\infty} F(n) x^n = x G(x)
      \]
-   - For \( F(n-2) \):
+   - For $F(n-2)$:
      \[
      \sum_{n=2}^{\infty} F(n-2) x^n = x^2 \sum_{n=0}^{\infty} F(n) x^n = x^2 G(x)
      \]
 ---
 
 2. **Combine these into the generating function**:
-   - The series for \( G(x) \) can be rewritten using the recurrence relation:
+   - The series for $G(x)$ can be rewritten using the recurrence relation:
    \[
    G(x) = F(0) + F(1)x + \sum_{n=2}^{\infty} F(n) x^n
    \]
@@ -917,15 +917,15 @@ Using the recurrence relation, we can express \( G(x) \) in terms of itself:
    \]
 ---
 
-### Step 3: Solve for \( G(x) \)
+### Step 3: Solve for $G(x)$
 
-Now we can rearrange the equation to isolate \( G(x) \):
+Now we can rearrange the equation to isolate $G(x)$:
 
 \[
 G(x) - x G(x) - x^2 G(x) = x
 \]
 
-Factoring out \( G(x) \):
+Factoring out$G(x)$:
 
 \[
 G(x)(1 - x - x^2) = x
@@ -941,7 +941,7 @@ G(x) = \frac{x}{1 - x - x^2}
 
 ### Step 4: Expansion and Coefficients
 
-The generating function \( G(x) = \frac{x}{1 - x - x^2} \) can be expanded using the method of partial fractions or by recognizing it as a power series. The coefficients of \( x^n \) in the expansion of \( G(x) \) correspond to the Fibonacci numbers \( F(n) \).
+The generating function$G(x) = \frac{x}{1 - x - x^2}$ can be expanded using the method of partial fractions or by recognizing it as a power series. The coefficients of$x^n$ in the expansion of$G(x)$ correspond to the Fibonacci numbers$F(n)$.
 
 ---
 
@@ -953,7 +953,7 @@ The generating function for the Fibonacci sequence is:
 G(x) = \frac{x}{1 - x - x^2}
 \]
 
-This function allows us to extract the Fibonacci numbers \( F(n) \) as coefficients of \( x^n \) in its series expansion. The recurrence relation and the generating function together provide a powerful method for analyzing and computing terms in the Fibonacci sequence.
+This function allows us to extract the Fibonacci numbers$F(n)$ as coefficients of$x^n$ in its series expansion. The recurrence relation and the generating function together provide a powerful method for analyzing and computing terms in the Fibonacci sequence.
 
 
 ## **Summary**
@@ -1054,7 +1054,7 @@ We use the **stars and bars** combinatorial method:
 - `★★|★` = 2 coffee, 1 tea.  
 - `★|★★` = 1 coffee, 2 tea.  
 - `|★★★` = 0 coffee, 3 tea.  
-Total: \(\binom{3 + 2 - 1}{3} = \binom{4}{3} = 4\) ways.
+Total: $\binom{3 + 2 - 1}{3} = \binom{4}{3} = 4$ ways.
 
 ---
 
