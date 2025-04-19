@@ -589,7 +589,7 @@ graph LR
 **Example**:  
 - **Nodes**:  
   - **Disease (D)**: Prior probability = 1% (rare).  
-  - **Symptom (S)**: $ P(S|D) = 90\%$, $ P(S|\neg D) = 5\%$.  
+  - **Symptom (S)**: $P(S|D) = 90\%$, $ P(S|\neg D) = 5\%$.  
 - **Calculation**:  
   ```math
   P(D|S) = \frac{0.9 \times 0.01}{0.9 \times 0.01 + 0.05 \times 0.99} \approx 15.4\%
@@ -612,12 +612,12 @@ graph LR
 
 #### **4. AI: Recommendation Systems 🎬**  
 **Predictive Modeling**:  
-- Estimate $ P(\text{User Likes Movie}|\text{Genres, Ratings})$.  
+- Estimate $P(\text{User Likes Movie}|\text{Genres, Ratings})$.  
 - Update recommendations as user preferences evolve.  
 
 **Example**:  
-- If a user likes *Sci-Fi* ($ P(\text{Sci-Fi}) = 70\%$) and *Action* ($ P(\text{Action}) = 60\%$):  
-  - A new *Sci-Fi/Action* movie has high $ P(\text{Like})$.  
+- If a user likes *Sci-Fi* ($P(\text{Sci-Fi}) = 70\%$) and *Action* ($P(\text{Action}) = 60\%$):  
+  - A new *Sci-Fi/Action* movie has high $P(\text{Like})$.  
 
 ---
 
