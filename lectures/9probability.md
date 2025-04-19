@@ -65,6 +65,9 @@ class: invert
 
 #### Example: Biased Coin
 - **Problem**: A coin is biased such that Heads (H) occurs twice as often as Tails (T). Assign probabilities.
+
+---
+
 - **Solution**:
   - Let $p(T) = x$. Then $p(H) = 2x$.
   - Total probability: $2x + x = 3x = 1 \Rightarrow x = \frac{1}{3}$.
@@ -81,8 +84,13 @@ class: invert
 ### Probability of an Event
 - **Definition**: Probability of event $E$ is $p(E) = \sum_{s \in E} p(s)$.
 
+---
+
 #### Example: Biased Die
 - **Problem**: A die is biased so 3 appears twice as often as other numbers. What is the probability of rolling an odd number?
+
+---
+
 - **Solution**:
   - Let probabilities of 1, 2, 4, 5, 6 be $x$. Then $p(3) = 2x$.
   - Total probability: $5x + 2x = 7x = 1 \Rightarrow x = \frac{1}{7}$.
@@ -541,6 +549,7 @@ graph LR
 ◾ Always consider base rates in Bayesian reasoning!  
 
 
+---
 
 
 ### Bayesian Applications in Spam Filters & AI 📧🤖
