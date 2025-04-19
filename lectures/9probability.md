@@ -102,10 +102,14 @@ class: invert
 
  **Key Theorems**
  - 🎯**Complement Probability:**
-  ```math P(E') = 1 - P(E) ```
+```math 
+P(E') = 1 - P(E) 
+```
   
 - 🎯**Union Probability:**  
-  $P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$
+```math 
+P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)
+```
 
 
 ---
