@@ -61,6 +61,8 @@ class: invert
 
 - **Probability Distribution**: Function $p$ mapping outcomes in sample space $S$ to probabilities.
 
+---
+
 #### Example: Biased Coin
 - **Problem**: A coin is biased such that Heads (H) occurs twice as often as Tails (T). Assign probabilities.
 - **Solution**:
