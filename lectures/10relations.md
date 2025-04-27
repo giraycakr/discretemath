@@ -1,3 +1,11 @@
+---
+marp: false
+paginate: true
+size: 16:10
+theme: default
+class: invert
+---
+
 # Example from last lecture: Bayesian Analysis in Cancer Diagnosis
 
 ---
@@ -781,11 +789,11 @@ A binary relation ${R}$ on a set ${A}$ is a **partial order** if and only if ${R
 When ${R}$ is a partial order, the pair $(A,R)$ is called a **partially ordered set** (**poset**).
 
 ---
-### {Examples}
+### Examples
 
-- $\leq $ relation on the set of integers $Z$, is a partial order.$(Z, \leq)$ is a poset.
+- $\leq$ relation on the set of integers $Z$, is a partial order.$(Z, \leq)$ is a poset.
 
-  - to prove, show ``$\leq $" is reflexive, antisymmetric, and transitive. 
+  - to prove, show "$\leq$" is reflexive, antisymmetric, and transitive. 
 
 - The subset relation $\subseteq$ on the power set of $\{1,2\}$ is a partial order. The set with the subset relation is a poset.
 
@@ -804,13 +812,14 @@ When ${R}$ is a partial order, the pair $(A,R)$ is called a **partially ordered 
 
 ---
 
-### {Example}
+### Example
 Each strongly connected component has been contracted to a single vertex to produce acyclic graph.
 ![](./figures/relations/conComps.png)
 
 
 
 ---
+
 ### Comparability
 
 - The elements $a$ and $b$ of a poset $(S, \preceq)$ are called \alert{comparable} if either $a \preceq b$ or $b \preceq a$.
@@ -901,7 +910,6 @@ $(\{1, 2, 3, 4\},\leq ).$
 
 **Example**: Constructing the Hasse diagram for 
 $(\{1, 2, 3, 4,6,8,12\},\mid ).$ 
-
  ![](./figures/relations/hasse.png)
 
 
@@ -976,12 +984,12 @@ The topological sorting is the procedure to find a linear (total) order that doe
 
 1. $k \gets 1$  
 2. **While** $S \neq \emptyset$ **do**  
-    a. $a_k \gets$ a minimal element of $S$  
-    b.
-    ```math
-    S \gets S \setminus \{a_k\}
-    ```
-    c. $k \gets k + 1$  
+   - $a_k \gets$ a minimal element of $S$  
+   - 
+   ```math
+   S \gets S \setminus \{a_k\}
+   ```  
+   -   $k \gets k + 1$  
 3. **Return** $a_1, a_2, \dots, a_n$  *(This is a compatible ordering of $S$)*  
 
 ---
@@ -1049,10 +1057,11 @@ For example, the multilevel security policy used in the military:
 pair $(A, C)$
    - $A$ is an authority level: unclassified, confidential, secret, top secret.
    - $C$ is a category: a subset of compartments
-  
+
+---
+
  - Security classes are ordered: $(A_1,C_1) \preceq (A_2,C_2)$ iff $A_1\leq A_2$ and $C_1\subseteq C_2$. 
  - Information is permitted to flow from the security class  $(A_1,C_1)$ to $(A_2,C_2)$ iff $(A_1,C_1) \preceq (A_2,C_2)$.
 
-People and computer programs
-are then allowed access to information from a specific restricted set of security classes.
+People and computer programs are then allowed access to information from a specific restricted set of security classes.
 
