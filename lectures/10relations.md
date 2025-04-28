@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 paginate: true
 size: 16:10
 theme: default
@@ -41,9 +41,9 @@ Question: If someone tests positive, what’s the probability they actually have
 
 ## Bayes' Theorem Formula
 
-```math
+$$
 P(\text{Cancer} \mid \text{Test}^+) = \frac{P(\text{Test}^+ \mid \text{Cancer}) \cdot P(\text{Cancer})}{P(\text{Test}^+)}
-```
+$$
 
 **Components:**
 - $P(\text{Cancer})$: Prevalence (prior probability)  
@@ -65,9 +65,9 @@ P(\text{Cancer} \mid \text{Test}^+) = \frac{P(\text{Test}^+ \mid \text{Cancer}) 
 2. **False Positives**: $0.05 \times 0.99 = 0.0495$  
 3. **Posterior Probability**:  
 
-```math
-   \frac{0.009}{0.009 + 0.0495} \approx 15.4\%
-```
+$$
+\frac{0.009}{0.009 + 0.0495} \approx 15.4\%
+$$
 
 **Interpretation:**  
 A positive test only implies a **15.4% chance** of actual cancer due to low prevalence and false alarms.
@@ -246,7 +246,7 @@ graph LR
     1 --> 2
     1 --> 3
     2 --> 3
- ```
+```
 
 The diagram shows:
 1. A loop from vertex 1 to itself (for (1,1))
@@ -302,12 +302,12 @@ graph LR
 ### Matrix Representation of Relations
 
 A relation $R$ from $A$ to $B$ can be represented by matrix $M=[m_{ij}]$, where
-```math
+$$
 m_{ij}=\begin{cases}
     1,& \text{if } (a_i,b_j)\in R\\
     0,              &\text{if } (a_i,b_j)\notin R 
 \end{cases}
-```
+$$
 
 ---
 
@@ -316,11 +316,11 @@ Suppose $A = \{1, 2, 3\}$ and $B = \{1, 2\}$.
 The relation $R$ from $A$ to $B$ is defined as $(a,b)\in R$ if $a\in A$ and $b\in B$ and $a>b$.
 
 The matrix representation is  
-```math
+$$
 M_R= \begin{bmatrix}
 0&0\\1&0\\1&1
 \end{bmatrix}
-```
+$$
 
 ---
 
@@ -328,11 +328,11 @@ Suppose $A = \{a_1, a_2, a_3\}$ and $B = \{b_1, b_2,b_3,b_4,b_5\}$.\\
 
 What are the ordered pairs of relation $R$ represented by the matrix:
 
-```math
+$$
 M_R= \begin{bmatrix}
 0&1&0&0&0\\1&0&1&1&0\\1&0&1&0&1
 \end{bmatrix}?
-```
+$$
 
 ---
 
@@ -488,9 +488,9 @@ see [https://www.csauthors.net/](https://www.csauthors.net/)
 ---
 
  What is 
- ```math
+ $$
  R^{*}=\bigcup_{n=1}^\infty R^n?
- ```
+ $$
  - $(a, b)\in R^{*}$ if there is a sequence of people, 
  starting with $a$ and ending with $b$, such that each person in the sequence has met the next person in the sequence. 
 
@@ -584,9 +584,9 @@ What properties hold for the relations in the figure?
 **Example**: Let $R = \{(a,b)\mid a\in \mathbb{N}\wedge b\in \mathbb{N} \wedge a<b\}$\\
 Then, the reflexive closure of $R$ is
 
-```math
+$$
 r(R)=\{(a,b)\mid a\in \mathbb{N}\wedge b\in \mathbb{N} \wedge a\leq b\}.
-```
+$$
 
 - The reflexive closure is obtained by adding $(a,a)$ to $R$ for all $a$ in $R$'s domain:
 - in digraph terms, by adding a self-loop at all nodes.
@@ -596,13 +596,13 @@ r(R)=\{(a,b)\mid a\in \mathbb{N}\wedge b\in \mathbb{N} \wedge a\leq b\}.
 
 **Example (symmetric closure)**: For less than relation on $\mathbb{N}$;
  the symmetric closure of $R$ is 
-```math
+$$
 s(R)=\{(a,b)\mid a\in \mathbb{N}\wedge b\in \mathbb{N} \wedge [a< b \vee a>b] \}
-```
+$$
 That is
-```math
+$$
 s(R)=\{(a,b)\mid a\in \mathbb{N}\wedge b\in \mathbb{N} \wedge a\neq b\}.
-```
+$$
 
 - The symmetric closure is obtained by adding $(b,a)$ whenever $(a,b)\in R$:
 - in digraph terms,  by adding an edge in the reverse direction (if not there) for every edge.
@@ -709,7 +709,7 @@ If $(a, b) \in  R$ iff $a \in A_i$ and $b \in A_i$ for some $i$, $1 \leq  i \leq
 ### Equivalence relation: each condition implies the other
 
 1. A relation $\sim$ is reflexive, symmetric, and transitive
-2. There is a partition of $A$ into \textbf{disjoint equivalence classes $A_i$} such that $x\sim y$ iff $x\in A_i$ and $y\in A_i$ for some $i$. 
+2. There is a partition of $A$ into **disjoint equivalence classes $A_i$** such that $x\sim y$ iff $x\in A_i$ and $y\in A_i$ for some $i$. 
 3. There is a set $B$ and a function $f:A\rightarrow B$ such that $x\sim y$ iff $f(x)=f(y).$
 
 
@@ -871,8 +871,10 @@ Let $(A, \preceq )$ be a poset.
 ---
 
 **Example**:
-The set $\mathbb{N}$ with the relation $\leq$ has the least element. 
- \textbf{Example:} 
+
+The set $\mathbb{N}$ with the relation $\leq$ has the least element.   
+
+**Example:** 
 The set of $\{1,2\}$ with the relation $\subseteq$ has the least element $\emptyset$.
 
 ---
@@ -880,9 +882,9 @@ The set of $\{1,2\}$ with the relation $\subseteq$ has the least element $\empty
 
 
 ### Hasse Diagram
- A digraph of a binary relation on a set can be simplified if the relation is a \alert{partial order}.
+ A digraph of a binary relation on a set can be simplified if the relation is a *partial order**.
 
-A Hasse diagram is\textbf{ a graph for a poset} such that
+A Hasse diagram is  **a graph for a poset** such that
 
 - it does not have any loops
 - all edges in the diagram points upward (initial vertex is below the terminal vertex for each edge)
@@ -986,9 +988,9 @@ The topological sorting is the procedure to find a linear (total) order that doe
 2. **While** $S \neq \emptyset$ **do**  
    - $a_k \gets$ a minimal element of $S$  
    - 
-   ```math
+   $$
    S \gets S \setminus \{a_k\}
-   ```  
+   $$  
    -   $k \gets k + 1$  
 3. **Return** $a_1, a_2, \dots, a_n$  *(This is a compatible ordering of $S$)*  
 
@@ -1016,9 +1018,9 @@ This algorithm performs a topological sort on a partially ordered set (poset) by
 ---
 
 **Exercise**: For the set
-```math
+$$
 \{\{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\}\}
-```
+$$
  with the partial order $\subseteq$; draw the steps of the topological sort?
 
 ---
