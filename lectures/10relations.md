@@ -162,8 +162,8 @@ A positive test only implies a **15.4% chance** of actual cancer due to low prev
 **example**
 If $A = \{1, 2, 3\}$ and $B = \{4, 5\}$,
 
-- $\{(1, 4), (2, 5), (3, 5)\}$ \visible<3->{is  a binary relation from $A$ to $B$.}
-- $\{(1, 1), (1, 4), (3, 5)\}$ \visible<3->{is \textbf{NOT} a binary relation from $A$ to $B$.}
+- $\{(1, 4), (2, 5), (3, 5)\}$ is  a binary relation from $A$ to $B$.
+- $\{(1, 1), (1, 4), (3, 5)\}$ is **NOT** a binary relation from $A$ to $B$.
 
 
 ---
