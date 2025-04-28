@@ -477,7 +477,7 @@ Let $R$ be the relation on the set of all people in the world that contains $(a,
 that is, if there is a person $c$ such that $a$ has met $c$ and $c$ has met $b$. 
 - Similarly, $(a,b)\in R^n$ if there are people $x_1 , x_2,\dots, x_{n-1}$ such that
   -  $a$ has met $x_1$,
-  -  $x_1$ has met $x_2$,$\dots,$
+  -  $x_1$ has met $x_2$, ...
   -  and $x_{n-1}$ has met $b$.
 
 
@@ -522,8 +522,7 @@ possible to travel from stop $a$ to stop $b$ making as many changes of trains as
 ---
 
 ### Classifying Binary Relations
- A relation $R$ on a set $
-A$ is 
+ A relation $R$ on a set $A$ is 
 
 - **reflexive** if $(a,a)\in R$ for all $a\in A$.
 - **irreflexive** if $(a,a)\notin R$ for all $a\in A$.
@@ -689,7 +688,7 @@ $A_i$ is called a \alert{block} of the partition.
 
  Let $A = \{1, 2, 3, 4, 5\}$,  
  - $A1 = \{1, 5\}, A2 = \{3\}$, and $A3 = \{2, 4\}.$ $\{A1, A2, A3\}$ is a partition of $A$. 
- -  $B1 = \{1, 2, 5\}, B2 = \{2, 3\},$ and $B3 = \{4\} $ is not a partition: $B1 \cap B2 \neq \emptyset$
+ -  $B1 = \{1, 2, 5\}, B2 = \{2, 3\},$ and $B3 = \{4\}$ is not a partition: $B1 \cap B2 \neq \emptyset$
   
 
 
@@ -791,9 +790,9 @@ When ${R}$ is a partial order, the pair $(A,R)$ is called a **partially ordered 
 ---
 ### Examples
 
-- $\leq$ relation on the set of integers $Z$, is a partial order.$(Z, \leq)$ is a poset.
+- $\leq$ relation on the set of integers $Z$, is a partial order.$\left(Z, \leq \right)$ is a poset.
 
-  - to prove, show "$\leq$" is reflexive, antisymmetric, and transitive. 
+  - to prove, show $\leq$ is reflexive, antisymmetric, and transitive. 
 
 - The subset relation $\subseteq$ on the power set of $\{1,2\}$ is a partial order. The set with the subset relation is a poset.
 
@@ -988,11 +987,11 @@ The topological sorting is the procedure to find a linear (total) order that doe
 2. **While** $S \neq \emptyset$ **do**  
    - $a_k \gets$ a minimal element of $S$  
    - 
-   ```math
-   S \gets S \setminus \{a_k\}
-   ```  
+```math
+S \gets S \setminus \{a_k\}
+```  
    -   $k \gets k + 1$  
-3. **Return** $a_1, a_2, \dots, a_n$  *(This is a compatible ordering of $S$)*  
+3. **Return** $a_1, a_2, \dots, a_n$  *(This is a compatible ordering of $S$ )*  
 
 ---
 
