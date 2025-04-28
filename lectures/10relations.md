@@ -1046,9 +1046,28 @@ If every element of a poset has both a least upper bound and a greatest lower bo
 
 ---
 
+ a partially ordered set (poset) is a lattice iff for any two elements $a$ and $b$ in the poset:
+
+1. **Existence of Meets**:  there must exist a greatest lower bound (meet) $a \wedge b$.
+
+2. **Existence of Joins**: there must exist a least upper bound (join) $a \vee b$.
+
+---
+
+```
+    c
+   / \
+  a   b
+```
+this poset is **not a lattice**. 
+- there is no element that serves as a meet for $a$ \) and $b$. 
+
+
+
+---
+
 - Is the poset $(Z^+,\mid)$ a lattice?
   - For any $a,b\in Z^+$, the least upper bound and the greatest lower bounds are $\textbf{lcm}(a,b)$ and $\gcd(a,b)$. So this poset is a lattice. 
-
 
 
 ---
