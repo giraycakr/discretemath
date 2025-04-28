@@ -974,8 +974,8 @@ The set $\{\emptyset, \{1\},\{2\},\{1,2\}\}$ with the partial order $\subseteq$:
 
 The topological sorting is the procedure to find a linear (total) order that does not violate the partial order.
 
-- Remove a minimal element from the given poset
-- Repeat \structure{(1.)} for the resulting set until no more elements left
+1. Remove a minimal element from the given poset
+2. Repeat (1.) for the resulting set until no more elements left
 
 
 ---
