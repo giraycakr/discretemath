@@ -487,7 +487,9 @@ see [https://www.csauthors.net/](https://www.csauthors.net/)
 
 ---
 
- What is 
+**The connectivity relation $R^*$**
+
+ What is  
  ```math
  R^{*}=\bigcup_{n=1}^\infty R^n?
  ```
