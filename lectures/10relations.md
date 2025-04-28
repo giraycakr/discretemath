@@ -681,7 +681,7 @@ Let $A$ be a set and $A_1, A_2,\dots, A_n$ be subsets of $A$. Then $\{A_1, A_2,\
   - $\cup_{i=1}^nA_i=A$
   - $A_i\cap A_j= \emptyset$ if $A_i\neq A_j$
 
-$A_i$ is called a \alert{block} of the partition. 
+$A_i$ is called a **block** of the partition. 
 
 
 ---
@@ -823,7 +823,7 @@ Each strongly connected component has been contracted to a single vertex to prod
 
 ### Comparability
 
-- The elements $a$ and $b$ of a poset $(S, \preceq)$ are called \alert{comparable} if either $a \preceq b$ or $b \preceq a$.
+- The elements $a$ and $b$ of a poset $(S, \preceq)$ are called **comparable** if either $a \preceq b$ or $b \preceq a$.
 
   - In the poset $(Z^+,\mid)$, 3 and 9 comparable. 
 
@@ -854,7 +854,7 @@ Each strongly connected component has been contracted to a single vertex to prod
 ### minimal/maximal element 
 Let $(A, \preceq)$ be a poset, where $\preceq$ represents an arbitrary partial order.
 \begin{itemize}
-- An element $b\in A$ is a \alert{minimal element} if there is no element $a\in A$ such that $a\preceq b$.
+- An element $b\in A$ is a **minimal element** if there is no element $a\in A$ such that $a\preceq b$.
 
 ---
 
@@ -867,7 +867,7 @@ The set of $\{\{1\},\{2\},\{1,2\}\}$ with the relation $\subseteq$ has two minim
 ### least/greatest element
 Let $(A, \preceq )$ be a poset.
 \begin{itemize}
-- An element $b\in A$ is the \alert{least element} if for every  element $a\in A$, $b\preceq a$.
+- An element $b\in A$ is the **least element** if for every  element $a\in A$, $b\preceq a$.
 
 ---
 
@@ -921,7 +921,7 @@ $(\{1, 2, 3, 4,6,8,12\},\mid ).$
 
 
 ### Total Order
-A binary relation ${R}$ on a set ${A}$ is a \alert{total order} if and only if ${R}$ is
+A binary relation ${R}$ on a set ${A}$ is a **total order** if and only if ${R}$ is
 - a partial order
 - For any pair of elements $a,b$ of $A$, $(a,b)\in R$ or
 $(b, a)\in R$
