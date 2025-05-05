@@ -1087,3 +1087,4 @@ pair $(A, C)$
 
 People and computer programs are then allowed access to information from a specific restricted set of security classes.
 
+---
